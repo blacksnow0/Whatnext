@@ -81,9 +81,15 @@ export default function Home() {
           <button className="px-6 py-3 bg-[#562705] text-white rounded-full font-semibold shadow hover:bg-[#5e2f12] transition w-full max-w-xs">
             Explore
           </button>
-          <button className="px-6 py-3 border border-[#8B4513] text-[#8B4513] rounded-full font-semibold hover:bg-[#f3ebe5] transition w-full max-w-xs">
-            Trailer
-          </button>
+          <a
+            href="https://www.youtube.com/watch?v=MDOXbRii-sg" // replace with your actual trailer URL
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="px-6 py-3 border border-[#8B4513] text-[#8B4513] rounded-full font-semibold hover:bg-[#f3ebe5] transition w-full max-w-xs">
+              Trailer
+            </button>
+          </a>
         </div>
       </div>
 
