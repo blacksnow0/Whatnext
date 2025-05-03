@@ -51,13 +51,13 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative rounded-3xl overflow-hidden shadow-2xl animate-fade-in">
+        <div className="relative border-4 rounded-3xl overflow-hidden shadow-2xl animate-fade-in">
           <img
             src={heroImage}
             alt="Travel Hero"
             className="w-full h-full object-cover object-bottom max-h-[500px]"
           />
-          <div className="absolute bottom-4 right-4 bg-white bg-opacity-40 px-4 py-2 rounded shadow">
+          <div className="absolute border-2 bottom-4 right-4 bg-white bg-opacity-40 px-4 py-2 rounded shadow drop-shadow-2xl ">
             <span className="text-sm text-[#8B4513] font-medium">
               Inspire your adventure 🌍
             </span>
@@ -72,7 +72,7 @@ export default function Home() {
         <img
           src={heroImage}
           alt="Travel Hero"
-          className="w-full max-h-[300px] object-cover  rounded-xl shadow-lg"
+          className="w-full max-h-[300px] object-cover border-4 rounded-xl shadow-lg"
         />
         <p className="text-base text-gray-700 px-4">
           Uncover breathtaking destinations and cultures waiting to be explored.

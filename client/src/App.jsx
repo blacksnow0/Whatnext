@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 // import Destinations from "./pages/Destinations";
-// import DestinationDetail from "./pages/DestinationDetail";
+import DestinationDetail from "./pages/DestinationDetail";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -11,8 +11,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/destinations" element={<Destinations />} />
-        <Route path="/destination/:id" element={<DestinationDetail />} /> */}
+        {/* <Route path="/destinations" element={<Destinations />} /> */}
+        <Route path="/destinations" element={<DestinationDetail />} />
       </Routes>
       <Footer />
     </Router>
