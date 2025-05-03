@@ -1,28 +1,38 @@
 export default function DestinationCard({ name, image, description }) {
   return (
-    <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:w-80 h-[28rem] rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 group mx-auto">
-      {/* Background image */}
-      <img
-        src={image}
-        alt="Card background"
-        className="absolute inset-0 w-full h-full object-cover transition-all group-hover:opacity-90"
-      />
+    <div className="w-full border-4 border-[#272727] max-w-md mx-auto aspect-[2/3] rounded-3xl overflow-hidden shadow-[0_12px_30px_-10px_rgba(0,0,0,0.4)] bg-[#0e0e0e] flex flex-col group transition-all duration-300 hover:scale-[1.04]">
+      <div className="h-[70%] relative">
+        <img
+          src={image}
+          alt="Destination"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute top-4 left-4 bg-black/40 text-white text-xs px-3 py-1 rounded-full backdrop-blur-md shadow-sm">
+          Work fast. Live slow.
+        </div>
 
-      {/* Top title overlay */}
-      <div className="absolute top-0 w-full p-4 sm:p-5 z-20 bg-gradient-to-b from-black/80 via-black/50 to-transparent">
-        <h2 className="text-xl  sm:text-xl font-semibold  font-mono  text-neutral-100 drop-shadow-amber-900 group-hover:text-[#d8c4b6] transition-all">
-          {name}
-        </h2>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
       </div>
 
-      {/* Bottom description and button */}
-      <div className="absolute bottom-0 w-full p-4 sm:p-6 text-white flex flex-col justify-between z-20 space-y-3 bg-gradient-to-t from-black/60 via-black/30 to-transparent">
-        <p className="text-xs sm:text-sm opacity-90 text-gray-300 leading-relaxed">
-          {description}
-        </p>
-        <button className="cursor-pointer px-4 py-2 sm:px-6 sm:py-3 bg-[#88542f] text-white rounded-full font-semibold shadow-md hover:bg-[#5e2f12] transition-all duration-300 transform hover:translate-y-1">
-          Explore More
-        </button>
+      {/* Bottom 30% - Text */}
+      <div className="h-[30%] flex flex-col justify-between px-6 py-4 text-white bg-[#272727]">
+        <div>
+          <h2 className="text- font-serif font-semibold  group-hover:text-[#d8c4b6] transition-colors">
+            {name.toUpperCase()}
+          </h2>
+          <p className="text-xs text-gray-400 mt-1 line-clamp-2">
+            {description}
+          </p>
+        </div>
+
+        <div className="flex justify-between items-center mt-3">
+          <button className="text-xs px-4 py-2 rounded-full border border-white hover:bg-white hover:text-black transition-all duration-300">
+            Explore More
+          </button>
+          <span className="text-[10px] text-gray-500">
+            web • brand • escape
+          </span>
+        </div>
       </div>
     </div>
   );

@@ -85,6 +85,7 @@ export default function Home() {
             href="https://www.youtube.com/watch?v=MDOXbRii-sg" // replace with your actual trailer URL
             target="_blank"
             rel="noopener noreferrer"
+            className="w-full"
           >
             <button className="px-6 py-3 border border-[#8B4513] text-[#8B4513] rounded-full font-semibold hover:bg-[#f3ebe5] transition w-full max-w-xs">
               Trailer
