@@ -3,6 +3,16 @@ import trekImage from "../assets/trip4.jpeg";
 import gallery1 from "../assets/trip1.jpeg";
 import gallery2 from "../assets/trip2.jpeg";
 import gallery3 from "../assets/trip3.jpeg";
+import gallery4 from "../assets/kagbhusandi.jpeg";
+import gallery5 from "../assets/hero3.jpeg";
+import gallery6 from "../assets/trip.jpeg";
+// At the top of your file
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
+import PhotoGallery from "../components/PhotoGallery";
 
 const DestinationDetail = () => {
   const destination = {
@@ -44,8 +54,17 @@ const DestinationDetail = () => {
       "Insurance",
       "Snacks & beverages",
     ],
-    gallery: [gallery1, gallery2, gallery3],
+    gallery: [gallery1, gallery2, gallery3, gallery4],
   };
+
+  const galleryImages = [
+    gallery1,
+    gallery2,
+    gallery3,
+    gallery4,
+    gallery5,
+    gallery6,
+  ];
 
   return (
     <div className="min-h-screen w-full text-gray-900 font-exo">
@@ -106,20 +125,7 @@ const DestinationDetail = () => {
           </ol>
         </section>
 
-        {/* Gallery */}
-        <section>
-          <h2 className="text-4xl font-bold mb-6">Trek Gallery</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {destination.gallery.map((img, index) => (
-              <img
-                key={index}
-                src={img}
-                alt={`Gallery ${index}`}
-                className="w-full h-60 object-cover rounded-lg shadow"
-              />
-            ))}
-          </div>
-        </section>
+        <PhotoGallery images={galleryImages} />
 
         {/* Inclusions & Exclusions */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-10">

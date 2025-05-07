@@ -25,7 +25,6 @@ const dummyDestinations = [
 export default function Home() {
   return (
     <section className="min-h-screen mt-20">
-      {/* Desktop/Tablet Version */}
       <div className="hidden md:grid grid-cols-2 gap-6 items-center px-6 md:px-12 lg:px-20 py-20 max-w-7xl mx-auto">
         <div className="space-y-6 text-center md:text-left animate-fade-in-up">
           <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight font-ubuntu">
@@ -40,7 +39,7 @@ export default function Home() {
               Explore Destinations
             </button>
             <a
-              href="https://www.youtube.com/watch?v=MDOXbRii-sg" // replace with your actual trailer URL
+              href="https://www.youtube.com/watch?v=MDOXbRii-sg"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -51,13 +50,13 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative border-4 rounded-3xl overflow-hidden shadow-2xl animate-fade-in">
+        <div className="relative border-2 rounded-3xl overflow-hidden shadow-2xl animate-fade-in">
           <img
             src={heroImage}
             alt="Travel Hero"
             className="w-full h-full object-cover object-center max-h-[500px]"
           />
-          <div className="absolute border-2 bottom-4 right-4 bg-white bg-opacity-40 px-4 py-2 rounded shadow drop-shadow-2xl ">
+          <div className="absolute bottom-2 border-2 right-4 bg-white bg-opacity-40 px-4 py-2 rounded shadow drop-shadow-2xl ">
             <span className="text-sm text-[#8B4513] font-medium">
               Inspire your adventure 🌍
             </span>
@@ -94,7 +93,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Shared Content: Destination Cards */}
       <div className="px-6 py-12 max-w-7xl mx-auto">
         <h2 className="text-3xl font-exo font-bold text-[#8B4513] mb-8 text-center">
           Top Picks For You
