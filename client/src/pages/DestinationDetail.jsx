@@ -1,58 +1,152 @@
-// src/DestinationDetail.js
-
 import React from "react";
-import trip3 from "../assets/trip3.jpeg";
+import trekImage from "../assets/trip4.jpeg";
+import gallery1 from "../assets/trip1.jpeg";
+import gallery2 from "../assets/trip2.jpeg";
+import gallery3 from "../assets/trip3.jpeg";
 
 const DestinationDetail = () => {
   const destination = {
-    name: "Paris",
-    country: "France",
+    name: "Kagbhusandi Trek",
+    country: "India",
     description:
-      "Known for its rich history, art, and culture, Paris is a top destination for travelers around the world.",
-    imageUrl: trip3, // Placeholder image URL
-    bestTimeToVisit: "April - June, September - November",
+      "Nestled in the Garhwal Himalayas, Kagbhusandi Trek offers breathtaking views, alpine meadows, and a spiritual escape into nature. It's a lesser-known gem ideal for experienced trekkers seeking solitude and serenity.",
+    imageUrl: trekImage,
+    bestTimeToVisit: "June - October",
     attractions: [
-      "Eiffel Tower",
-      "Louvre Museum",
-      "Notre-Dame Cathedral",
-      "Champs-Élysées",
+      "Kagbhusandi Lake",
+      "Valley of Flowers",
+      "Hemkund Sahib",
+      "Joshimath",
     ],
+    itinerary: [
+      "Day 1: Arrival at Joshimath",
+      "Day 2: Trek to Ghangaria",
+      "Day 3: Visit Kagbhusandi Lake",
+      "Day 4: Explore Valley of Flowers",
+      "Day 5: Return to Joshimath & Departure",
+    ],
+    highlights: [
+      "6-day guided trek",
+      "Camp under the stars",
+      "All meals included",
+      "Local guide and porter",
+    ],
+    inclusions: [
+      "Accommodation in tents/lodges",
+      "All meals during the trek",
+      "Certified local guide",
+      "First aid kit",
+      "Entry and forest permits",
+    ],
+    exclusions: [
+      "Transportation to base location",
+      "Personal trekking gear",
+      "Insurance",
+      "Snacks & beverages",
+    ],
+    gallery: [gallery1, gallery2, gallery3],
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
-      {/* Destination Header */}
-      <div className="mb-6">
-        <img
-          className="w-full h-96 object-cover rounded-lg shadow-lg"
-          src={destination.imageUrl}
-          alt={destination.name}
-        />
-        <h1 className="text-4xl font-bold mt-4">{destination.name}</h1>
-        <p className="text-xl text-gray-500">{destination.country}</p>
+    <div className="min-h-screen w-full text-gray-900 font-exo">
+      {/* Hero Section */}
+      <div
+        className="w-full min-h-[70vh] md:min-h-[85vh] bg-cover bg-center relative flex items-center justify-center"
+        style={{ backgroundImage: `url(${destination.imageUrl})` }}
+      >
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="relative z-10 text-center px-4">
+          <h1 className="text-5xl font-bold text-white drop-shadow-lg">
+            {destination.name}
+          </h1>
+          <p className="text-xl text-white/80 mt-2 tracking-wide">
+            {destination.country}
+          </p>
+        </div>
       </div>
 
-      {/* Destination Description */}
-      <div className="mb-6">
-        <p className="text-lg">{destination.description}</p>
-      </div>
+      {/* Content */}
+      <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 space-y-20">
+        {/* Overview */}
+        <section>
+          <h2 className="text-4xl font-bold mb-4">About the Trek</h2>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            {destination.description}
+          </p>
+        </section>
 
-      {/* Best Time to Visit */}
-      <div className="mb-6">
-        <h2 className="text-2xl font-semibold">Best Time to Visit</h2>
-        <p className="text-lg text-gray-700">{destination.bestTimeToVisit}</p>
-      </div>
+        {/* Best Time to Visit */}
+        <section>
+          <h2 className="text-4xl font-bold mb-4">Best Time to Visit</h2>
+          <p className="text-lg text-gray-700">{destination.bestTimeToVisit}</p>
+        </section>
 
-      {/* Attractions */}
-      <div className="mb-6">
-        <h2 className="text-2xl font-semibold">Top Attractions</h2>
-        <ul className="list-disc pl-6">
-          {destination.attractions.map((attraction, index) => (
-            <li key={index} className="text-lg text-gray-700">
-              {attraction}
-            </li>
-          ))}
-        </ul>
+        {/* Highlights */}
+        <section>
+          <h2 className="text-4xl font-bold mb-6">Package Highlights</h2>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
+            {destination.highlights.map((item, index) => (
+              <li
+                key={index}
+                className="bg-white border border-gray-200 p-4 rounded-lg shadow-sm"
+              >
+                ✅ {item}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Itinerary */}
+        <section>
+          <h2 className="text-4xl font-bold mb-6">Itinerary</h2>
+          <ol className="space-y-3 list-decimal list-inside text-lg text-gray-700">
+            {destination.itinerary.map((day, index) => (
+              <li key={index}>{day}</li>
+            ))}
+          </ol>
+        </section>
+
+        {/* Gallery */}
+        <section>
+          <h2 className="text-4xl font-bold mb-6">Trek Gallery</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {destination.gallery.map((img, index) => (
+              <img
+                key={index}
+                src={img}
+                alt={`Gallery ${index}`}
+                className="w-full h-60 object-cover rounded-lg shadow"
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* Inclusions & Exclusions */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div>
+            <h2 className="text-3xl font-bold mb-4">Inclusions</h2>
+            <ul className="space-y-2 list-disc list-inside text-gray-700">
+              {destination.inclusions.map((item, index) => (
+                <li key={index}>✔️ {item}</li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h2 className="text-3xl font-bold mb-4">Exclusions</h2>
+            <ul className="space-y-2 list-disc list-inside text-gray-700">
+              {destination.exclusions.map((item, index) => (
+                <li key={index}>❌ {item}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Booking Button */}
+        <section className="text-center pt-12">
+          <button className="bg-[#88542f] hover:bg-[#6d4026] transition text-white px-8 py-4 rounded-full text-xl font-semibold shadow-lg">
+            Book This Trek
+          </button>
+        </section>
       </div>
     </div>
   );

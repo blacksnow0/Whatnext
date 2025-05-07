@@ -1,4 +1,16 @@
-/* Global Styles */
+@font-face {
+  font-family: Ubuntu;
+  src: url("../src/assets/fonts/Ubuntu-Medium.ttf");
+}
+@font-face {
+  font-family: Exo;
+  src: url("../src/assets/fonts/Exo2-VariableFont_wght.ttf");
+}
+
+@theme {
+  --font-ubuntu: Ubuntu, "sans-serif";
+  --font-exo: Exo, "sans-serif";
+}
 @import "tailwindcss";
 
 :root {
@@ -13,23 +25,23 @@
 }
 
 body {
-  background: linear-gradient(
-    135deg,
-    rgba(139, 104, 79, 0.1),
-    rgba(171, 129, 95, 0.3)
+  background: radial-gradient(
+    circle at 20% 30%,
+    rgba(139, 104, 79, 0.15),
+    rgba(171, 129, 95, 0.25),
+    transparent 20%
   );
-  background-size: 400% 400%;
-  animation: gradientBackground 10s ease infinite;
+  background-size: cover;
 }
 
-@keyframes gradientBackground {
+@keyframes gradientMove {
   0% {
-    background-position: 0% 50%;
+    background-position: 0% 0%;
   }
   50% {
-    background-position: 100% 50%;
+    background-position: 100% 100%;
   }
   100% {
-    background-position: 0% 50%;
+    background-position: 0% 0%;
   }
 }

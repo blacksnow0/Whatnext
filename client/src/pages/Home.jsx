@@ -1,6 +1,6 @@
 import DestinationCard from "../components/DestinationCard";
 import heroImage from "../assets/hero3.jpeg";
-import img1 from "../assets/trip1.jpeg";
+import img1 from "../assets/trip.jpeg";
 import img2 from "../assets/trip2.jpeg";
 import img3 from "../assets/trip3.jpeg";
 
@@ -24,12 +24,12 @@ const dummyDestinations = [
 
 export default function Home() {
   return (
-    <section className="min-h-screen">
+    <section className="min-h-screen mt-20">
       {/* Desktop/Tablet Version */}
       <div className="hidden md:grid grid-cols-2 gap-6 items-center px-6 md:px-12 lg:px-20 py-20 max-w-7xl mx-auto">
         <div className="space-y-6 text-center md:text-left animate-fade-in-up">
-          <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight">
-            Discover <span className="text-[#693008]">What’s Next!</span>
+          <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight font-ubuntu">
+            Discover <span className=" text-[#693008]">What’s Next!</span>
           </h1>
           <p className="text-lg text-gray-700 max-w-xl">
             Uncover breathtaking destinations, untold stories, and cultures
@@ -96,7 +96,7 @@ export default function Home() {
 
       {/* Shared Content: Destination Cards */}
       <div className="px-6 py-12 max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-[#8B4513] mb-8 text-center">
+        <h2 className="text-3xl font-exo font-bold text-[#8B4513] mb-8 text-center">
           Top Picks For You
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
