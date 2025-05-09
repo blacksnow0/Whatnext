@@ -4,13 +4,13 @@ const PhotoGallery = ({ images }) => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <section className="py-12">
+    <section className=" font-garmond py-12">
       <div className="mb-12  relative">
         <span className="block text-xs uppercase tracking-widest text-[#a2683d] font-medium mb-3">
           Moments That Matter
         </span>
 
-        <h2 className="inline-block px-6 py-3 border-2 border-[#a2683d] text-4xl font-exo font-bold text-[#3b2f24] bg-white/90 backdrop-blur-sm shadow-xl rounded-md tracking-wide">
+        <h2 className="inline-block px-6 py-3 border-2 border-[#a2683d] text-4xl font-ubuntu font-bold text-[#3b2f24] bg-white/90 backdrop-blur-sm shadow-xl rounded-md tracking-wide">
           Trek Gallery
         </h2>
 

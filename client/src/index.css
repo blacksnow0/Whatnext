@@ -6,10 +6,15 @@
   font-family: Exo;
   src: url("../src/assets/fonts/Exo2-VariableFont_wght.ttf");
 }
+@font-face {
+  font-family: Garamond;
+  src: url("../src/assets/fonts/EBGaramond-VariableFont_wght.ttf");
+}
 
 @theme {
   --font-ubuntu: Ubuntu, "sans-serif";
   --font-exo: Exo, "sans-serif";
+  --font-garmond: Garmond, "sans-serif";
 }
 @import "tailwindcss";
 

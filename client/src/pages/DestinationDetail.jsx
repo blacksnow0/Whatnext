@@ -13,6 +13,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 import PhotoGallery from "../components/PhotoGallery";
+import ItinerarySection from "../components/ItinerarySection";
+import PackageHighlights from "../components/PackageHiglights";
 
 const DestinationDetail = () => {
   const destination = {
@@ -29,12 +31,38 @@ const DestinationDetail = () => {
       "Joshimath",
     ],
     itinerary: [
-      "Day 1: Arrival at Joshimath",
-      "Day 2: Trek to Ghangaria",
-      "Day 3: Visit Kagbhusandi Lake",
-      "Day 4: Explore Valley of Flowers",
-      "Day 5: Return to Joshimath & Departure",
+      {
+        day: "Day 1",
+        highlight: "Arrival & Acclimatization in Joshimath",
+        description:
+          "Your adventure begins as you arrive in the quaint Himalayan town of Joshimath, nestled amidst steep mountain walls and pine forests. Spend the day acclimatizing to the altitude, exploring local temples like Narasimha Temple, or simply soaking in the peaceful mountain air. Evening briefings with your trek leader prepare you for the days ahead.",
+      },
+      {
+        day: "Day 2",
+        highlight: "Scenic Trek to Ghangaria",
+        description:
+          "Begin your trek with a beautiful ascent through dense forests, winding trails, and cascading waterfalls. The route from Govindghat to Ghangaria is a visual treat, with the Pushpawati River accompanying you along the way. Arrive at the serene village of Ghangaria — your gateway to the Valley of Flowers and Kagbhusandi Lake. Relax and recharge in the quietude of this alpine hamlet.",
+      },
+      {
+        day: "Day 3",
+        highlight: "Spiritual Hike to Kagbhusandi Lake",
+        description:
+          "This day marks the spiritual and physical high point of the journey. Embark on a challenging yet rewarding trek to the sacred Kagbhusandi Lake, cradled high in the Garhwal Himalayas. Surrounded by rugged cliffs and echoing silence, the emerald lake feels otherworldly. Mythology and mystique come alive here — it's believed that the lake is watched over by celestial crows and sages. Return to Ghangaria by evening, forever changed by what you’ve seen.",
+      },
+      {
+        day: "Day 4",
+        highlight: "Discover the Valley of Flowers",
+        description:
+          "Today, enter one of India’s most enchanting UNESCO World Heritage sites — the Valley of Flowers. Wander through a natural sanctuary bursting with rare Himalayan flora, colorful alpine blooms, and misty meadows. Witness nature’s raw canvas painted in a thousand hues as you trek deeper into the valley. It's not just a place — it’s a feeling. Return to Ghangaria with your soul uplifted.",
+      },
+      {
+        day: "Day 5",
+        highlight: "Descent & Departure from Joshimath",
+        description:
+          "Wrap up your journey with a descent back to Govindghat and a drive to Joshimath. Reflect on the memories forged — the friendships, the breathtaking landscapes, and the inner peace you found in the mountains. After a warm farewell and some last-minute local shopping, you’ll depart from Joshimath with a heart full of adventure and awe.",
+      },
     ],
+
     highlights: [
       "6-day guided trek",
       "Camp under the stars",
@@ -67,7 +95,7 @@ const DestinationDetail = () => {
   ];
 
   return (
-    <div className="min-h-screen w-full text-gray-900 font-exo">
+    <div className="min-h-screen w-full text-gray-900">
       {/* Hero Section */}
       <div
         className="w-full min-h-[70vh] md:min-h-[85vh] bg-cover bg-center relative flex items-center justify-center"
@@ -75,7 +103,7 @@ const DestinationDetail = () => {
       >
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 text-center px-4">
-          <h1 className="text-5xl font-bold text-white drop-shadow-lg">
+          <h1 className="text-5xl font-ubuntu font-bold text-white drop-shadow-lg">
             {destination.name}
           </h1>
           <p className="text-xl text-white/80 mt-2 tracking-wide">
@@ -101,29 +129,10 @@ const DestinationDetail = () => {
         </section>
 
         {/* Highlights */}
-        <section>
-          <h2 className="text-4xl font-bold mb-6">Package Highlights</h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
-            {destination.highlights.map((item, index) => (
-              <li
-                key={index}
-                className="bg-white border border-gray-200 p-4 rounded-lg shadow-sm"
-              >
-                ✅ {item}
-              </li>
-            ))}
-          </ul>
-        </section>
+        <PackageHighlights highlights={destination.highlights} />
 
         {/* Itinerary */}
-        <section>
-          <h2 className="text-4xl font-bold mb-6">Itinerary</h2>
-          <ol className="space-y-3 list-decimal list-inside text-lg text-gray-700">
-            {destination.itinerary.map((day, index) => (
-              <li key={index}>{day}</li>
-            ))}
-          </ol>
-        </section>
+        <ItinerarySection itinerary={destination.itinerary} />
 
         <PhotoGallery images={galleryImages} />
 
