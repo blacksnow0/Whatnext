@@ -2,24 +2,23 @@ import { FaLeaf } from "react-icons/fa"; // or choose any suitable icon
 
 const PackageHighlights = ({ highlights }) => {
   return (
-    <section className="py-12 font-garamond">
+    <section className="font-garamond">
       {/* Header */}
       <div className="mb-10 relative">
         <span className="block text-xs uppercase tracking-widest text-[#a2683d] font-medium mb-2">
           Why Choose This Trek
         </span>
 
-        <h2 className="inline-block px-6 py-3 border-2 border-[#a2683d] text-4xl font-ubuntu font-bold text-[#3b2f24] bg-white/90 backdrop-blur-sm shadow-xl rounded-md tracking-wide">
+        <h2 className="inline-block px-6 py-3 border-2 border-[#a2683d] text-2xl md:text-4xl font-ubuntu font-bold text-[#3b2f24] bg-white/90 backdrop-blur-sm shadow-xl rounded-md tracking-wide">
           Package Highlights
         </h2>
 
-        <p className="mt-4 text-base text-gray-700 font-light max-w-2xl">
+        <p className="mt-4 text-base text-gray-700 font-garmond max-w-2xl">
           Handpicked experiences that make this journey unforgettable — nature,
           culture, comfort, and thrill all in one.
         </p>
       </div>
 
-      {/* Highlight List */}
       <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
         {highlights.map((item, index) => (
           <li

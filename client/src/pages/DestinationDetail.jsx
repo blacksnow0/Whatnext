@@ -15,6 +15,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import PhotoGallery from "../components/PhotoGallery";
 import ItinerarySection from "../components/ItinerarySection";
 import PackageHighlights from "../components/PackageHiglights";
+import BestTimeToVisit from "../components/BestTimeToVisit";
 
 const DestinationDetail = () => {
   const destination = {
@@ -116,25 +117,30 @@ const DestinationDetail = () => {
       <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 space-y-20">
         {/* Overview */}
         <section>
-          <h2 className="text-4xl font-bold mb-4">About the Trek</h2>
-          <p className="text-lg text-gray-700 leading-relaxed">
-            {destination.description}
-          </p>
+          <div className="mb-12 relative">
+            <span className="block text-xs uppercase tracking-widest text-[#a2683d] font-medium mb-3">
+              Where Adventure Begins
+            </span>
+
+            <h2 className="inline-block px-6 py-3 border-2 border-[#a2683d] text-2xl md:text-4xl font-ubuntu font-bold text-[#3b2f24] bg-white/90 backdrop-blur-sm shadow-xl rounded-md tracking-wide">
+              About the Trek
+            </h2>
+            <p className="mt-4 font-garmond text-base text-gray-700 font-light">
+              {destination.description}
+            </p>
+          </div>
         </section>
 
         {/* Best Time to Visit */}
-        <section>
-          <h2 className="text-4xl font-bold mb-4">Best Time to Visit</h2>
-          <p className="text-lg text-gray-700">{destination.bestTimeToVisit}</p>
-        </section>
-
-        {/* Highlights */}
-        <PackageHighlights highlights={destination.highlights} />
+        <BestTimeToVisit bestTimeToVisit={destination.bestTimeToVisit} />
 
         {/* Itinerary */}
         <ItinerarySection itinerary={destination.itinerary} />
 
         <PhotoGallery images={galleryImages} />
+
+        {/* Highlights */}
+        <PackageHighlights highlights={destination.highlights} />
 
         {/* Inclusions & Exclusions */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-10">
