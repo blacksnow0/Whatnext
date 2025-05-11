@@ -18,6 +18,18 @@
 }
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
+Hide scrollbar utility .scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

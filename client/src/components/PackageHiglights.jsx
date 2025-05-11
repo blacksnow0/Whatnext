@@ -2,7 +2,7 @@ import { FaLeaf } from "react-icons/fa"; // or choose any suitable icon
 
 const PackageHighlights = ({ highlights }) => {
   return (
-    <section className="font-garamond">
+    <section id="highlights" className="font-garamond">
       {/* Header */}
       <div className="mb-10 relative">
         <span className="block text-xs uppercase tracking-widest text-[#a2683d] font-medium mb-2">

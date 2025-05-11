@@ -2,7 +2,10 @@ import bestTimeImage from "../assets/mountain.jpg"; // Add an appropriate image 
 
 const BestTimeToVisit = ({ bestTimeToVisit }) => {
   return (
-    <section className="font-garmond rounded-sm relative h-[200px] sm:h-[240px] md:h-[300px] lg:h-[360px] w-full overflow-hidden shadow-xl">
+    <section
+      id="best-time"
+      className="font-garmond rounded-sm relative h-[200px] sm:h-[240px] md:h-[300px] lg:h-[360px] w-full overflow-hidden shadow-xl"
+    >
       {/* Background Image */}
       <img
         src={bestTimeImage}

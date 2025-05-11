@@ -4,7 +4,7 @@ const PhotoGallery = ({ images }) => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <section className=" font-garmond ">
+    <section id="gallery" className=" font-garmond ">
       <div className="mb-12  relative">
         <span className="block text-xs uppercase tracking-widest text-[#a2683d] font-medium mb-3">
           Moments That Matter

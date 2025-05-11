@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 // import bgImage from "../assets/mountain.jpg";
-import texture from "../assets/arabesque.png";
 
 const ItinerarySection = ({ itinerary }) => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -11,7 +10,7 @@ const ItinerarySection = ({ itinerary }) => {
   };
 
   return (
-    <section className="font-garmond relative  px-4 sm:px-8">
+    <section id="itinerary" className="font-garmond relative  ">
       {/* Section Header */}
       <div className="mb-2 relative t">
         <span className="block text-xs uppercase tracking-widest text-[#a2683d] font-medium mb-3">
@@ -35,39 +34,25 @@ const ItinerarySection = ({ itinerary }) => {
             onClick={() => toggleDay(index)}
             className="relative cursor-pointer transition-transform duration-200 hover:scale-[1.01] group"
           >
-            {/* Day Label and Toggle */}
-            <div className="flex justify-between items-center gap-3 pr-2">
-              <div className="flex-3/4 font-ubuntu flex-col gap-2">
-                {/* Day Capsule */}
-                <span
-                  className="inline-block w-full text-[#3d2b1f] text-md font-semibold px-4 py-2 
-    rounded-full shadow-inner tracking-wide border"
-                  style={{
-                    background: `linear-gradient(
-      rgba(255, 235, 205, 0.3),  /* light peach */
-      rgba(255, 200, 140, 0.3)   /* soft warm orange */
-    ), url(${texture})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "repeat",
-                    color: "#3d2b1f",
-                  }}
-                >
-                  {dayItem.day} -{" "}
-                  <span className="hidden md:inline">{dayItem.highlight}</span>
-                </span>
+            {/* Unified Flex Row */}
+            <div className="flex  items-center gap-3 pr-2">
+              {/* Day Capsule */}
+              <span className="text-[16px] font-semibold text-[#3a3a3a] border border-[#eaeaea] rounded-md bg-white px-[10px] py-[3px] whitespace-nowrap">
+                {dayItem.day}
+              </span>
 
-                {/* Highlight Title */}
-                <h3 className="text-lg ml-1 sm:text-xl font-semibold text-[#4b3621] md:hidden">
-                  {dayItem.highlight}
-                </h3>
-              </div>
+              {/* Highlight Title (always visible now) */}
+              <h3 className="text-base sm:text-lg font-semibold text-[#4b3621]">
+                {dayItem.highlight}
+              </h3>
 
+              {/* Toggle Icon */}
               <span className="text-[#6b4e2d] text-xl transition-transform duration-200 group-hover:rotate-180">
                 {openIndex === index ? <FiChevronUp /> : <FiChevronDown />}
               </span>
             </div>
 
+            {/* Expandable Content */}
             <div
               className={`overflow-hidden transition-all duration-500 ease-in-out ${
                 openIndex === index

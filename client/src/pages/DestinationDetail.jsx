@@ -6,12 +6,11 @@ import gallery3 from "../assets/trip3.jpeg";
 import gallery4 from "../assets/kagbhusandi.jpeg";
 import gallery5 from "../assets/hero3.jpeg";
 import gallery6 from "../assets/trip.jpeg";
-// At the top of your file
-import { Swiper, SwiperSlide } from "swiper/react";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper/modules";
+
 import PhotoGallery from "../components/PhotoGallery";
 import ItinerarySection from "../components/ItinerarySection";
 import PackageHighlights from "../components/PackageHiglights";
@@ -114,9 +113,53 @@ const DestinationDetail = () => {
       </div>
 
       {/* Content */}
-      <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 space-y-20">
+      <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 space-y-10">
+        {/* Section Navigation */}
+        <nav className="sticky top-[80px] z-30 bg-[#fdfaf7]/80 backdrop-blur-sm shadow-[inset_0_-1px_0_0_#e0d6cc] border-t border-[#f5eee7]">
+          <div className="max-w-6xl mx-auto px-4 py-2 overflow-x-auto scrollbar-hide">
+            <div className="flex gap-6 md:gap-8 whitespace-nowrap text-sm md:text-base font-medium text-[#4b392e]">
+              <a
+                href="#overview"
+                className="hover:text-[#a2683d] transition-colors duration-200"
+              >
+                Overview
+              </a>
+              <a
+                href="#best-time"
+                className="hover:text-[#a2683d] transition-colors duration-200"
+              >
+                Best Time
+              </a>
+              <a
+                href="#itinerary"
+                className="hover:text-[#a2683d] transition-colors duration-200"
+              >
+                Itinerary
+              </a>
+              <a
+                href="#gallery"
+                className="hover:text-[#a2683d] transition-colors duration-200"
+              >
+                Gallery
+              </a>
+              <a
+                href="#highlights"
+                className="hover:text-[#a2683d] transition-colors duration-200"
+              >
+                Highlights
+              </a>
+              <a
+                href="#inclusions"
+                className="hover:text-[#a2683d] transition-colors duration-200"
+              >
+                Inclusions
+              </a>
+            </div>
+          </div>
+        </nav>
+
         {/* Overview */}
-        <section>
+        <section id="overview">
           <div className="mb-12 relative">
             <span className="block text-xs uppercase tracking-widest text-[#a2683d] font-medium mb-3">
               Where Adventure Begins
@@ -143,7 +186,10 @@ const DestinationDetail = () => {
         <PackageHighlights highlights={destination.highlights} />
 
         {/* Inclusions & Exclusions */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <section
+          id="inclusions"
+          className="grid grid-cols-1 md:grid-cols-2 gap-10"
+        >
           <div>
             <h2 className="text-3xl font-bold mb-4">Inclusions</h2>
             <ul className="space-y-2 list-disc list-inside text-gray-700">
