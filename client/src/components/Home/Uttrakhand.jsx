@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-
 import valleyImage from "../../assets/images/valleyImage.jpeg";
 import roopkundImage from "../../assets/images/roopkundImage.jpeg";
 import pindariImage from "../../assets/images/pindariImage.jpeg";
@@ -57,7 +56,7 @@ function Uttrakhand() {
       ([entry]) => {
         if (entry.isIntersecting) {
           heading.classList.add("opacity-100", "translate-y-0");
-          observer.disconnect(); // animation only once
+          observer.disconnect();
         }
       },
       { threshold: 0.9 }
@@ -72,10 +71,16 @@ function Uttrakhand() {
         id="uttrakhand-heading"
         className="relative text-center mb-16 opacity-0 translate-y-8 transition-all duration-700"
       >
-        <h2 className="text-[2rem] sm:text-[3rem] lg:text-[3.25rem] leading-tight font-serif uppercase tracking-[0.15em] text-[#7e395b] ">
+        <h2 className="text-[2rem] sm:text-[3rem] lg:text-[3.25rem] leading-tight font-serif uppercase tracking-[0.15em] text-[#7e395b]">
           Discover Uttrakhand
         </h2>
         <div className="mt-3 w-24 h-[3px] bg-[#7e395b] mx-auto rounded-full"></div>
+
+        {/* Mobile-only description */}
+        <p className="block sm:hidden mt-4 text-sm text-[#4b4b50] max-w-xs mx-auto leading-relaxed opacity-90">
+          From misty mountains to serene temples — experience the raw beauty and
+          spiritual essence of Uttrakhand like never before.
+        </p>
       </div>
 
       <Swiper

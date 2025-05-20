@@ -11,7 +11,6 @@ const ItinerarySection = ({ itinerary }) => {
 
   return (
     <section id="itinerary" className="font-garmond relative  ">
-      {/* Section Header */}
       <div className="mb-2 relative t">
         <span className="block text-xs font-ubuntu uppercase tracking-widest text-brand font-medium mb-3">
           Plan Every Step
@@ -34,25 +33,20 @@ const ItinerarySection = ({ itinerary }) => {
             onClick={() => toggleDay(index)}
             className="relative cursor-pointer transition-transform duration-200 hover:scale-[1.01] group"
           >
-            {/* Unified Flex Row */}
             <div className="flex  items-center gap-3 pr-2">
-              {/* Day Capsule */}
               <span className="text-[16px] font-semibold text-[#3a3a3a] border rounded-md bg-white px-[10px] py-[3px] whitespace-nowrap">
                 {dayItem.day}
               </span>
 
-              {/* Highlight Title (always visible now) */}
               <h3 className="text-base sm:text-lg font-semibold text-[#4b3621]">
                 {dayItem.highlight}
               </h3>
 
-              {/* Toggle Icon */}
               <span className="text-[#6b4e2d] text-xl transition-transform duration-200 group-hover:rotate-180">
                 {openIndex === index ? <FiChevronUp /> : <FiChevronDown />}
               </span>
             </div>
 
-            {/* Expandable Content */}
             <div
               className={`overflow-hidden transition-all duration-500 ease-in-out ${
                 openIndex === index

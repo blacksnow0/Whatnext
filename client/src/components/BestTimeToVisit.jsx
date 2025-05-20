@@ -1,4 +1,4 @@
-import bestTimeImage from "../assets/images/mountain.jpg"; // Add an appropriate image to your assets
+import bestTimeImage from "../assets/images/mountain.jpg";
 
 const BestTimeToVisit = ({ bestTimeToVisit }) => {
   return (
