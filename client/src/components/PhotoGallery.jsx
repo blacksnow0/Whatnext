@@ -6,11 +6,11 @@ const PhotoGallery = ({ images }) => {
   return (
     <section id="gallery" className=" font-garmond ">
       <div className="mb-12  relative">
-        <span className="block text-xs uppercase tracking-widest text-[#a2683d] font-medium mb-3">
+        <span className="block font-ubuntu text-xs uppercase tracking-widest text-brand font-medium mb-3">
           Moments That Matter
         </span>
 
-        <h2 className="inline-block px-6 py-3 border-2 border-[#a2683d] text-2xl md:text-4xl font-ubuntu font-bold text-[#3b2f24] bg-white/90 backdrop-blur-sm shadow-xl rounded-md tracking-wide">
+        <h2 className="inline-block px-6 py-3 border-2  text-2xl md:text-4xl font-ubuntu text-brand bg-[#f4eef1] shadow-xl rounded-md tracking-wide">
           Trek Gallery
         </h2>
 

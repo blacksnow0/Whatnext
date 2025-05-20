@@ -1,5 +1,5 @@
 import React from "react";
-import trekImage from "../assets/images/trip4.jpeg";
+// import trekImage from "../assets/images/trip4.jpeg";
 import gallery1 from "../assets/images/trip1.jpeg";
 import gallery2 from "../assets/images/trip2.jpeg";
 import gallery3 from "../assets/images/trip3.jpeg";
@@ -22,7 +22,7 @@ const DestinationDetail = () => {
     country: "India",
     description:
       "Nestled in the Garhwal Himalayas, Kagbhusandi Trek offers breathtaking views, alpine meadows, and a spiritual escape into nature. It's a lesser-known gem ideal for experienced trekkers seeking solitude and serenity.",
-    imageUrl: trekImage,
+    imageUrl: gallery4,
     bestTimeToVisit: "June - October",
     attractions: [
       "Kagbhusandi Lake",
@@ -115,43 +115,25 @@ const DestinationDetail = () => {
       {/* Content */}
       <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 space-y-10">
         {/* Section Navigation */}
-        <nav className="sticky top-[80px] z-30 bg-[#fdfaf7]/80 backdrop-blur-sm shadow-[inset_0_-1px_0_0_#e0d6cc] border-t border-[#f5eee7]">
-          <div className="max-w-6xl mx-auto px-4 py-2 overflow-x-auto scrollbar-hide">
-            <div className="flex gap-6 md:gap-8 whitespace-nowrap text-sm md:text-base font-medium text-[#4b392e]">
-              <a
-                href="#overview"
-                className="hover:text-[#a2683d] transition-colors duration-200"
-              >
+        <nav>
+          <div className="max-w-6xl mx-auto overflow-x-auto scrollbar-hide">
+            <div className="flex md:gap-6 whitespace-nowrap text-sm md:text-base">
+              <a href="#overview" className="custom-nav-btn">
                 Overview
               </a>
-              <a
-                href="#best-time"
-                className="hover:text-[#a2683d] transition-colors duration-200"
-              >
+              <a href="#best-time" className="custom-nav-btn">
                 Best Time
               </a>
-              <a
-                href="#itinerary"
-                className="hover:text-[#a2683d] transition-colors duration-200"
-              >
+              <a href="#itinerary" className="custom-nav-btn">
                 Itinerary
               </a>
-              <a
-                href="#gallery"
-                className="hover:text-[#a2683d] transition-colors duration-200"
-              >
+              <a href="#gallery" className="custom-nav-btn">
                 Gallery
               </a>
-              <a
-                href="#highlights"
-                className="hover:text-[#a2683d] transition-colors duration-200"
-              >
+              <a href="#highlights" className="custom-nav-btn">
                 Highlights
               </a>
-              <a
-                href="#inclusions"
-                className="hover:text-[#a2683d] transition-colors duration-200"
-              >
+              <a href="#inclusions" className="custom-nav-btn">
                 Inclusions
               </a>
             </div>
@@ -161,11 +143,11 @@ const DestinationDetail = () => {
         {/* Overview */}
         <section id="overview">
           <div className="mb-12 relative">
-            <span className="block text-xs uppercase tracking-widest text-[#a2683d] font-medium mb-3">
+            <span className="block font-ubuntu text-xs uppercase tracking-widest text-brand font-medium mb-3">
               Where Adventure Begins
             </span>
 
-            <h2 className="inline-block px-6 py-3 border-2 border-[#a2683d] text-2xl md:text-4xl font-ubuntu font-bold text-[#3b2f24] bg-white/90 backdrop-blur-sm shadow-xl rounded-md tracking-wide">
+            <h2 className="inline-block px-6 py-3 border-2  text-2xl md:text-4xl font-ubuntu text-brand bg-[#f4eef1] shadow-xl rounded-md tracking-wide">
               About the Trek
             </h2>
             <p className="mt-4 font-garmond text-base text-gray-700 font-light">
@@ -210,9 +192,7 @@ const DestinationDetail = () => {
 
         {/* Booking Button */}
         <section className="text-center pt-12">
-          <button className="bg-[#88542f] hover:bg-[#6d4026] transition text-white px-8 py-4 rounded-full text-xl font-semibold shadow-lg">
-            Book This Trek
-          </button>
+          <button className="btn-primary">Book This Trek</button>
         </section>
       </div>
     </div>

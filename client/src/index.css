@@ -85,3 +85,24 @@ body {
   user-select: none;
   cursor: pointer;
 }
+
+.custom-nav-btn {
+  @apply inline-block text-sm md:text-base font-medium text-[#7e395b] pl-4 pr-3 py-1.5  relative transition-all duration-300 border-l-4 border-[#7e395b] md:border-none md:pl-3;
+}
+
+.custom-nav-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: #7e395b;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.custom-nav-btn:hover::after {
+  transform: scaleX(1);
+}
