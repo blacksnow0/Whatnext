@@ -25,13 +25,15 @@ export default function HeroDestinationCard({
 
         <div className="h-[30%] flex flex-col justify-between px-6 py-4 text-white bg-[#272727]">
           <div>
-            <h2 className=" font-ubuntu font-semibold  group-hover:text-[#d8c4b6] transition-colors">
+            <h2 className="font-ubuntu font-semibold group-hover:text-[#d8c4b6] transition-colors">
               {name.toUpperCase()}
             </h2>
+
             <h2 className="text-sm my-2 text-orange-200 font-semibold">
               ₹ {price}/-
             </h2>
-            <p className="text-xs text-gray-400 mt-1 line-clamp-2">
+
+            <p className="text-xs text-gray-400 mt-1 line-clamp-1 sm:line-clamp-2">
               {description}
             </p>
           </div>
