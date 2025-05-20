@@ -1,4 +1,4 @@
-import bestTimeImage from "../assets/mountain.jpg"; // Add an appropriate image to your assets
+import bestTimeImage from "../assets/images/mountain.jpg"; // Add an appropriate image to your assets
 
 const BestTimeToVisit = ({ bestTimeToVisit }) => {
   return (
@@ -14,7 +14,7 @@ const BestTimeToVisit = ({ bestTimeToVisit }) => {
       />
 
       {/* Overlay Layer */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/40 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/30 to-black/20 z-10" />
 
       {/* Content */}
       <div className="relative z-20 h-full flex flex-col justify-center items-center text-center text-white px-4 sm:px-6 md:px-12">

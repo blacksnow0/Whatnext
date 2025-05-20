@@ -1,11 +1,11 @@
 import React from "react";
-import trekImage from "../assets/trip4.jpeg";
-import gallery1 from "../assets/trip1.jpeg";
-import gallery2 from "../assets/trip2.jpeg";
-import gallery3 from "../assets/trip3.jpeg";
-import gallery4 from "../assets/kagbhusandi.jpeg";
-import gallery5 from "../assets/hero3.jpeg";
-import gallery6 from "../assets/trip.jpeg";
+import trekImage from "../assets/images/trip4.jpeg";
+import gallery1 from "../assets/images/trip1.jpeg";
+import gallery2 from "../assets/images/trip2.jpeg";
+import gallery3 from "../assets/images/trip3.jpeg";
+import gallery4 from "../assets/images/kagbhusandi.jpeg";
+import gallery5 from "../assets/images/hero3.jpeg";
+import gallery6 from "../assets/images/trip.jpeg";
 
 import "swiper/css";
 import "swiper/css/navigation";

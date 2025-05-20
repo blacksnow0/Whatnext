@@ -18,6 +18,20 @@
 }
 @import "tailwindcss";
 
+@layer utilities {
+  .bg-brand {
+    background-color: #6b2f4d;
+  }
+
+  .hover\:bg-brand-hover:hover {
+    background-color: #9b4f72;
+  }
+
+  .text-brand {
+    color: #7e395b;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -61,4 +75,13 @@ body {
   100% {
     background-position: 0% 0%;
   }
+}
+
+.btn-primary {
+  @apply px-6 py-2 rounded-full font-semibold text-white bg-[#7e395b] shadow-md
+    transition-colors duration-300 ease-in-out 
+    hover:bg-[#9b4f72] focus:outline-none focus:ring-4 focus:ring-[#7e395b]/50
+    active:bg-[#6b2f4d] active:scale-95;
+  user-select: none;
+  cursor: pointer;
 }

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/whatnextlogo (1).png";
+
+import logo from "../assets/images/whatnextlogo (1).png";
 
 export default function Navbar() {
   return (
