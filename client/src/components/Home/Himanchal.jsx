@@ -70,11 +70,11 @@ function Himachal() {
   return (
     <div className="px-6 py-4 max-w-7xl mx-auto">
       <div
-        id="uttrakhand-heading"
+        id="himachal-heading"
         className="relative text-center mb-16 opacity-0 translate-y-8 transition-all duration-700"
       >
         <h2 className="text-[2rem] sm:text-[3rem] lg:text-[3.25rem] leading-tight font-serif uppercase tracking-[0.15em] text-[#7e395b]">
-          Discover Himanchal
+          Discover Himachal
         </h2>
         <div className="mt-3 w-24 h-[3px] bg-[#7e395b] mx-auto rounded-full"></div>
 
