@@ -1,6 +1,24 @@
 import heroImage from "../../assets/images/hero3.jpeg";
+import heroImage2 from "../../assets/images/trip4.jpeg";
+import heroImage3 from "../../assets/images/spitiImage.jpeg";
+import heroImage4 from "../../assets/images/waterfall.jpeg";
+
 import Typewriter from "../helper/Typewritter";
+import { useEffect, useState } from "react";
+
 function Hero() {
+  const images = [heroImage, heroImage2, heroImage3, heroImage4];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      console.log(images.length);
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="pt-20">
       <div className="hidden md:grid grid-cols-2 gap-6 items-center px-6 md:px-12 lg:px-20 py-20 max-w-7xl mx-auto ">
@@ -41,14 +59,21 @@ function Hero() {
           </div>
         </div>
 
-        <div className="relative border-2 rounded-3xl overflow-hidden shadow-2xl animate-fade-in">
-          <img
-            src={heroImage}
-            alt="Travel Hero"
-            className="w-full h-full object-cover object-center max-h-[500px]"
-          />
-          <div className="absolute bottom-2 border-2 right-4 bg-white bg-opacity-40 px-4 py-2 rounded shadow drop-shadow-2xl ">
-            <span className="text-sm text-[#8B4513] font-medium">
+        <div className="relative w-full h-[500px] overflow-hidden rounded-3xl shadow-2xl border-2">
+          {images.map((img, index) => (
+            <img
+              key={index}
+              src={img}
+              alt="Travel Hero"
+              className={`absolute top-0 left-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out ${
+                index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+              }`}
+            />
+          ))}
+
+          {/* THIS stays fixed, unaffected by the fade */}
+          <div className="absolute bottom-2 right-4 bg-white bg-opacity-40 px-4 py-2 rounded shadow drop-shadow-2xl border-2 z-20">
+            <span className="text-sm font-ubuntu text-brand font-medium">
               Inspire your adventure 🌍
             </span>
           </div>
@@ -74,11 +99,20 @@ function Hero() {
             ]}
           />
         </div>
-        <img
-          src={heroImage}
-          alt="Travel Hero"
-          className="w-full max-h-[300px] object-cover border-4 rounded-xl shadow-lg"
-        />
+
+        <div className="relative w-full h-[300px] overflow-hidden rounded-xl shadow-lg border-4">
+          {images.map((img, index) => (
+            <img
+              key={index}
+              src={img}
+              alt="Travel Hero"
+              className={`absolute top-0 left-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out ${
+                index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+              }`}
+            />
+          ))}
+        </div>
+
         <p className="text-base text-gray-700 px-4">
           Uncover breathtaking destinations and cultures waiting to be explored.
         </p>
