@@ -1,4 +1,5 @@
 import heroImage from "../../assets/images/hero3.jpeg";
+import Typewriter from "../helper/Typewritter";
 function Hero() {
   return (
     <section className="pt-20">
@@ -7,6 +8,21 @@ function Hero() {
           <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight font-ubuntu">
             Discover <span className="text-brand">What’s Next!</span>
           </h1>
+          <div className="text-start mt-8 text-xl sm:text-2xl md:text-5xl font-serif ">
+            &nbsp;
+            <Typewriter
+              words={[
+                "Mountains",
+                "Temples",
+                "Culture",
+                "Spirituality",
+                "Adventure",
+                "Nature",
+                "Heritage",
+                "Peace",
+              ]}
+            />
+          </div>
           <p className="text-lg text-gray-700 max-w-xl">
             Uncover breathtaking destinations, untold stories, and cultures
             waiting to be explored. Your next journey starts now.
@@ -43,6 +59,21 @@ function Hero() {
         <h1 className="text-4xl font-extrabold leading-tight">
           What’s <span className="text-[#7e395b]">Next</span>
         </h1>
+        <div className="text-center text-2xl sm:text-2xl md:text-5xl font-serif ">
+          &nbsp;
+          <Typewriter
+            words={[
+              "Mountains",
+              "Temples",
+              "Culture",
+              "Spirituality",
+              "Adventure",
+              "Nature",
+              "Heritage",
+              "Peace",
+            ]}
+          />
+        </div>
         <img
           src={heroImage}
           alt="Travel Hero"
