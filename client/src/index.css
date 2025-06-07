@@ -103,6 +103,20 @@ body {
   transition: transform 0.3s ease;
 }
 
-.custom-nav-btn:hover::after {
-  transform: scaleX(1);
+/* Hover effect only on desktop (min-width: 768px for example) */
+@media (min-width: 768px) {
+  .custom-nav-btn:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+/* Disable transform effect on mobile (max-width: 767px) */
+@media (max-width: 767px) {
+  .custom-nav-btn::after {
+    transform: none !important;
+    transition: none !important;
+    width: 0%;
+    /* Optional: keep it visible or hidden, depending on your design */
+    /* background: transparent;  if you want to hide it */
+  }
 }

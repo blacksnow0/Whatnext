@@ -91,7 +91,7 @@ export const destinations = [
     country: "India",
     description:
       "Famed for its blooming alpine meadows, the Valley of Flowers Trek is a kaleidoscope of colors tucked away in Uttarakhand. Ideal for beginners and nature lovers alike, it's a walk through a living canvas.",
-    imageUrl: gallery1,
+    imageUrl: valleyImage,
     bestTimeToVisit: "July - September",
     attractions: [
       "Valley of Flowers",
