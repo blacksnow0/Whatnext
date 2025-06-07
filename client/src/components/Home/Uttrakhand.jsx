@@ -3,50 +3,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import valleyImage from "../../assets/images/valleyImage.jpeg";
-import roopkundImage from "../../assets/images/roopkundImage.jpeg";
-import pindariImage from "../../assets/images/pindariImage.jpeg";
-import harkidunImage from "../../assets/images/harkidunImage.jpeg";
-import kuariImage from "../../assets/images/trip2.jpeg";
 
 import { useEffect } from "react";
-const dummyDestinations = [
-  {
-    name: "Har Ki Dun",
-    image: harkidunImage,
-    description:
-      "A cradle-shaped valley trek through ancient villages and forests, rich in local culture and scenic beauty.",
-    price: "8,800",
-  },
-  {
-    name: "Valley of Flowers",
-    image: valleyImage,
-    description:
-      "A UNESCO World Heritage site, this trek offers a burst of colorful alpine flowers nestled in the Himalayas.",
-    price: "7,500",
-  },
-  {
-    name: "Roopkund Trek",
-    image: roopkundImage,
-    description:
-      "A mysterious glacial lake trek known for its human skeletons and dramatic views of Trishul and Nanda Ghunti peaks.",
-    price: "9,200",
-  },
-  {
-    name: "Pindari Glacier",
-    image: pindariImage,
-    description:
-      "A beginner-friendly glacier trek in the Kumaon region with spectacular views of Nanda Devi and other peaks.",
-    price: "7,000",
-  },
-  {
-    name: "Kuari Pass",
-    image: kuariImage,
-    description:
-      "Known as the 'Curzon Trail', this trek offers majestic views of the Garhwal Himalayas, including Nanda Devi.",
-    price: "8,000",
-  },
-];
+import { uttarakhand } from "../../utils/data";
 
 function Uttrakhand() {
   useEffect(() => {
@@ -101,12 +60,13 @@ function Uttrakhand() {
           },
         }}
       >
-        {dummyDestinations.map((dest, idx) => (
+        {uttarakhand.map((dest, idx) => (
           <SwiperSlide key={idx}>
             <DestinationCard
               name={dest.name}
               image={dest.image}
               description={dest.description}
+              id={dest.id}
               price={dest.price}
             />
           </SwiperSlide>

@@ -12,7 +12,6 @@ function Hero() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      console.log(images.length);
       setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 3000);
 
@@ -30,14 +29,14 @@ function Hero() {
             &nbsp;
             <Typewriter
               words={[
-                "Mountains",
-                "Temples",
-                "Culture",
-                "Spirituality",
-                "Adventure",
-                "Nature",
-                "Heritage",
-                "Peace",
+                "Mountains ?",
+                "Temples ?",
+                "Culture ?",
+                "Spirituality ?",
+                "Adventure ?",
+                "Nature ?",
+                "Heritage ?",
+                "Peace ?",
               ]}
             />
           </div>

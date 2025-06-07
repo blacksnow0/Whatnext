@@ -5,9 +5,10 @@ export default function HeroDestinationCard({
   image,
   description,
   price,
+  id,
 }) {
   return (
-    <Link to="/destinations">
+    <Link to={`destinations/${id}`}>
       <div className="w-full border-10 border-[#272727] max-w-md mx-auto aspect-[2/3] rounded-3xl overflow-hidden shadow-[0_12px_30px_-10px_rgba(0,0,0,0.4)] bg-[#0e0e0e] flex flex-col ">
         <div className="h-[70%] relative">
           <img

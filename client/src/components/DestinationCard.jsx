@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
 
-export default function DestinationCard({ name, image, description, price }) {
+export default function DestinationCard({
+  name,
+  image,
+  description,
+  price,
+  id,
+}) {
   return (
-    <Link to="/destinations">
+    <Link to={`/destinations/${id}`}>
       <div className="w-[90%] sm:w-full max-w-xs sm:max-w-md mx-auto rounded-2xl overflow-hidden  bg-[#1c1c1e] shadow-[0_12px_30px_-10px_rgba(0,0,0,0.4)] flex flex-col h-[450px] sm:h-[500px] lg:h-[480px]">
         {/* Image Section */}
         <div className="relative h-[60%]">

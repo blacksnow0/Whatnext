@@ -1,12 +1,3 @@
-import React from "react";
-// import trekImage from "../assets/images/trip4.jpeg";
-import gallery1 from "../assets/images/trip1.jpeg";
-import gallery2 from "../assets/images/trip2.jpeg";
-import gallery3 from "../assets/images/trip3.jpeg";
-import gallery4 from "../assets/images/kagbhusandi.jpeg";
-import gallery5 from "../assets/images/hero3.jpeg";
-import gallery6 from "../assets/images/trip.jpeg";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -16,83 +7,14 @@ import ItinerarySection from "../components/ItinerarySection";
 import PackageHighlights from "../components/PackageHiglights";
 import BestTimeToVisit from "../components/BestTimeToVisit";
 
+import { destinations } from "../utils/data";
+import { useParams } from "react-router-dom";
+
 const DestinationDetail = () => {
-  const destination = {
-    name: "Kagbhusandi Trek",
-    country: "India",
-    description:
-      "Nestled in the Garhwal Himalayas, Kagbhusandi Trek offers breathtaking views, alpine meadows, and a spiritual escape into nature. It's a lesser-known gem ideal for experienced trekkers seeking solitude and serenity.",
-    imageUrl: gallery4,
-    bestTimeToVisit: "June - October",
-    attractions: [
-      "Kagbhusandi Lake",
-      "Valley of Flowers",
-      "Hemkund Sahib",
-      "Joshimath",
-    ],
-    itinerary: [
-      {
-        day: "Day 1",
-        highlight: "Arrival & Acclimatization in Joshimath",
-        description:
-          "Your adventure begins as you arrive in the quaint Himalayan town of Joshimath, nestled amidst steep mountain walls and pine forests. Spend the day acclimatizing to the altitude, exploring local temples like Narasimha Temple, or simply soaking in the peaceful mountain air. Evening briefings with your trek leader prepare you for the days ahead.",
-      },
-      {
-        day: "Day 2",
-        highlight: "Scenic Trek to Ghangaria",
-        description:
-          "Begin your trek with a beautiful ascent through dense forests, winding trails, and cascading waterfalls. The route from Govindghat to Ghangaria is a visual treat, with the Pushpawati River accompanying you along the way. Arrive at the serene village of Ghangaria — your gateway to the Valley of Flowers and Kagbhusandi Lake. Relax and recharge in the quietude of this alpine hamlet.",
-      },
-      {
-        day: "Day 3",
-        highlight: "Spiritual Hike to Kagbhusandi Lake",
-        description:
-          "This day marks the spiritual and physical high point of the journey. Embark on a challenging yet rewarding trek to the sacred Kagbhusandi Lake, cradled high in the Garhwal Himalayas. Surrounded by rugged cliffs and echoing silence, the emerald lake feels otherworldly. Mythology and mystique come alive here — it's believed that the lake is watched over by celestial crows and sages. Return to Ghangaria by evening, forever changed by what you’ve seen.",
-      },
-      {
-        day: "Day 4",
-        highlight: "Discover the Valley of Flowers",
-        description:
-          "Today, enter one of India’s most enchanting UNESCO World Heritage sites — the Valley of Flowers. Wander through a natural sanctuary bursting with rare Himalayan flora, colorful alpine blooms, and misty meadows. Witness nature’s raw canvas painted in a thousand hues as you trek deeper into the valley. It's not just a place — it’s a feeling. Return to Ghangaria with your soul uplifted.",
-      },
-      {
-        day: "Day 5",
-        highlight: "Descent & Departure from Joshimath",
-        description:
-          "Wrap up your journey with a descent back to Govindghat and a drive to Joshimath. Reflect on the memories forged — the friendships, the breathtaking landscapes, and the inner peace you found in the mountains. After a warm farewell and some last-minute local shopping, you’ll depart from Joshimath with a heart full of adventure and awe.",
-      },
-    ],
+  const { id } = useParams();
+  const destination = destinations.find((dest) => dest.id === id);
 
-    highlights: [
-      "6-day guided trek",
-      "Camp under the stars",
-      "All meals included",
-      "Local guide and porter",
-    ],
-    inclusions: [
-      "Accommodation in tents/lodges",
-      "All meals during the trek",
-      "Certified local guide",
-      "First aid kit",
-      "Entry and forest permits",
-    ],
-    exclusions: [
-      "Transportation to base location",
-      "Personal trekking gear",
-      "Insurance",
-      "Snacks & beverages",
-    ],
-    gallery: [gallery1, gallery2, gallery3, gallery4],
-  };
-
-  const galleryImages = [
-    gallery1,
-    gallery2,
-    gallery3,
-    gallery4,
-    gallery5,
-    gallery6,
-  ];
+  const galleryImages = destination.galleryImages;
 
   return (
     <div className="min-h-screen w-full text-gray-900">
