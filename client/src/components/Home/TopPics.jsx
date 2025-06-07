@@ -7,8 +7,11 @@ function TopPicks() {
     <section className="px-4 sm:px-6 lg:px-8 py-12 max-w-7xl mx-auto">
       {/* Section Heading */}
       <div className="text-center mb-12">
+        <span className="text-sm sm:text-base uppercase tracking-widest text-[#a55b7a] font-semibold">
+          This Season’s Top Picks
+        </span>
         <h2 className="text-[2rem] sm:text-[2.5rem] lg:text-[3rem] leading-tight font-serif uppercase tracking-wider text-[#7e395b]">
-          Top Picks
+          Most Popular Treks Right Now
         </h2>
         <div className="mt-2 w-24 h-1 bg-[#7e395b] mx-auto rounded-full" />
       </div>

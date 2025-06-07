@@ -12,6 +12,9 @@ import pindariImage from "../assets/images/pindariImage.jpeg";
 import harkidunImage from "../assets/images/harkidunImage.jpeg";
 import kuariImage from "../assets/images/trip2.jpeg";
 
+import satopanth1 from "../assets/images/satopanth1.jpeg";
+import satopanth2 from "../assets/images/satopanth2.jpeg";
+
 export const destinations = [
   {
     id: "kagbhusandi-trek",
@@ -157,7 +160,7 @@ export const destinations = [
     country: "India",
     description:
       "Satopanth Tal is a high-altitude glacial lake surrounded by towering Himalayan peaks. Known for its spiritual aura and pristine beauty, this trek is both physically challenging and soulfully rewarding.",
-    imageUrl: satopanth,
+    imageUrl: satopanth2,
     bestTimeToVisit: "May - October",
     attractions: [
       "Satopanth Lake",
@@ -165,7 +168,7 @@ export const destinations = [
       "Mana Village",
       "Vasundhara Falls",
     ],
-    galleryImages: [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6],
+    galleryImages: [satopanth1, satopanth2, satopanth, gallery6],
     itinerary: [
       {
         day: "Day 1",

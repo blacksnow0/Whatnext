@@ -1,12 +1,18 @@
 import heroImage from "../../assets/images/hero3.jpeg";
 import heroImage2 from "../../assets/images/trip4.jpeg";
 import heroImage3 from "../../assets/images/spitiImage.jpeg";
-import heroImage4 from "../../assets/images/waterfall.jpeg";
+import heroImage4 from "../../assets/images/satopanth.jpeg";
 
 import Typewriter from "../helper/Typewritter";
 import { useEffect, useState } from "react";
 
 function Hero() {
+  const regions = [
+    { name: "Himachal", image: heroImage3 },
+    { name: "Nepal", image: heroImage2 },
+    { name: "Uttarakhand", image: heroImage4 },
+  ];
+
   const images = [heroImage, heroImage2, heroImage3, heroImage4];
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -80,43 +86,32 @@ function Hero() {
       </div>
 
       <div className="block md:hidden px-4 py-10 space-y-6 text-center animate-fade-in-up">
-        <h1 className="text-4xl font-extrabold leading-tight">
+        <h1 className="font-ubuntu text-4xl font-extrabold leading-tight tracking-wide">
           What’s <span className="text-[#7e395b]">Next</span>
         </h1>
-        <div className="text-center text-2xl sm:text-2xl md:text-5xl font-serif ">
-          &nbsp;
+
+        <div className="text-2xl sm:text-2xl md:text-5xl font-serif tracking-wide leading-snug">
           <Typewriter
             words={[
-              "Mountains",
-              "Temples",
-              "Culture",
-              "Spirituality",
-              "Adventure",
-              "Nature",
-              "Heritage",
-              "Peace",
+              "Mountains?",
+              "Temples?",
+              "Culture?",
+              "Spirituality?",
+              "Adventure?",
+              "Nature?",
+              "Heritage?",
+              "Peace?",
             ]}
+            cursor
+            cursorStyle="|"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1500}
           />
         </div>
 
-        <div className="relative w-full h-[300px] overflow-hidden rounded-xl shadow-lg border-4">
-          {images.map((img, index) => (
-            <img
-              key={index}
-              src={img}
-              alt="Travel Hero"
-              className={`absolute top-0 left-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out ${
-                index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
-              }`}
-            />
-          ))}
-        </div>
-
-        <p className="text-base text-gray-700 px-4">
-          Uncover breathtaking destinations and cultures waiting to be explored.
-        </p>
         <div className="flex flex-col gap-4 items-center">
-          <button className="px-6 py-3 bg-brand text-white rounded-full font-semibold shadow-md hover:bg-[#6b314c] active:scale-95 transition-transform duration-300 w-full max-w-xs">
+          <button className="px-6 py-3 bg-brand text-white rounded-full font-semibold shadow-md hover:shadow-lg hover:bg-[#6b314c] focus:outline-none focus:ring-2 focus:ring-[#7e395b] active:scale-95 transition-transform duration-300 w-full max-w-xs">
             Explore
           </button>
 
@@ -126,10 +121,28 @@ function Hero() {
             rel="noopener noreferrer"
             className="w-full"
           >
-            <button className="px-6 py-3 border border-bg-brand text-brand rounded-full font-semibold hover:bg-[#f3ebe5] transition w-full max-w-xs">
+            <button className="px-6 py-3 border border-bg-brand text-brand rounded-full font-semibold hover:bg-[#f3ebe5] focus:outline-none focus:ring-2 focus:ring-[#7e395b] transition w-full max-w-xs">
               Trailer
             </button>
           </a>
+        </div>
+        <div className="flex justify-center gap-6 mt-4 ">
+          {regions.map(({ name, image }) => (
+            <div
+              key={name}
+              className="flex flex-col items-center cursor-pointer"
+              title={name}
+              aria-label={name}
+            >
+              <div
+                className="w-18 h-18 rounded-full bg-center bg-cover border-2 border-white shadow-xl hover:scale-110 transition-transform duration-300"
+                style={{ backgroundImage: `url(${image})` }}
+              />
+              <span className="mt-1 text-sm font-medium text-gray-700">
+                {name}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
