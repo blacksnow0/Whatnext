@@ -79,7 +79,7 @@ function Hero() {
           {/* THIS stays fixed, unaffected by the fade */}
           <div className="absolute bottom-2 right-4 bg-white bg-opacity-40 px-4 py-2 rounded shadow drop-shadow-2xl border-2 z-20">
             <span className="text-sm font-ubuntu text-brand font-medium">
-              Inspire your adventure 🌍
+              Get inspired and start your adventure 🌍
             </span>
           </div>
         </div>
