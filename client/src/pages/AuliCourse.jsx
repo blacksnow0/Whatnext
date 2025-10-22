@@ -1,6 +1,7 @@
 import React from "react";
 import BestTimeToVisit from "../components/BestTimeToVisit";
 import imageHero from "../assets/images/snowboard.jpeg";
+import BookingSection from "../components/helper/BookingComponent";
 
 
 export default function AuliCourse() {
@@ -85,12 +86,12 @@ export default function AuliCourse() {
         className="w-full min-h-[70vh] md:min-h-[85vh] bg-cover bg-center relative flex items-center justify-center"
         style={{ backgroundImage: `url(${destination.imageUrl})` }}
       >
-        <div className="absolute inset-0 bg-black/10" />
+        <div className="absolute inset-0 bg-white/30" />
         <div className="relative z-10 text-center px-4">
-          <h1 className="text-5xl font-ubuntu font-bold text-white drop-shadow-lg">
+          <h1 className="text-5xl font-ubuntu font-bold text-brand drop-shadow-lg">
             {destination.name}
           </h1>
-          <p className="text-xl text-white/80 mt-2 tracking-wide">
+          <p className="text-xl text-brand mt-2 tracking-wide">
             {destination.country}
           </p>
         </div>
@@ -197,12 +198,7 @@ export default function AuliCourse() {
         </section>
 
         {/* Booking */}
-        <section className="text-center pt-12">
-          <button className="btn-primary">Book This Course</button>
-          <p className="text-gray-600 mt-2 text-sm">
-            Limited seats per batch. Confirm early for best slots.
-          </p>
-        </section>
+          <BookingSection/>
       </div>
     </div>
   );

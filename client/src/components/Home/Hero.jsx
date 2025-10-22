@@ -5,6 +5,7 @@ import heroImage4 from "../../assets/images/satopanth.jpeg";
 
 import Typewriter from "../helper/Typewritter";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Hero() {
   const regions = [
@@ -51,7 +52,9 @@ function Hero() {
             waiting to be explored. Your next journey starts now.
           </p>
           <div className="flex gap-4 justify-start">
-            <button className="btn-primary">Explore Destinations</button>
+            <button className="btn-primary"><Link to={'/auli'}>
+                Snow Adventure
+            </Link></button>
             <a
               href="https://www.youtube.com/watch?v=MDOXbRii-sg"
               target="_blank"
@@ -112,7 +115,9 @@ function Hero() {
 
         <div className="flex flex-col gap-4 items-center">
           <button className="px-6 py-3 bg-brand text-white rounded-full font-semibold shadow-md hover:shadow-lg hover:bg-[#6b314c] focus:outline-none focus:ring-2 focus:ring-[#7e395b] active:scale-95 transition-transform duration-300 w-full max-w-xs">
-            Explore
+            <Link to={'/auli'}>
+                Snow Adventure
+            </Link>
           </button>
 
           <a
