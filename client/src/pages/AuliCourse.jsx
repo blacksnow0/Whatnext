@@ -3,7 +3,6 @@ import BestTimeToVisit from "../components/BestTimeToVisit";
 import imageHero from "../assets/images/snowboard.jpeg";
 import BookingSection from "../components/helper/BookingComponent";
 
-
 export default function AuliCourse() {
   const destination = {
     name: "Auli Skiing & Snowboarding Course",
@@ -72,15 +71,75 @@ export default function AuliCourse() {
     ],
   };
 
-  const galleryImages = [
-    "/images/auli-1.jpg",
-    "/images/auli-2.jpg",
-    "/images/auli-3.jpg",
-    "/images/auli-4.jpg",
-  ];
-
   return (
     <div className="min-h-screen w-full text-gray-900">
+      <Helmet>
+        <title>
+          Skiing & Snowboarding Course in Auli | 7-Day Winter Sports Package |
+          WhatNext
+        </title>
+
+        <meta
+          name="description"
+          content="Join the 7-day skiing and snowboarding course in Auli, Uttarakhand. Includes certified instructors, gear, accommodation, meals, and breathtaking Himalayan views."
+        />
+
+        <meta
+          name="keywords"
+          content="Auli skiing course, Auli snowboarding, winter sports India, skiing in Uttarakhand, Auli winter trip, skiing lessons India, snow adventure, WhatNext"
+        />
+
+        <link
+          rel="canonical"
+          href="https://www.whatnextonline.in/winter-sports"
+        />
+
+        {/* OG Tags */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Auli Skiing & Snowboarding Course | Winter Sports Adventure"
+        />
+        <meta
+          property="og:description"
+          content="Learn skiing and snowboarding in Auli with certified instructors, gear, accommodation, meals, and group activities. Perfect for beginners and adventure lovers."
+        />
+        <meta
+          property="og:image"
+          content="https://www.whatnextonline.in/static/auli-skiing-hero.jpg"
+        />
+        <meta
+          property="og:url"
+          content="https://www.whatnextonline.in/winter-sports"
+        />
+
+        {/* JSON-LD Schema for Sports Activity */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SportsActivityLocation",
+            name: "Auli Skiing & Snowboarding Course",
+            description:
+              "A 7-day skiing and snowboarding training program in Auli with certified instructors, meals, gear and accommodation.",
+            sport: "Skiing, Snowboarding",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Auli",
+              addressRegion: "Uttarakhand",
+              addressCountry: "IN",
+            },
+            image: [
+              "https://www.whatnextonline.in/static/auli-skiing-hero.jpg",
+            ],
+            provider: {
+              "@type": "Organization",
+              name: "WhatNext Online",
+              url: "https://www.whatnextonline.in",
+            },
+          })}
+        </script>
+      </Helmet>
+
       {/* Hero Section */}
       <div
         className="w-full min-h-[70vh] md:min-h-[85vh] bg-cover bg-center relative flex items-center justify-center"
@@ -103,13 +162,27 @@ export default function AuliCourse() {
         <nav>
           <div className="max-w-6xl mx-auto overflow-x-auto scrollbar-hide">
             <div className="flex md:gap-6 whitespace-nowrap text-sm md:text-base">
-              <a href="#overview" className="custom-nav-btn">Overview</a>
-              <a href="#pricing" className="custom-nav-btn">Pricing</a>
-              <a href="#best-time" className="custom-nav-btn">Best Time</a>
-              <a href="#itinerary" className="custom-nav-btn">Itinerary</a>
-              <a href="#gallery" className="custom-nav-btn">Gallery</a>
-              <a href="#highlights" className="custom-nav-btn">Highlights</a>
-              <a href="#inclusions" className="custom-nav-btn">Inclusions</a>
+              <a href="#overview" className="custom-nav-btn">
+                Overview
+              </a>
+              <a href="#pricing" className="custom-nav-btn">
+                Pricing
+              </a>
+              <a href="#best-time" className="custom-nav-btn">
+                Best Time
+              </a>
+              <a href="#itinerary" className="custom-nav-btn">
+                Itinerary
+              </a>
+              <a href="#gallery" className="custom-nav-btn">
+                Gallery
+              </a>
+              <a href="#highlights" className="custom-nav-btn">
+                Highlights
+              </a>
+              <a href="#inclusions" className="custom-nav-btn">
+                Inclusions
+              </a>
             </div>
           </div>
         </nav>
@@ -132,8 +205,12 @@ export default function AuliCourse() {
         {/* Pricing */}
         <section id="pricing" className="grid md:grid-cols-2 gap-8">
           <div className="p-6 border rounded-lg shadow-lg hover:shadow-xl transition bg-white">
-            <h3 className="text-2xl font-ubuntu font-semibold mb-2 text-brand">Skiing Course</h3>
-            <p className="text-gray-700 mb-4">Perfect for beginners learning balance, control, and turns.</p>
+            <h3 className="text-2xl font-ubuntu font-semibold mb-2 text-brand">
+              Skiing Course
+            </h3>
+            <p className="text-gray-700 mb-4">
+              Perfect for beginners learning balance, control, and turns.
+            </p>
             <p className="text-4xl font-bold text-brand mb-4">₹29,999</p>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
               <li>7 days of certified training</li>
@@ -144,8 +221,13 @@ export default function AuliCourse() {
           </div>
 
           <div className="p-6 border rounded-lg shadow-lg hover:shadow-xl transition bg-white">
-            <h3 className="text-2xl font-ubuntu font-semibold mb-2 text-brand">Snowboarding Course</h3>
-            <p className="text-gray-700 mb-4">Ideal for thrill-seekers mastering balance, jumps, and freestyle basics.</p>
+            <h3 className="text-2xl font-ubuntu font-semibold mb-2 text-brand">
+              Snowboarding Course
+            </h3>
+            <p className="text-gray-700 mb-4">
+              Ideal for thrill-seekers mastering balance, jumps, and freestyle
+              basics.
+            </p>
             <p className="text-4xl font-bold text-brand mb-4">₹39,999</p>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
               <li>7 days of certified training</li>
@@ -161,7 +243,9 @@ export default function AuliCourse() {
 
         {/* Itinerary Section */}
         <section id="itinerary" className="py-10">
-          <h2 className="text-3xl font-bold text-brand mb-6">Detailed Itinerary</h2>
+          <h2 className="text-3xl font-bold text-brand mb-6">
+            Detailed Itinerary
+          </h2>
           <div className="space-y-6">
             {destination.itinerary.map((item, index) => (
               <div
@@ -178,7 +262,10 @@ export default function AuliCourse() {
         </section>
 
         {/* Inclusions & Exclusions */}
-        <section id="inclusions" className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <section
+          id="inclusions"
+          className="grid grid-cols-1 md:grid-cols-2 gap-10"
+        >
           <div>
             <h2 className="text-3xl font-bold mb-4">Inclusions</h2>
             <ul className="space-y-2 list-disc list-inside text-gray-700">
@@ -198,7 +285,7 @@ export default function AuliCourse() {
         </section>
 
         {/* Booking */}
-          <BookingSection/>
+        <BookingSection />
       </div>
     </div>
   );
