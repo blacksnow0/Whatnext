@@ -8,7 +8,7 @@ export default function AuliEventsPreview() {
     <section className="py-16 px-4 md:px-8 bg-white">
       {/* Heading */}
       {/* Featured Banner */}
-      <div className="marquee-wrapper relative overflow-hidden bg-brand border-y border-brand text-white font-extrabold py-2 px-10 mb-8">
+      <div className="marquee-wrapper relative overflow-hidden bottom-10 bg-brand border-y border-brand text-white font-extrabold py-2 px-10 mb-8">
         <div className="marquee-content flex">
           <span>• Featured Winter Experience •</span>
           <span>• Limited Seats Available •</span>
