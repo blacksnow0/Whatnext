@@ -2,6 +2,7 @@ import React from "react";
 import BestTimeToVisit from "../components/BestTimeToVisit";
 import imageHero from "../assets/images/snowboard.jpeg";
 import BookingSection from "../components/helper/BookingComponent";
+import { Helmet } from "react-helmet";
 
 export default function AuliCourse() {
   const destination = {
