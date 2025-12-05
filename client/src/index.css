@@ -120,3 +120,26 @@ body {
     /* background: transparent;  if you want to hide it */
   }
 }
+
+.marquee-wrapper {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 2.5rem; /* spacing */
+  white-space: nowrap;
+  min-width: max-content; /* <--- CRITICAL */
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

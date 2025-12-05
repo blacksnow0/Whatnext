@@ -135,7 +135,7 @@ function Hero() {
         </div>
 
         {/* REGIONS CIRCLE ICONS */}
-        <div className="flex justify-center gap-6 mt-4">
+        {/* <div className="flex justify-center gap-6 mt-4">
           {REGIONS.map(({ name, image }) => (
             <div
               key={name}
@@ -153,7 +153,7 @@ function Hero() {
               </span>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

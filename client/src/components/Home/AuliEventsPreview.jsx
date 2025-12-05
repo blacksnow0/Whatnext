@@ -7,10 +7,39 @@ export default function AuliEventsPreview() {
   return (
     <section className="py-16 px-4 md:px-8 bg-white">
       {/* Heading */}
+      {/* Featured Banner */}
+      <div className="marquee-wrapper relative overflow-hidden bg-brand border-y border-brand text-white font-extrabold py-2 px-10 mb-8">
+        <div className="marquee-content flex">
+          <span>• Featured Winter Experience •</span>
+          <span>• Limited Seats Available •</span>
+          <span>• Early Bird Offer Active •</span>
+          <span>• Auli Christmas & New Year 2025 •</span>
+
+          {/* Spacer for clean separation between loops */}
+          <span className="inline-block w-7"></span>
+        </div>
+
+        <div className="marquee-content flex">
+          <span>• Featured Winter Experience •</span>
+          <span>• Limited Seats Available •</span>
+          <span>• Early Bird Offer Active •</span>
+          <span>• Auli Christmas & New Year 2025 •</span>
+
+          {/* Spacer again */}
+          <span className="inline-block w-7"></span>
+        </div>
+        <div className="marquee-content flex">
+          <span>• Featured Winter Experience •</span>
+          <span>• Limited Seats Available •</span>
+          <span>• Early Bird Offer Active •</span>
+          <span>• Auli Christmas & New Year 2025 •</span>
+
+          {/* Spacer again */}
+          <span className="inline-block w-7"></span>
+        </div>
+      </div>
+
       <div className="text-center mb-8">
-        <p className="text-xs tracking-widest text-brand font-semibold uppercase">
-          Featured Winter Experience
-        </p>
         <h2 className="text-3xl md:text-4xl font-ubuntu font-bold text-brand mt-2">
           Auli Christmas & New Year 25-26
         </h2>
@@ -47,7 +76,7 @@ export default function AuliEventsPreview() {
                 View Details
               </Link>
               <a
-                href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I'm%20interested%20in%20the%20Auli%20Christmas%20Event"
+                href="https://wa.me/917017502703?text=Hi%2C%20I'm%20interested%20in%20the%20Auli%20Christmas%20Event"
                 target="_blank"
                 rel="noreferrer"
                 className="text-sm text-brand underline hover:text-brand/70"
@@ -84,7 +113,7 @@ export default function AuliEventsPreview() {
                 View Details
               </Link>
               <a
-                href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I'm%20interested%20in%20the%20Auli%20New%20Year%20Event"
+                href="https://wa.me/917017502703?text=Hi%2C%20I'm%20interested%20in%20the%20Auli%20New%20Year%20Event"
                 target="_blank"
                 rel="noreferrer"
                 className="text-sm text-brand underline hover:text-brand/70"
