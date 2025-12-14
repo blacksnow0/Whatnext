@@ -43,9 +43,9 @@ function Hero() {
       <div className="hidden md:grid grid-cols-2 gap-6 items-center px-6 md:px-12 lg:px-20 py-20 max-w-7xl mx-auto">
         {/* LEFT TEXT CONTENT */}
         <div className="space-y-6 text-center md:text-left animate-fade-in-up">
-          <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight font-ubuntu">
+          <h2 className="text-5xl lg:text-6xl font-extrabold leading-tight font-ubuntu">
             Discover <span className="text-brand">What’s Next!</span>
-          </h1>
+          </h2>
 
           <div className="text-start mt-8 text-xl sm:text-2xl md:text-5xl font-serif">
             <Typewriter words={TYPEWRITER_WORDS} />
@@ -98,9 +98,9 @@ function Hero() {
 
       {/* Mobile View */}
       <div className="block md:hidden px-4 py-10 space-y-6 text-center animate-fade-in-up">
-        <h1 className="font-ubuntu text-4xl font-extrabold leading-tight tracking-wide">
+        <h2 className="font-ubuntu text-4xl font-extrabold leading-tight tracking-wide">
           What’s <span className="text-[#7e395b]">Next</span>
-        </h1>
+        </h2>
 
         <div className="text-2xl sm:text-2xl font-serif tracking-wide leading-snug">
           <Typewriter
