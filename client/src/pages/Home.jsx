@@ -92,6 +92,10 @@ export default function Home() {
         </script>
       </Helmet>
 
+      <h1 className="sr-only">
+        Himalayan Treks, Winter Trips & Auli Events by WhatNext Online
+      </h1>
+
       <Hero />
       <AuliEventsPreview />
       <TopPics />
