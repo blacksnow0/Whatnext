@@ -7,11 +7,13 @@ import AuliEventsPage from "./pages/AuliEventsPage";
 import Destinations from "./pages/DestinationsPage";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import Portfolio from "./pages/Portfolio";
 
 function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/portfolio" element={<Portfolio />}></Route>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFound />} />

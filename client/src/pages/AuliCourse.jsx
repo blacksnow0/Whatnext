@@ -1,293 +1,222 @@
 import React from "react";
-import BestTimeToVisit from "../components/BestTimeToVisit";
+import { Helmet } from "react-helmet";
 import imageHero from "../assets/images/snowboard.jpeg";
 import BookingSection from "../components/helper/BookingComponent";
-import { Helmet } from "react-helmet";
+import BestTimeToVisit from "../components/BestTimeToVisit";
 
 export default function AuliCourse() {
-  const destination = {
-    name: "Auli Skiing & Snowboarding Course",
-    country: "Auli, Uttarakhand",
-    imageUrl: imageHero,
-    description:
-      "Experience 7 days of adrenaline and learning in India’s premier snow sports destination. This course combines hands-on training, breathtaking landscapes, and a complete alpine experience for both beginners and thrill-seekers.",
-    bestTimeToVisit: "Mid-December to March",
-    highlights: [
-      "7-day certified training with professional instructors",
-      "Skiing & snowboarding gear included",
-      "All meals and cozy mountain accommodation",
-      "Group activities and guided slope sessions",
-      "Breathtaking views of Nanda Devi and surrounding peaks",
-    ],
-    itinerary: [
-      {
-        day: "Day 1 – Arrival & Orientation",
-        detail:
-          "Arrive in Auli, one of India’s most stunning snow-clad destinations. You’ll check into your mountain lodge, meet fellow adventurers, and enjoy a cozy welcome dinner. Evening orientation covers course details, safety instructions, and gear familiarization. Sleep under the stars as snowflakes fall outside.",
-      },
-      {
-        day: "Day 2 – Getting Started on the Slopes",
-        detail:
-          "Morning starts with a warm-up and introduction to your instructor team. Learn about balance, gliding techniques, snowplow basics, and slope etiquette. By afternoon, you’ll have your first hands-on experience on gentle slopes with real gear. Evening bonfire and reflection session with hot soup.",
-      },
-      {
-        day: "Day 3 – Building Balance & Confidence",
-        detail:
-          "Now that you’re comfortable on the snow, you’ll dive into controlled descents, braking, and mastering turns. Instructors will guide you through dynamic drills to refine stance and edge control. End your day with a group movie night showcasing pro skiing and snowboarding clips for inspiration.",
-      },
-      {
-        day: "Day 4 – Intermediate Techniques & Chair Lift Training",
-        detail:
-          "Today, you’ll graduate to intermediate slopes! Focus on linking turns, using the chair lift safely, and managing moderate gradients. Snowboarders begin carving techniques while skiers refine posture and control. Afternoon group challenge — your first mini race down the practice slope!",
-      },
-      {
-        day: "Day 5 – Exploring Auli’s Alpine Terrain",
-        detail:
-          "A guided exploration day! Ride the ski lift to Auli’s higher slopes overlooking Nanda Devi. Experience advanced runs (optional for beginners) under close supervision. Learn edge pressure, carving, and freestyle basics. Capture GoPro-worthy moments surrounded by panoramic white peaks.",
-      },
-      {
-        day: "Day 6 – Freestyle & Skill Mastery",
-        detail:
-          "Time to push limits! Depending on your progress, you’ll learn small jumps, backward glides, and balance tricks. Instructors conduct video feedback sessions to help fine-tune your form. Evening certificate practice runs and sunset view session with local music and dinner.",
-      },
-      {
-        day: "Day 7 – Final Run & Certification Ceremony",
-        detail:
-          "Your final day begins with an early-morning practice run where you’ll showcase your progress. Later, gather for the official course wrap-up and certification ceremony. Exchange photos, laughter, and goodbyes with your group before departing — leaving with memories, skills, and new lifelong friends.",
-      },
-    ],
-    inclusions: [
-      "Accommodation (shared mountain cottages)",
-      "All meals (breakfast, lunch, dinner)",
-      "Certified instructors",
-      "Skiing/Snowboarding equipment",
-      "Lift passes & local transfers",
-      "First aid & safety gear",
-    ],
-    exclusions: [
-      "Travel to and from Auli",
-      "Personal expenses",
-      "Additional adventure activities",
-      "Insurance (recommended separately)",
-    ],
-  };
-
   return (
-    <div className="min-h-screen w-full text-gray-900">
+    <div className="w-full text-gray-900">
+      {/* SEO */}
       <Helmet>
         <title>
-          Skiing & Snowboarding Course in Auli | 7-Day Winter Sports Package |
+          Learn Skiing & Snowboarding in Auli | 7-Day Certified Course |
           WhatNext
         </title>
-
         <meta
           name="description"
-          content="Join the 7-day skiing and snowboarding course in Auli, Uttarakhand. Includes certified instructors, gear, accommodation, meals, and breathtaking Himalayan views."
+          content="Join a beginner-friendly 7-day skiing & snowboarding course in Auli. Certified instructors, equipment, accommodation & meals included."
         />
-
-        <meta
-          name="keywords"
-          content="Auli skiing course, Auli snowboarding, winter sports India, skiing in Uttarakhand, Auli winter trip, skiing lessons India, snow adventure, WhatNext"
-        />
-
         <link
           rel="canonical"
-          href="https://www.whatnextonline.in/winter-sports"
+          href="https://www.whatnextonline.in/auli-skiing-course"
         />
-
-        {/* OG Tags */}
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:title"
-          content="Auli Skiing & Snowboarding Course | Winter Sports Adventure"
-        />
-        <meta
-          property="og:description"
-          content="Learn skiing and snowboarding in Auli with certified instructors, gear, accommodation, meals, and group activities. Perfect for beginners and adventure lovers."
-        />
-        <meta
-          property="og:image"
-          content="https://www.whatnextonline.in/static/auli-skiing-hero.jpg"
-        />
-        <meta
-          property="og:url"
-          content="https://www.whatnextonline.in/winter-sports"
-        />
-
-        {/* JSON-LD Schema for Sports Activity */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SportsActivityLocation",
-            name: "Auli Skiing & Snowboarding Course",
-            description:
-              "A 7-day skiing and snowboarding training program in Auli with certified instructors, meals, gear and accommodation.",
-            sport: "Skiing, Snowboarding",
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Auli",
-              addressRegion: "Uttarakhand",
-              addressCountry: "IN",
-            },
-            image: [
-              "https://www.whatnextonline.in/static/auli-skiing-hero.jpg",
-            ],
-            provider: {
-              "@type": "Organization",
-              name: "WhatNext Online",
-              url: "https://www.whatnextonline.in",
-            },
-          })}
-        </script>
       </Helmet>
 
-      {/* Hero Section */}
-      <div
-        className="w-full min-h-[70vh] md:min-h-[85vh] bg-cover bg-center relative flex items-center justify-center"
-        style={{ backgroundImage: `url(${destination.imageUrl})` }}
+      {/* HERO */}
+      <section
+        className="relative min-h-[85vh] flex items-center bg-cover bg-center"
+        style={{ backgroundImage: `url(${imageHero})` }}
       >
-        <div className="absolute inset-0 bg-white/30" />
-        <div className="relative z-10 text-center px-4">
-          <h1 className="text-5xl font-ubuntu font-bold text-brand drop-shadow-lg">
-            {destination.name}
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 max-w-6xl mx-auto px-6 text-white">
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+            Learn Skiing & Snowboarding in Auli
           </h1>
-          <p className="text-xl text-brand mt-2 tracking-wide">
-            {destination.country}
+          <p className="mt-4 text-lg md:text-xl max-w-2xl text-white/90">
+            A 7-day beginner-friendly alpine course with certified instructors,
+            safety-first training, and breathtaking Himalayan slopes.
           </p>
+
+          <div className="flex flex-wrap gap-4 mt-8">
+            <a
+              href="#booking"
+              className="bg-brand px-8 py-4 text-white font-semibold rounded-md"
+            >
+              Talk to an Instructor
+            </a>
+            <a
+              href="#course"
+              className="border border-white px-8 py-4 rounded-md"
+            >
+              View Course Details
+            </a>
+          </div>
+
+          <div className="mt-8 flex gap-6 text-sm text-white/90">
+            <span>✔ No prior experience needed</span>
+            <span>✔ All gear included</span>
+            <span>✔ Small groups</span>
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Page Content */}
-      <div className="max-w-6xl mx-auto px-4 md:px-8 py-16 space-y-10">
-        {/* Navigation */}
-        <nav>
-          <div className="max-w-6xl mx-auto overflow-x-auto scrollbar-hide">
-            <div className="flex md:gap-6 whitespace-nowrap text-sm md:text-base">
-              <a href="#overview" className="custom-nav-btn">
-                Overview
-              </a>
-              <a href="#pricing" className="custom-nav-btn">
-                Pricing
-              </a>
-              <a href="#best-time" className="custom-nav-btn">
-                Best Time
-              </a>
-              <a href="#itinerary" className="custom-nav-btn">
-                Itinerary
-              </a>
-              <a href="#gallery" className="custom-nav-btn">
-                Gallery
-              </a>
-              <a href="#highlights" className="custom-nav-btn">
-                Highlights
-              </a>
-              <a href="#inclusions" className="custom-nav-btn">
-                Inclusions
-              </a>
-            </div>
-          </div>
-        </nav>
-
-        {/* Overview */}
-        <section id="overview">
-          <div className="mb-12 relative">
-            <span className="block font-ubuntu text-xs uppercase tracking-widest text-brand font-medium mb-3">
-              Where Adventure Begins
-            </span>
-            <h2 className="inline-block px-6 py-3 border-2 text-2xl md:text-4xl font-ubuntu text-brand bg-[#f4eef1] shadow-xl rounded-md tracking-wide">
-              About the Course
-            </h2>
-            <p className="mt-4 font-garmond text-base text-gray-700 font-light">
-              {destination.description}
-            </p>
-          </div>
-        </section>
-
-        {/* Pricing */}
-        <section id="pricing" className="grid md:grid-cols-2 gap-8">
-          <div className="p-6 border rounded-lg shadow-lg hover:shadow-xl transition bg-white">
-            <h3 className="text-2xl font-ubuntu font-semibold mb-2 text-brand">
-              Skiing Course
-            </h3>
-            <p className="text-gray-700 mb-4">
-              Perfect for beginners learning balance, control, and turns.
-            </p>
-            <p className="text-4xl font-bold text-brand mb-4">₹29,999</p>
-            <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li>7 days of certified training</li>
-              <li>All equipment included</li>
-              <li>Accommodation & meals</li>
-              <li>Lift passes & local transport</li>
-            </ul>
-          </div>
-
-          <div className="p-6 border rounded-lg shadow-lg hover:shadow-xl transition bg-white">
-            <h3 className="text-2xl font-ubuntu font-semibold mb-2 text-brand">
-              Snowboarding Course
-            </h3>
-            <p className="text-gray-700 mb-4">
-              Ideal for thrill-seekers mastering balance, jumps, and freestyle
-              basics.
-            </p>
-            <p className="text-4xl font-bold text-brand mb-4">₹39,999</p>
-            <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li>7 days of certified training</li>
-              <li>All equipment included</li>
-              <li>Accommodation & meals</li>
-              <li>Lift passes & local transport</li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Best Time */}
-        <BestTimeToVisit bestTimeToVisit={destination.bestTimeToVisit} />
-
-        {/* Itinerary Section */}
-        <section id="itinerary" className="py-10">
-          <h2 className="text-3xl font-bold text-brand mb-6">
-            Detailed Itinerary
+      {/* WHO IS THIS FOR */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-bold mb-12 text-center">
+            Is This Course Right for You?
           </h2>
-          <div className="space-y-6">
-            {destination.itinerary.map((item, index) => (
-              <div
-                key={index}
-                className="p-6 bg-white border-l-4 border-brand shadow-md rounded-lg"
-              >
-                <h3 className="text-xl font-semibold text-brand mb-2">
-                  {item.day}
-                </h3>
-                <p className="text-gray-700 leading-relaxed">{item.detail}</p>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Complete Beginners",
+                text: "Never skied before? We start from walking on snow and build confidence step by step.",
+              },
+              {
+                title: "Adventure Seekers",
+                text: "Physically active and ready to level up? Progress to longer runs and carving basics.",
+              },
+              {
+                title: "Snowboard Curious",
+                text: "Prefer a board over skis? Snowboarding is available on request with expert guidance.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="bg-white p-8 rounded-xl shadow">
+                <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
+                <p className="text-gray-700">{item.text}</p>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Inclusions & Exclusions */}
-        <section
-          id="inclusions"
-          className="grid grid-cols-1 md:grid-cols-2 gap-10"
-        >
-          <div>
-            <h2 className="text-3xl font-bold mb-4">Inclusions</h2>
-            <ul className="space-y-2 list-disc list-inside text-gray-700">
-              {destination.inclusions.map((item, index) => (
-                <li key={index}>✔️ {item}</li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h2 className="text-3xl font-bold mb-4">Exclusions</h2>
-            <ul className="space-y-2 list-disc list-inside text-gray-700">
-              {destination.exclusions.map((item, index) => (
-                <li key={index}>❌ {item}</li>
-              ))}
-            </ul>
-          </div>
-        </section>
+      {/* WHAT YOU WILL LEARN */}
+      <section id="course" className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-bold mb-12 text-center">
+            What You’ll Learn in 7 Days
+          </h2>
 
-        {/* Booking */}
+          <div className="grid md:grid-cols-3 gap-8 text-gray-700">
+            {[
+              "Balance & stance fundamentals",
+              "Speed control (snowplough)",
+              "Turning & carving basics",
+              "Chair lift & slope etiquette",
+              "Terrain awareness & safety",
+              "Optional freestyle introduction",
+            ].map((skill, i) => (
+              <div key={i} className="p-6 border rounded-lg text-center">
+                {skill}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ITINERARY */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-bold mb-10 text-center">
+            7-Day Learning Journey
+          </h2>
+
+          <div className="space-y-6">
+            {[
+              ["Day 1", "Arrival, orientation, gear fitting, safety briefing"],
+              ["Day 2", "Snowplough braking, balance & gentle slopes"],
+              ["Day 3", "Turning techniques & confidence runs"],
+              ["Day 4", "Lift usage & intermediate slopes"],
+              ["Day 5", "Terrain exploration & carving basics"],
+              ["Day 6", "Freestyle intro & video feedback"],
+              ["Day 7", "Final run & certification ceremony"],
+            ].map(([day, desc], i) => (
+              <div
+                key={i}
+                className="bg-white p-6 rounded-lg shadow border-l-4 border-brand"
+              >
+                <h3 className="font-semibold text-lg">{day}</h3>
+                <p className="text-gray-700 mt-1">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PRICING */}
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-bold mb-12 text-center">
+            Course Pricing
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                title: "Skiing Course",
+                price: "₹29,999",
+                desc: "Perfect for beginners focusing on balance and control.",
+              },
+              {
+                title: "Snowboarding Course",
+                price: "₹39,999",
+                desc: "Ideal for thrill-seekers learning board control & freestyle.",
+              },
+            ].map((p, i) => (
+              <div key={i} className="border p-8 rounded-xl shadow-lg bg-white">
+                <h3 className="text-2xl font-semibold">{p.title}</h3>
+                <p className="mt-2 text-gray-700">{p.desc}</p>
+                <p className="text-4xl font-bold text-brand mt-6">{p.price}</p>
+                <p className="mt-4 text-sm text-gray-600">
+                  All equipment, accommodation & meals included
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* BEST TIME */}
+      <BestTimeToVisit bestTimeToVisit="Mid-December to March" />
+
+      {/* FAQ */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-3xl font-bold mb-10 text-center">
+            Frequently Asked Questions
+          </h2>
+
+          <div className="space-y-6">
+            {[
+              [
+                "Do I need prior experience?",
+                "No, this course is designed for beginners.",
+              ],
+              [
+                "Is snowboarding harder than skiing?",
+                "Snowboarding has a steeper learning curve, but is fully guided.",
+              ],
+              [
+                "Is it safe?",
+                "Yes, certified instructors and safety gear are included.",
+              ],
+              ["What fitness level is required?", "Basic fitness is enough."],
+            ].map(([q, a], i) => (
+              <div key={i} className="bg-white p-6 rounded-lg shadow">
+                <h4 className="font-semibold">{q}</h4>
+                <p className="text-gray-700 mt-2">{a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* BOOKING */}
+      <section id="booking" className="py-20">
         <BookingSection />
-      </div>
+      </section>
     </div>
   );
 }
