@@ -73,7 +73,7 @@ const Portfolio = () => {
             </a>
 
             <a
-              href="mailto:your@email.com"
+              href="mailto:himanshu2001ofc@gmail.com"
               className="border border-slate-700 px-7 py-3 rounded-xl hover:border-cyan-400 transition"
             >
               Contact
@@ -152,6 +152,66 @@ const Portfolio = () => {
         </div>
       </section>
 
+      <section className="max-w-7xl mx-auto px-6 pb-20">
+        <div className="mb-12 text-center">
+          <span className="text-cyan-400 text-sm tracking-widest uppercase">
+            What I Do
+          </span>
+
+          <h2 className="mt-3 text-3xl font-bold">Services & Expertise</h2>
+
+          <p className="mt-4 text-gray-400 max-w-xl mx-auto">
+            I focus on building fast, scalable and business-driven web
+            solutions.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8 text-center">
+          {[
+            {
+              title: "Fast Performance",
+              desc: "Optimized React apps with clean architecture and fast load times.",
+            },
+            {
+              title: "Scalable Systems",
+              desc: "Production-ready backend and frontend structures.",
+            },
+            {
+              title: "Conversion Focused",
+              desc: "Websites built to convert users into customers.",
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="bg-white/5 border border-white/10 rounded-2xl p-6"
+            >
+              <h3 className="text-lg font-semibold text-cyan-400">
+                {item.title}
+              </h3>
+              <p className="mt-3 text-sm text-gray-400">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-6 pb-24 text-center">
+        <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-white/10 rounded-3xl p-10">
+          <h2 className="text-3xl font-bold">Let’s Build Something Great</h2>
+
+          <p className="mt-4 text-gray-400 max-w-xl mx-auto">
+            Available for freelance projects, collaborations, and full-time
+            roles.
+          </p>
+
+          <a
+            href="mailto:himanshu2001ofc@gmail.com"
+            className="inline-block mt-6 bg-gradient-to-r from-cyan-500 to-blue-500 px-8 py-3 rounded-xl font-medium hover:opacity-90 transition"
+          >
+            Get In Touch
+          </a>
+        </div>
+      </section>
+
       {/* FOOTER */}
       <footer className="border-t border-white/10 py-8">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -169,7 +229,7 @@ const Portfolio = () => {
             </a>
             <a
               className="hover:text-cyan-400 transition"
-              href="#https://www.linkedin.com/in/himanshu-chauhan-b6bb57266/"
+              href="https://www.linkedin.com/in/himanshu-chauhan-b6bb57266/"
             >
               LinkedIn
             </a>
