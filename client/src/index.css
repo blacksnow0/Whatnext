@@ -1,0 +1,145 @@
+@font-face {
+  font-family: Ubuntu;
+  src: url("../src/assets/fonts/Ubuntu-Medium.ttf");
+}
+@font-face {
+  font-family: Exo;
+  src: url("../src/assets/fonts/Exo2-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: Garamond;
+  src: url("../src/assets/fonts/EBGaramond-VariableFont_wght.ttf");
+}
+
+@theme {
+  --font-ubuntu: Ubuntu, "sans-serif";
+  --font-exo: Exo, "sans-serif";
+  --font-garmond: Garmond, "sans-serif";
+}
+@import "tailwindcss";
+
+@layer utilities {
+  .bg-brand {
+    background-color: #6b2f4d;
+  }
+
+  .hover\:bg-brand-hover:hover {
+    background-color: #9b4f72;
+  }
+
+  .text-brand {
+    color: #7e395b;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+Hide scrollbar utility .scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: radial-gradient(
+    circle at 20% 30%,
+    rgba(139, 104, 79, 0.15),
+    rgba(171, 129, 95, 0.25),
+    transparent 20%
+  );
+  background-size: cover;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.btn-primary {
+  @apply px-6 py-2 rounded-full font-semibold text-white bg-[#7e395b] shadow-md
+    transition-colors duration-300 ease-in-out 
+    hover:bg-[#9b4f72] focus:outline-none focus:ring-4 focus:ring-[#7e395b]/50
+    active:bg-[#6b2f4d] active:scale-95;
+  user-select: none;
+  cursor: pointer;
+}
+
+.custom-nav-btn {
+  @apply inline-block text-sm md:text-base font-medium text-[#7e395b] pl-4 pr-3 py-1.5  relative transition-all duration-300 border-l-4 border-[#7e395b] md:border-none md:pl-3;
+}
+
+.custom-nav-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: #7e395b;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect only on desktop (min-width: 768px for example) */
+@media (min-width: 768px) {
+  .custom-nav-btn:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+/* Disable transform effect on mobile (max-width: 767px) */
+@media (max-width: 767px) {
+  .custom-nav-btn::after {
+    transform: none !important;
+    transition: none !important;
+    width: 0%;
+    /* Optional: keep it visible or hidden, depending on your design */
+    /* background: transparent;  if you want to hide it */
+  }
+}
+
+.marquee-wrapper {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 2.5rem; /* spacing */
+  white-space: nowrap;
+  min-width: max-content; /* <--- CRITICAL */
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
