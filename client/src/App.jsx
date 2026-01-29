@@ -8,6 +8,7 @@ import Destinations from "./pages/DestinationsPage";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import Portfolio from "./pages/Portfolio";
+import AuliCourseDetails from "./pages/AuliCourseDetails";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/auli" element={<AuliEventsPage />} />
           <Route path="/destinations" element={<Destinations />} />
           <Route path="/destinations/:id" element={<DestinationDetail />} />
+          <Route path="/winter-sports/:courseId" element={<AuliCourseDetails />} />
         </Route>
       </Routes>
     </Router>
