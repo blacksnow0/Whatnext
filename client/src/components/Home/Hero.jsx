@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+import WinterSportsPreview from "../Home/WinterSportPrew";
+
 import Typewriter from "../helper/Typewritter";
 
 import heroImage from "../../assets/images/hero3.jpeg";
@@ -72,6 +74,8 @@ function Hero() {
               </button>
             </a>
           </div>
+
+          <WinterSportsPreview/>
         </div>
 
         {/* RIGHT IMAGE SLIDER */}
@@ -133,6 +137,8 @@ function Hero() {
             </button>
           </a>
         </div>
+
+        <WinterSportsPreview/>
 
         {/* REGIONS CIRCLE ICONS */}
         {/* <div className="flex justify-center gap-6 mt-4">
