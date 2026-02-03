@@ -9,12 +9,14 @@ import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import Portfolio from "./pages/Portfolio";
 import AuliCourseDetails from "./pages/AuliCourseDetails";
+import Ily from "./pages/lyi";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/portfolio" element={<Portfolio />}></Route>
+          <Route path="/say-yes" element={<Ily />} />
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFound />} />
