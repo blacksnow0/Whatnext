@@ -31,7 +31,7 @@ const Typewriter = ({ words = [], speed = 150, pause = 1000 }) => {
   }, [charIndex, isDeleting, wordIndex]);
 
   return (
-    <span className="text-[#7e395b] font-ubuntu font-semibold">
+    <span className="text-white font-ubuntu font-semibold">
       {text}
       <span className="animate-pulse">|</span>
     </span>

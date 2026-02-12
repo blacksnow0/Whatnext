@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import snowboardingImage from "../../assets/images/snowboarding.jpeg";
+import snowboardingImage from "../../assets/images/snowboarding.png";
 
 export default function WinterSportsPreview() {
   return (
@@ -48,7 +48,6 @@ export default function WinterSportsPreview() {
                   </span>
                 </span>
               </div>
-
             </div>
           </div>
         </Link>
@@ -57,34 +56,35 @@ export default function WinterSportsPreview() {
       {/* ================= DESKTOP DESIGN ================= */}
       <div className="hidden md:block">
         <Link to="/winter-sports">
-          <div className="relative group overflow-hidden rounded-2xl h-[200px] cursor-pointer shadow-xl">
 
-            {/* Background Image */}
+          <div className="relative group overflow-hidden rounded-3xl h-[220px] cursor-pointer">
+
+            {/* Background */}
             <img
               src={snowboardingImage}
               alt="Winter Sports Auli"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+            {/* Softer Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
 
-            {/* Content */}
-            <div className="relative z-10 h-full flex flex-col justify-center px-6 text-white">
+            {/* Glass Content Layer */}
+            <div className="absolute bottom-4 left-4 right-4 backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-4 text-white shadow-xl">
 
-              <span className="text-xs uppercase tracking-widest text-white/80">
+              <span className="text-xs uppercase tracking-wider text-white/80">
                 Featured Experience
               </span>
 
-              <h3 className="text-2xl font-bold mt-1">
+              <h3 className="text-xl font-semibold mt-1">
                 Winter Sports in <span className="text-brand">Auli</span>
               </h3>
 
-              <p className="text-sm text-white/80 mt-1 max-w-xs">
+              <p className="text-sm text-white/80 mt-1">
                 Ski • Snowboard • Ride the Himalayas
               </p>
 
-              <div className="mt-3 inline-flex items-center gap-2 font-semibold text-sm">
+              <div className="mt-2 flex items-center gap-2 font-semibold text-sm">
                 Explore Experience
                 <span className="text-lg transition-transform group-hover:translate-x-1">
                   →
@@ -93,6 +93,7 @@ export default function WinterSportsPreview() {
 
             </div>
           </div>
+
         </Link>
       </div>
 

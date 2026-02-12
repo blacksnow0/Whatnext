@@ -1,30 +1,19 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import imageHero from "../assets/images/skiing.png";
+
 import BookingSection from "../components/helper/BookingComponent";
 import BestTimeToVisit from "../components/BestTimeToVisit";
 
-/* ================= PACKAGES ================= */
+import { packages } from "../utils/data/auliCourses";
 
-const packages = [
-  { id: "2day", name: "2 Day", title: "Beginner Snow Experience", price: "₹9,999" },
-  { id: "3day", name: "3 Day", title: "Snow Adventure Program", price: "₹14,999" },
-  { id: "4day", name: "4 Day", title: "Skill Builder Course", price: "₹19,999" },
-  {
-    id: "7day",
-    name: "7 Day",
-    title: "Professional Ski Program",
-    price: "₹30,000",
-    featured: true,
-  },
-];
+
 
 export default function AuliCourse() {
   return (
     <div className="bg-white text-gray-900 relative">
-
+      
       {/* ================= SEO ================= */}
-
       <Helmet>
         <title>Ski Courses In Auli | Professional Ski Training | WhatNext</title>
         <meta
@@ -38,7 +27,6 @@ export default function AuliCourse() {
       </Helmet>
 
       {/* ================= HERO ================= */}
-
       <section
         className="relative min-h-[85vh] md:min-h-screen bg-cover bg-center flex items-end md:items-center"
         style={{ backgroundImage: `url(${imageHero})` }}
@@ -46,20 +34,20 @@ export default function AuliCourse() {
         <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 to-black/20" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-5 pb-10 md:pb-0 grid md:grid-cols-2 gap-8 items-center text-white">
-
           <div>
             <span className="uppercase tracking-widest text-xs md:text-sm text-white/70">
               Auli · Uttarakhand
             </span>
 
             <h1 className="text-3xl md:text-6xl font-bold mt-3 leading-tight">
-  Learn <span className="text-brand">Skiing</span>
-  <br className="hidden md:block" /> Like a Pro
-</h1>
+              Learn <span className="text-brand">Skiing</span>
+              <br className="hidden md:block" />
+              Like a Pro
+            </h1>
 
             <p className="mt-3 md:mt-5 text-sm md:text-lg text-white/90 max-w-xl">
-              Premium ski training programs with certified coaches and real slope
-              experience.
+              Premium ski training programs with certified coaches and real
+              slope experience.
             </p>
 
             <div className="flex flex-col md:flex-row gap-3 md:gap-4 mt-5">
@@ -77,28 +65,18 @@ export default function AuliCourse() {
                 Enroll Now
               </a>
             </div>
-
-            <div className="flex flex-wrap gap-4 mt-5 text-xs md:text-sm text-white/80">
-              <span>✓ Beginner Friendly</span>
-              <span>✓ Certified Coaches</span>
-              <span>✓ Limited Batches</span>
-            </div>
           </div>
-
         </div>
       </section>
 
       {/* ================= PACKAGE SELECTOR ================= */}
-
       <section id="packages" className="py-10 md:py-14">
         <div className="max-w-7xl mx-auto px-5">
-
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
             Choose Your Program
           </h2>
 
           <div className="flex flex-col gap-4">
-
             {packages.map((pkg) => (
               <div
                 key={pkg.id}
@@ -108,6 +86,15 @@ export default function AuliCourse() {
                     : "bg-white shadow"
                 }`}
               >
+                {/* IMAGE */}
+                {pkg.image && (
+                  <img
+                    src={pkg.image}
+                    alt={pkg.name}
+                    className="w-full h-48 object-cover rounded-lg mb-4"
+                  />
+                )}
+
                 <div className="flex justify-between items-center">
                   <h3 className="font-semibold text-sm md:text-lg">
                     {pkg.name}
@@ -120,9 +107,7 @@ export default function AuliCourse() {
                   )}
                 </div>
 
-                <p className="text-sm text-gray-600 mt-1">
-                  {pkg.title}
-                </p>
+                <p className="text-sm text-gray-600 mt-1">{pkg.title}</p>
 
                 <div className="flex justify-between items-center mt-4">
                   <span className="text-xl font-bold text-brand">
@@ -138,79 +123,17 @@ export default function AuliCourse() {
                 </div>
               </div>
             ))}
-
           </div>
-
         </div>
       </section>
-
-      {/* ================= VALUE STRIP ================= */}
-
-      <section className="py-10 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-5 grid gap-6 md:grid-cols-3">
-
-          {[
-            ["Professional Training", "Certified instructors & structured learning"],
-            ["Safety First", "International safety standards"],
-            ["Mountain Slopes", "Train on real alpine terrain"],
-          ].map(([title, desc], i) => (
-            <div key={i}>
-              <h4 className="font-semibold text-base md:text-lg">
-                {title}
-              </h4>
-              <p className="text-sm text-gray-600 mt-1">
-                {desc}
-              </p>
-            </div>
-          ))}
-
-        </div>
-      </section>
-
-      {/* ================= ITINERARY ================= */}
-
-      {/* <section className="py-12">
-        <div className="max-w-5xl mx-auto px-5">
-
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">
-            7 Day Program Flow
-          </h2>
-
-          <div className="space-y-4 border-l-2 border-brand pl-4 md:pl-6">
-
-            {[
-              "Orientation, safety training & equipment fitting",
-              "Balance drills and braking techniques",
-              "Turning control and slope confidence",
-              "Chairlift training and longer runs",
-              "Terrain practice and carving basics",
-              "Freestyle introduction and feedback",
-              "Final evaluation and certification",
-            ].map((item, i) => (
-              <div key={i} className="relative">
-                <span className="absolute -left-[18px] md:-left-[34px] top-1 w-3 h-3 bg-brand rounded-full" />
-                <p className="text-sm md:text-base text-gray-700">
-                  {item}
-                </p>
-              </div>
-            ))}
-
-          </div>
-
-        </div>
-      </section> */}
 
       {/* ================= BEST TIME ================= */}
-
       <BestTimeToVisit bestTimeToVisit="Mid December to March" />
 
       {/* ================= BOOKING ================= */}
-
       <section id="booking" className="py-16 bg-gray-50">
         <BookingSection />
       </section>
-
-
     </div>
   );
 }

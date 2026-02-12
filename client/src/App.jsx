@@ -16,7 +16,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/portfolio" element={<Portfolio />}></Route>
-          <Route path="/say-yes" element={<Ily />} />
+          {/* <Route path="/say-yes" element={<Ily />} /> */}
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFound />} />

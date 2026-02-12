@@ -3,76 +3,11 @@ import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import BookingSection from "../components/helper/BookingComponent";
 
-import hero2Day from "../assets/images/auli-skiing/2day.jpeg";
-import hero3Day from "../assets/images/auli-skiing/3day.jpeg";
-import hero4Day from "../assets/images/auli-skiing/4day.jpeg";
-import hero7Day from "../assets/images/auli-skiing/7day.jpeg";;
 
 
+import {courseData} from "../utils/data/auliCourses"
 
-/* ================= COURSE DATA ================= */
 
-const courseData = {
-  "2day": {
-    title: "2-Day Beginner Snow Experience",
-    price: "₹9,999",
-    duration: "2 Days",
-    image: hero2Day,
-    description:
-      "Perfect for first-time skiers who want to experience snow sports safely and confidently.",
-    itinerary: [
-      "Arrival, orientation & equipment fitting",
-      "Balance training and beginner slope runs",
-    ],
-  },
-
-  "3day": {
-    title: "3-Day Snow Adventure Program",
-    price: "₹14,999",
-    duration: "3 Days",
-    image: hero3Day,
-    description:
-      "Adventure-focused program designed for thrill-seekers who want guided slope experiences.",
-    itinerary: [
-      "Snow basics and equipment handling",
-      "Turning techniques and slope confidence",
-      "Guided adventure runs",
-    ],
-  },
-
-  "4day": {
-    title: "4-Day Skill Builder Course",
-    price: "₹19,999",
-    duration: "4 Days",
-    image: hero4Day,
-    description:
-      "Fast-track skiing program focused on skill improvement and independent slope control.",
-    itinerary: [
-      "Snowplough braking and balance control",
-      "Turning mastery drills",
-      "Chairlift training",
-      "Independent slope practice",
-    ],
-  },
-
-  "7day": {
-    title: "7-Day Professional Ski Program",
-    price: "₹30,000",
-    duration: "7 Days",
-    image: hero7Day,
-    description:
-      "Complete professional ski foundation program designed to build confident and advanced skiers.",
-    itinerary: [
-      "Orientation and safety training",
-      "Balance and braking drills",
-      "Turning techniques",
-      "Chairlift training",
-      "Terrain exploration",
-      "Freestyle introduction",
-      "Final evaluation and certification",
-    ],
-  },
-};
 
 
 export default function AuliCourseDetails() {
@@ -190,6 +125,54 @@ export default function AuliCourseDetails() {
       <section id="booking" className="py-16 bg-gray-50">
         <BookingSection />
       </section>
+
+      <section className="py-12 bg-gray-50">
+  <div className="max-w-5xl mx-auto px-5">
+
+    <h2 className="text-2xl md:text-3xl font-bold mb-6">
+      Inclusions
+    </h2>
+
+    <ul className="space-y-2 text-gray-700 list-disc pl-5">
+      <li>Round-trip transport from Rishikesh to Auli</li>
+      <li>Accommodation on sharing basis</li>
+      <li>All meals (Breakfast, Lunch & Dinner)</li>
+      <li>Certified ski instructor training sessions</li>
+      <li>Ski equipment rental (Skis, boots, poles / snowboard)</li>
+      <li>Chairlift pass during training hours</li>
+      <li>Access to beginner/intermediate slopes</li>
+      <li>Safety briefing & first-aid support</li>
+      <li>Program completion certificate (where applicable)</li>
+      <li>On-ground trip coordinator support</li>
+    </ul>
+
+  </div>
+</section>
+
+
+<section className="py-12">
+  <div className="max-w-5xl mx-auto px-5">
+
+    <h2 className="text-2xl md:text-3xl font-bold mb-6">
+      Exclusions
+    </h2>
+
+    <ul className="space-y-2 text-gray-700 list-disc pl-5">
+      <li>Travel to Rishikesh pickup location</li>
+      <li>Personal expenses (shopping, snacks, laundry)</li>
+      <li>Medical or emergency evacuation costs</li>
+      <li>Personal travel/adventure insurance</li>
+      <li>Heater charges at hotels (if applicable)</li>
+      <li>Porter or mule charges for luggage</li>
+      <li>Extra chairlift rides beyond training</li>
+      <li>Private coaching sessions</li>
+      <li>Equipment damage due to negligence</li>
+      <li>Costs due to weather/road disruptions</li>
+    </ul>
+
+  </div>
+</section>
+
 
     </div>
   );
