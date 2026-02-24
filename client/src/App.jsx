@@ -10,13 +10,15 @@ import NotFound from "./pages/NotFound";
 import Portfolio from "./pages/Portfolio";
 import AuliCourseDetails from "./pages/AuliCourseDetails";
 import Ily from "./pages/lyi";
+import AdminAvailability from "./pages/Admin";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/portfolio" element={<Portfolio />}></Route>
-          {/* <Route path="/say-yes" element={<Ily />} /> */}
+        <Route path="/admin" element={<AdminAvailability />}></Route>
+        {/* <Route path="/say-yes" element={<Ily />} /> */}
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFound />} />
@@ -25,7 +27,10 @@ function App() {
           <Route path="/auli" element={<AuliEventsPage />} />
           <Route path="/destinations" element={<Destinations />} />
           <Route path="/destinations/:id" element={<DestinationDetail />} />
-          <Route path="/winter-sports/:courseId" element={<AuliCourseDetails />} />
+          <Route
+            path="/winter-sports/:courseId"
+            element={<AuliCourseDetails />}
+          />
         </Route>
       </Routes>
     </Router>
