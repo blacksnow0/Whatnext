@@ -1,109 +1,92 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import WinterSportsPreview from "../Home/WinterSportPrew";
-import Typewriter from "../helper/Typewritter";
+import { useEffect, useState } from "react";
 
-import heroImage from "../../assets/images/hero3.jpeg";
-import heroImage2 from "../../assets/images/trip4.jpeg";
-import heroImage3 from "../../assets/images/spitiImage.jpeg";
-import heroImage4 from "../../assets/images/satopanth.jpeg";
+import hero1 from "../../assets/images/hero3.jpeg";
+import hero2 from "../../assets/images/trip4.jpeg";
+import hero3 from "../../assets/images/spitiImage.jpeg";
 
-const TYPEWRITER_WORDS = [
-  "Mountains?",
-  "Temples?",
-  "Culture?",
-  "Spirituality?",
-  "Adventure?",
-  "Nature?",
-  "Heritage?",
-  "Peace?",
-];
-
-const SLIDER_IMAGES = [heroImage, heroImage2, heroImage3, heroImage4];
-
-function Hero() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+export default function Hero() {
+  const images = [hero1, hero2, hero3];
+  const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % SLIDER_IMAGES.length);
-    }, 4000);
+    const slider = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 5000);
 
-    return () => clearInterval(timer);
+    return () => clearInterval(slider);
   }, []);
 
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden bg-black text-white">
+      {/* Background Images */}
+      <div className="absolute inset-0">
+        {images.map((img, index) => (
+          <img
+            key={index}
+            src={img}
+            alt="Himalayan travel"
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+              currentImage === index ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
 
-      {/* BACKGROUND IMAGE SLIDER */}
-      {SLIDER_IMAGES.map((img, index) => (
-        <img
-          key={index}
-          src={img}
-          alt="Adventure background"
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-            index === currentIndex ? "opacity-100" : "opacity-0"
-          }`}
-        />
-      ))}
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/55"></div>
+      </div>
 
-      {/* OVERLAY */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20 z-10" />
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 min-h-screen flex items-center">
+        <div className="max-w-3xl">
+          {/* Brand */}
+          <p className="uppercase tracking-[0.35em] text-sm text-white/70 mb-4">
+            WhatNext Online
+          </p>
 
-      {/* CONTENT */}
-      <div className="relative z-20 max-w-6xl mx-auto px-6 pt-32 pb-20 text-white text-center md:text-left">
+          {/* Heading */}
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+            Your Next Himalayan
+            <span className="block text-white/80">Story Starts Here</span>
+          </h1>
 
+          {/* Subtext */}
+          <p className="mt-6 text-lg md:text-xl text-white/80 max-w-2xl">
+            Curated treks, snow escapes, spiritual journeys, and unforgettable
+            travel experiences across Uttarakhand & Himachal.
+          </p>
 
-        {/* MAIN HEADLINE */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
-          What’s Next?
-        </h1>
+          {/* CTA */}
+          <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <Link
+              to="/packages"
+              className="px-8 py-4 rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition"
+            >
+              Explore Packages
+            </Link>
 
-        {/* TYPEWRITER */}
-        <div className="mt-6 text-xl md:text-3xl font-serif">
-          <Typewriter words={TYPEWRITER_WORDS} />
-        </div>
+            <a
+              href="https://wa.me/91XXXXXXXXXX"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 rounded-full border border-white text-white font-semibold hover:bg-white hover:text-black transition"
+            >
+              WhatsApp Us
+            </a>
+          </div>
 
-        {/* SUBTEXT */}
-        <p className="mt-6 max-w-xl mx-auto md:mx-0 text-white/90">
-          Discover snow adventures, Himalayan treks, and unforgettable
-          experiences curated by experts.
-        </p>
-
-        {/* CTA BUTTONS */}
-        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-
-          <Link
-            to="/winter-sports"
-            className="px-8 py-3 bg-brand text-white rounded-full font-semibold shadow-lg hover:scale-105 transition-transform duration-300"
-          >
-            Explore Snow Adventures →
-          </Link>
-
-          <a
-            href="https://www.youtube.com/watch?v=MDOXbRii-sg"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="px-8 py-3 border border-white text-white rounded-full font-semibold hover:bg-white hover:text-black transition">
-              Watch Experience Film
-            </button>
-          </a>
-        </div>
-
-        {/* TRUST STRIP */}
-        <div className="mt-6 flex flex-wrap gap-6 justify-center md:justify-start text-sm text-white/80">
-          <span>✔ 500+ Travelers</span>
-          <span>✔ Certified Guides</span>
-        </div>
-
-        {/* OPTIONAL PREVIEW */}
-        <div className="mt-10">
-          <WinterSportsPreview />
+          {/* Trust Row */}
+          <div className="mt-10 flex flex-wrap gap-6 text-sm text-white/75">
+            <span>500+ Travelers</span>
+            <span>Verified Stays</span>
+            <span>Local Experts</span>
+            <span>24/7 Support</span>
+          </div>
         </div>
       </div>
+
+      {/* Bottom Fade */}
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent"></div>
     </section>
   );
 }
-
-export default Hero;
