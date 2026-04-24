@@ -54,7 +54,7 @@ export default function Navbar() {
               href="https://wa.me/91XXXXXXXXXX"
               target="_blank"
               rel="noreferrer"
-              className="px-5 py-2 rounded-full bg-black text-white hover:opacity-90 transition"
+              className="px-5 py-2 rounded-full bg-[#f97316] text-white hover:opacity-90 transition"
             >
               Book Now
             </a>
@@ -63,22 +63,22 @@ export default function Navbar() {
           {/* MOBILE BUTTON */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden h-10 w-10 flex items-center justify-center rounded-full border border-neutral-300"
+            className="md:hidden h-10 w-10 flex items-center justify-center rounded-full bg-[#f97316] "
             aria-label="Toggle menu"
           >
             <div className="space-y-1.5">
               <span
-                className={`block h-[2px] w-5 bg-black transition ${
+                className={`block h-[1px] w-5 bg-white transition ${
                   menuOpen ? "rotate-45 translate-y-[7px]" : ""
                 }`}
               />
               <span
-                className={`block h-[2px] w-5 bg-black transition ${
+                className={`block h-[1px] w-5 bg-white transition ${
                   menuOpen ? "opacity-0" : ""
                 }`}
               />
               <span
-                className={`block h-[2px] w-5 bg-black transition ${
+                className={`block h-[1px] w-5 bg-white transition ${
                   menuOpen ? "-rotate-45 -translate-y-[7px]" : ""
                 }`}
               />
@@ -121,7 +121,7 @@ export default function Navbar() {
               href="https://wa.me/91XXXXXXXXXX"
               target="_blank"
               rel="noreferrer"
-              className="mt-2 text-center px-5 py-3 rounded-full bg-black text-white"
+              className="mt-2 text-center px-5 py-3 rounded-full bg-[#f97316] text-white"
             >
               Book Now
             </a>
