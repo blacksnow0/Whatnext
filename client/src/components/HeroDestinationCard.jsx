@@ -1,51 +1,108 @@
+// HeroDestinationCard.jsx
+
 import { Link } from "react-router-dom";
 
 export default function HeroDestinationCard({
   name,
   image,
-  description,
   price,
   id,
+  featured = false,
 }) {
-  return (
-    <Link to={`destinations/${id}`}>
-      <div className="w-full border-10 border-[#272727] max-w-md mx-auto aspect-[2/3] rounded-3xl overflow-hidden shadow-[0_12px_30px_-10px_rgba(0,0,0,0.4)] bg-[#0e0e0e] flex flex-col ">
-        <div className="h-[70%] relative">
-          <img
-            src={image}
-            alt="Destination"
-            className="w-full h-full object-cover object-bottom"
-          />
-          <div className="absolute top-4 left-4 bg-black/40 text-white text-xs px-3 py-1 rounded-full backdrop-blur-md shadow-sm">
-            Work fast. Live slow.
+  if (featured) {
+    return (
+      <Link to={`/destinations/${id}`} className="group block">
+        <div className="grid lg:grid-cols-2 overflow-hidden rounded-[28px] border border-neutral-200 bg-white">
+          {/* Image */}
+          <div className="relative min-h-[280px] sm:min-h-[420px]">
+            <img
+              src={image}
+              alt={name}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+
+            <div className="absolute top-4 left-4 bg-white px-3 py-1 rounded-full text-[10px] uppercase tracking-[0.18em] font-semibold">
+              Most Booked
+            </div>
           </div>
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-          <div className="absolute inset-0 pointer-events-none z-10 grain-overlay" />
+          {/* Content */}
+          <div className="bg-[#2f2f2f] text-white p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.22em] text-[#f97316] font-semibold">
+                Featured Escape
+              </p>
+
+              <h3 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight">
+                {name}
+              </h3>
+            </div>
+
+            <div className="mt-8 flex items-end justify-between gap-4">
+              <div>
+                <p className="text-xs uppercase tracking-[0.2em] text-neutral-500">
+                  Starting From
+                </p>
+
+                <p className="text-3xl font-semibold">₹{price}</p>
+              </div>
+
+              <span className="text-sm font-semibold flex items-center gap-2">
+                Explore
+                <span className="text-[#f97316] transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </span>
+            </div>
+          </div>
         </div>
+      </Link>
+    );
+  }
 
-        <div className="h-[30%] flex flex-col justify-between px-6 py-4 text-white bg-[#272727]">
-          <div>
-            <h2 className="font-ubuntu font-semibold group-hover:text-[#d8c4b6] transition-colors">
-              {name.toUpperCase()}
-            </h2>
-
-            <h2 className="text-sm my-2 text-orange-200 font-semibold">
-              ₹ {price}/-
-            </h2>
-
-            <p className="text-xs text-gray-400 mt-1 line-clamp-1 sm:line-clamp-2">
-              {description}
-            </p>
+  return (
+    <Link to={`/destinations/${id}`} className="group block">
+      <div className="overflow-hidden rounded-[24px] border border-neutral-200 bg-[#fcfaf8]">
+        <div className="flex gap-4 p-4">
+          {/* Image */}
+          <div className="relative w-[110px] h-[110px] shrink-0 overflow-hidden rounded-2xl">
+            <img
+              src={image}
+              alt={name}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
           </div>
 
-          <div className="flex justify-between items-center mt-3">
-            <button className="text-xs px-4 py-2 rounded-full border border-white hover:bg-white hover:text-black transition-all duration-300">
-              Explore More
-            </button>
-            <span className="text-[10px] text-gray-500">
-              web • brand • escape
-            </span>
+          {/* Content */}
+          <div className="min-w-0 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 className="text-xl font-semibold tracking-tight line-clamp-1">
+                {name}
+              </h3>
+            </div>
+
+            <div className="mt-4 flex items-end justify-between gap-3">
+              <div>
+                <p className="text-[11px] uppercase tracking-[0.2em] text-neutral-400">
+                  From
+                </p>
+
+                <p className="text-lg font-semibold">₹{price}</p>
+
+                <p className="text-[10px] text-[#f97316] font-semibold uppercase tracking-[0.14em] mt-1">
+                  Few Slots Left
+                </p>
+              </div>
+
+              <span className="text-sm font-semibold flex items-center gap-2">
+                View
+                <span className="text-[#f97316] transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </span>
+            </div>
           </div>
         </div>
       </div>

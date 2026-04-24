@@ -7,6 +7,37 @@ export default function Hero() {
   const images = [hero2];
   const [currentImage, setCurrentImage] = useState(0);
 
+  function CountUp({ end, suffix = "" }) {
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+      let start = 0;
+      const duration = 1800;
+      const stepTime = 20;
+      const increment = end / (duration / stepTime);
+
+      const timer = setInterval(() => {
+        start += increment;
+
+        if (start >= end) {
+          setCount(end);
+          clearInterval(timer);
+        } else {
+          setCount(Math.floor(start));
+        }
+      }, stepTime);
+
+      return () => clearInterval(timer);
+    }, [end]);
+
+    return (
+      <span className="tabular-nums">
+        {count}
+        {suffix}
+      </span>
+    );
+  }
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
@@ -104,9 +135,9 @@ export default function Hero() {
         {/* SECOND SECTION */}
         {/* STATS */}
         <div className="grid grid-cols-2 lg:grid-cols-4 mt-14 sm:mt-16 border-t border-neutral-300">
-          <div className="group py-7 sm:py-10 px-4 sm:px-6 border-r border-b lg:border-b-0 border-neutral-300">
+          <div className="py-7 sm:py-10 px-4 sm:px-6 border-r border-b lg:border-b-0 border-neutral-300">
             <h3 className="text-4xl sm:text-5xl font-semibold tracking-tight text-black">
-              500+
+              <CountUp end={500} suffix="+" />
             </h3>
 
             <p className="mt-3 text-xs sm:text-sm uppercase tracking-[0.18em] text-neutral-500">
@@ -114,9 +145,9 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className="group py-7 sm:py-10 px-4 sm:px-6 border-b lg:border-b-0 lg:border-r border-neutral-300">
+          <div className="py-7 sm:py-10 px-4 sm:px-6 border-b lg:border-b-0 lg:border-r border-neutral-300">
             <h3 className="text-4xl sm:text-5xl font-semibold tracking-tight text-black">
-              10+
+              <CountUp end={10} suffix="+" />
             </h3>
 
             <p className="mt-3 text-xs sm:text-sm uppercase tracking-[0.18em] text-neutral-500">
@@ -124,9 +155,9 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className="group py-7 sm:py-10 px-4 sm:px-6 border-r border-neutral-300">
+          <div className="py-7 sm:py-10 px-4 sm:px-6 border-r border-neutral-300">
             <h3 className="text-4xl sm:text-5xl font-semibold tracking-tight text-black">
-              99%
+              <CountUp end={99} suffix="%" />
             </h3>
 
             <p className="mt-3 text-xs sm:text-sm uppercase tracking-[0.18em] text-neutral-500">
@@ -134,9 +165,9 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className="group py-7 sm:py-10 px-4 sm:px-6">
+          <div className="py-7 sm:py-10 px-4 sm:px-6">
             <h3 className="text-4xl sm:text-5xl font-semibold tracking-tight text-black">
-              24/7
+              <CountUp end={24} suffix="/7" />
             </h3>
 
             <p className="mt-3 text-xs sm:text-sm uppercase tracking-[0.18em] text-neutral-500">

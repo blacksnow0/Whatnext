@@ -9,13 +9,14 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 lg:px-10 pt-3">
-      <nav className="max-w-7xl mx-auto bg-white/90 backdrop-blur-md border border-neutral-200 rounded-2xl shadow-sm">
-        <div className="flex items-center justify-between px-4 sm:px-6 py-3">
+      <nav className="max-w-7xl mx-auto bg-white/92 backdrop-blur-md border border-neutral-200/80 rounded-[22px] shadow-sm">
+        {/* TOP BAR */}
+        <div className="flex items-center justify-between px-4 sm:px-6 py-2.5">
           {/* LOGO */}
           <Link
             to="/"
             onClick={closeMenu}
-            className="flex items-center gap-3 shrink-0"
+            className="flex items-center gap-2.5 shrink-0"
           >
             <img
               src={logo}
@@ -24,46 +25,59 @@ export default function Navbar() {
             />
 
             <div className="hidden sm:block leading-tight">
-              <p className="text-sm font-semibold tracking-tight">
+              <p className="text-sm font-semibold tracking-tight text-black">
                 WhatNext Online
               </p>
-              <p className="text-[11px] text-neutral-500">
+              <p className="text-[11px] tracking-wide text-neutral-500">
                 Himalayan Experiences
               </p>
             </div>
           </Link>
 
           {/* DESKTOP MENU */}
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-700">
-            <Link to="/" className="hover:text-black transition">
+          <div className="hidden md:flex items-center gap-10 text-[15px] font-medium text-neutral-700">
+            <Link
+              to="/"
+              className="relative hover:text-black transition after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-black after:transition-all hover:after:w-full"
+            >
               Home
             </Link>
 
             <Link
               to="/destinations"
-              className="hover:text-black transition"
+              className="relative hover:text-black transition after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-black after:transition-all hover:after:w-full"
             >
               Destinations
             </Link>
 
-            <Link to="/about" className="hover:text-black transition">
+            <Link
+              to="/about"
+              className="relative hover:text-black transition after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-black after:transition-all hover:after:w-full"
+            >
               About
             </Link>
 
+            {/* CTA */}
             <a
               href="https://wa.me/91XXXXXXXXXX"
               target="_blank"
               rel="noreferrer"
-              className="px-5 py-2 rounded-full bg-[#f97316] text-white hover:opacity-90 transition"
+              className="group flex items-center gap-2"
             >
-              Book Now
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f97316] text-white transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+
+              <span className="text-[11px] font-semibold tracking-[0.18em] text-black">
+                BOOK NOW
+              </span>
             </a>
           </div>
 
-          {/* MOBILE BUTTON */}
+          {/* MOBILE MENU BUTTON */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden h-10 w-10 flex items-center justify-center rounded-full bg-[#f97316] "
+            className="md:hidden h-10 w-10 flex items-center justify-center rounded-full bg-[#f97316]"
             aria-label="Toggle menu"
           >
             <div className="space-y-1.5">
@@ -89,14 +103,14 @@ export default function Navbar() {
         {/* MOBILE MENU */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ${
-            menuOpen ? "max-h-80 border-t border-neutral-200" : "max-h-0"
+            menuOpen ? "max-h-96 border-t border-neutral-200" : "max-h-0"
           }`}
         >
-          <div className="px-4 pb-4 pt-3 flex flex-col gap-4 text-sm font-medium text-neutral-700">
+          <div className="px-5 py-5 flex flex-col gap-5 text-sm font-medium text-neutral-700">
             <Link
               to="/"
               onClick={closeMenu}
-              className="py-2 hover:text-black transition"
+              className="hover:text-black transition"
             >
               Home
             </Link>
@@ -104,7 +118,7 @@ export default function Navbar() {
             <Link
               to="/destinations"
               onClick={closeMenu}
-              className="py-2 hover:text-black transition"
+              className="hover:text-black transition"
             >
               Destinations
             </Link>
@@ -112,7 +126,7 @@ export default function Navbar() {
             <Link
               to="/about"
               onClick={closeMenu}
-              className="py-2 hover:text-black transition"
+              className="hover:text-black transition"
             >
               About
             </Link>
@@ -121,9 +135,15 @@ export default function Navbar() {
               href="https://wa.me/91XXXXXXXXXX"
               target="_blank"
               rel="noreferrer"
-              className="mt-2 text-center px-5 py-3 rounded-full bg-[#f97316] text-white"
+              className="mt-2 flex items-center gap-3"
             >
-              Book Now
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f97316] text-white">
+                →
+              </span>
+
+              <span className="text-[11px] font-semibold tracking-[0.18em] text-black">
+                BOOK NOW
+              </span>
             </a>
           </div>
         </div>

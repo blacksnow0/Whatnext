@@ -1,32 +1,48 @@
-import DestinationCard from "../HeroDestinationCard";
+// TopPicks.jsx
 
+import DestinationCard from "../HeroDestinationCard";
 import { topDestinations } from "../../utils/data";
 
 function TopPicks() {
+  const featured = topDestinations[0];
+  const others = topDestinations.slice(1);
+
   return (
-    <section className="px-4 sm:px-6 lg:px-8 py-12 max-w-7xl mx-auto">
-      {/* Section Heading */}
-      <div className="text-center mb-12">
-        <span className="text-sm sm:text-base uppercase tracking-widest text-[#a55b7a] font-semibold">
-          This Season’s Top Picks
-        </span>
-        <h2 className="text-[2rem] sm:text-[2.5rem] lg:text-[3rem] leading-tight font-serif uppercase tracking-wider text-[#7e395b]">
-          Most Popular Treks Right Now
-        </h2>
-        <div className="mt-2 w-24 h-1 bg-[#7e395b] mx-auto rounded-full" />
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-16 sm:py-20">
+      {/* Header */}
+      <div className="grid lg:grid-cols-2 gap-8 items-end mb-10 sm:mb-14">
+        <div>
+          <p className="text-[11px] sm:text-xs uppercase tracking-[0.35em] text-[#f97316] font-semibold">
+            This Season’s Top Picks
+          </p>
+
+          <h2 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[0.95]">
+            Journeys Worth
+            <br />
+            Booking Right Now
+          </h2>
+        </div>
+
+        <div className="hidden lg:pl-10">
+          <p className="text-sm sm:text-base text-neutral-500 leading-relaxed">
+            High demand routes, curated stays and unforgettable mountain
+            experiences.
+          </p>
+
+        </div>
       </div>
 
-      {/* Cards Grid */}
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {topDestinations.map((dest, index) => (
-          <DestinationCard
-            key={index}
-            name={dest.name}
-            image={dest.image}
-            description={dest.description}
-            price={dest.price}
-            id={dest.id}
-          />
+      {/* Featured */}
+      {featured && (
+        <div className="mb-7 sm:mb-8">
+          <DestinationCard {...featured} featured />
+        </div>
+      )}
+
+      {/* Grid */}
+      <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {others.map((dest, index) => (
+          <DestinationCard key={index} {...dest} />
         ))}
       </div>
     </section>
