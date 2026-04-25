@@ -1,11 +1,41 @@
 // TopPicks.jsx
 
+import { useMemo, useRef, useState } from "react";
 import DestinationCard from "../HeroDestinationCard";
 import { topDestinations } from "../../utils/data";
 
 function TopPicks() {
-  const featured = topDestinations[0];
-  const others = topDestinations.slice(1);
+  const [featuredId, setFeaturedId] = useState(topDestinations[0]?.id);
+  const heroRef = useRef(null);
+
+  const featured = useMemo(
+    () => topDestinations.find((item) => item.id === featuredId),
+    [featuredId]
+  );
+
+  const others = useMemo(
+    () => topDestinations.filter((item) => item.id !== featuredId),
+    [featuredId]
+  );
+
+  const handleSelect = (destination) => {
+    setFeaturedId(destination.id);
+
+    // Mobile / tablet only
+    if (window.innerWidth < 1024 && heroRef.current) {
+      setTimeout(() => {
+        const y =
+          heroRef.current.getBoundingClientRect().top +
+          window.pageYOffset -
+          90; // navbar breathing space
+
+        window.scrollTo({
+          top: y,
+          behavior: "smooth",
+        });
+      }, 120);
+    }
+  };
 
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-16 sm:py-20">
@@ -23,26 +53,27 @@ function TopPicks() {
           </h2>
         </div>
 
-        <div className="hidden lg:pl-10">
+        <div className="hidden lg:block lg:pl-10">
           <p className="text-sm sm:text-base text-neutral-500 leading-relaxed">
             High demand routes, curated stays and unforgettable mountain
             experiences.
           </p>
-
         </div>
       </div>
 
       {/* Featured */}
-      {featured && (
-        <div className="mb-7 sm:mb-8">
-          <DestinationCard {...featured} featured />
-        </div>
-      )}
+      <div ref={heroRef} className="mb-7 sm:mb-8">
+        {featured && <DestinationCard {...featured} featured />}
+      </div>
 
-      {/* Grid */}
+      {/* Small Cards */}
       <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {others.map((dest, index) => (
-          <DestinationCard key={index} {...dest} />
+        {others.map((dest) => (
+          <DestinationCard
+            key={dest.id}
+            {...dest}
+            onSelect={() => handleSelect(dest)}
+          />
         ))}
       </div>
     </section>

@@ -4,6 +4,7 @@ import gallery3 from "../assets/images/trip3.jpeg";
 import gallery4 from "../assets/images/kagbhusandi.jpeg";
 import gallery5 from "../assets/images/hero3.jpeg";
 import gallery6 from "../assets/images/trip.jpeg";
+import badrinath from "../assets/images/badrinath.jpeg";
 
 import satopanth from "../assets/images/satopanth.jpeg";
 import valleyImage from "../assets/images/valleyImage.jpeg";
@@ -223,6 +224,74 @@ export const destinations = [
     gallery: [gallery1, gallery4, gallery5, gallery6],
   },
   {
+    id: "badrinath",
+    name: "Satopanth Tal Trek",
+    country: "India",
+    description:
+      "Satopanth Tal is a high-altitude glacial lake surrounded by towering Himalayan peaks. Known for its spiritual aura and pristine beauty, this trek is both physically challenging and soulfully rewarding.",
+    imageUrl: satopanth2,
+    bestTimeToVisit: "May - October",
+    attractions: [
+      "Satopanth Lake",
+      "Chaukhamba Peaks",
+      "Mana Village",
+      "Vasundhara Falls",
+    ],
+    galleryImages: [satopanth1, satopanth2, satopanth, gallery6],
+    itinerary: [
+      {
+        day: "Day 1",
+        highlight: "Arrival in Badrinath",
+        description:
+          "Arrive at the sacred town of Badrinath. Acclimate and explore the ancient temple and local surroundings.",
+      },
+      {
+        day: "Day 2",
+        highlight: "Trek to Laxmi Van",
+        description:
+          "Begin your trek with a scenic walk to Laxmi Van, a campsite nestled among birch and pine forests.",
+      },
+      {
+        day: "Day 3",
+        highlight: "Trek to Chakratirtha",
+        description:
+          "Continue climbing through rocky terrain to reach Chakratirtha, a beautiful high-altitude meadow with views of Chaukhamba.",
+      },
+      {
+        day: "Day 4",
+        highlight: "Visit Satopanth Tal",
+        description:
+          "Reach the sacred Satopanth Tal, believed to be the path to heaven. Surrounded by ice-capped peaks, it's a spiritual paradise.",
+      },
+      {
+        day: "Day 5",
+        highlight: "Descent to Badrinath",
+        description:
+          "Retrace your steps to Badrinath and conclude the journey with blessings and breathtaking memories.",
+      },
+    ],
+    highlights: [
+      "Glacial alpine lake",
+      "Remote & spiritual trail",
+      "Trek near India's last village",
+      "Panoramic views of Himalayan peaks",
+    ],
+    inclusions: [
+      "Accommodation in tents",
+      "All meals on the trek",
+      "Expert trek leaders",
+      "Porters and support staff",
+      "Forest permits",
+    ],
+    exclusions: [
+      "Transport to Badrinath",
+      "Meals in base town",
+      "Trekking equipment",
+      "Insurance & medical expenses",
+    ],
+    gallery: [gallery1, gallery4, gallery5, gallery6],
+  },
+  {
     id: "lord-curzon-trail",
     name: "Lord Curzon Trail (Kuari Pass Trek)",
     country: "India",
@@ -362,16 +431,27 @@ export const destinations = [
 
 export const topDestinations = [
   {
+    id: "badrinath",
+    name: "Badrinath Dham",
+    image:badrinath,
+    images: [badrinath, gallery2, gallery3],
+    description:
+      "Satopanth Tal is a high-altitude glacial lake surrounded by towering Himalayan peaks. Known for its spiritual aura and pristine beauty, this trek is both physically challenging and soulfully rewarding.",
+    price: "5,500",
+  },
+  {
     id: "kagbhusandi-trek",
     name: "Kagbhusandi",
-    image: gallery4,
+    image:gallery4,
+    images: [gallery4, gallery1, gallery2, gallery3],
     description: "A tropical paradise with beautiful beaches and rich culture.",
     price: "12,000",
   },
   {
     id: "valley-of-flowers",
     name: "Valley Of Flowers",
-    image: valleyImage,
+    image:valleyImage,
+    images: [valleyImage, gallery5, gallery6],
     description:
       "A UNESCO World Heritage site, this trek offers a burst of colorful alpine flowers nestled in the Himalayas.",
     price: "9,500",
@@ -379,7 +459,8 @@ export const topDestinations = [
   {
     id: "satopanth-tal",
     name: "Satopanth Tal Trek",
-    image: satopanth,
+    image:satopanth,
+    images: [satopanth, gallery2, gallery3],
     description:
       "Satopanth Tal is a high-altitude glacial lake surrounded by towering Himalayan peaks. Known for its spiritual aura and pristine beauty, this trek is both physically challenging and soulfully rewarding.",
     price: "14,500",
