@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import hero2 from "../../assets/images/trip4.jpeg";
+import hero1 from "../../assets/images/trip4.jpeg";
+import hero from "../../assets/images/badrinath-hero.jpeg";
+import hero2 from "../../assets/images/badrinath-hero2.png";
 
 export default function Hero() {
   const images = [hero2];
