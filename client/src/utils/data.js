@@ -5,6 +5,8 @@ import gallery4 from "../assets/images/kagbhusandi.jpeg";
 import gallery5 from "../assets/images/hero3.jpeg";
 import gallery6 from "../assets/images/trip.jpeg";
 import badrinath from "../assets/images/badrinath.jpeg";
+import badrinath2 from "../assets/images/badrinath2.png";
+import valley2 from "../assets/images/valley2.png";
 
 import satopanth from "../assets/images/satopanth.jpeg";
 import valleyImage from "../assets/images/valleyImage.jpeg";
@@ -434,7 +436,7 @@ export const topDestinations = [
     id: "badrinath",
     name: "Badrinath Dham",
     image:badrinath,
-    images: [badrinath, gallery2, gallery3],
+    images: [badrinath, badrinath2, gallery3],
     description:
       "Satopanth Tal is a high-altitude glacial lake surrounded by towering Himalayan peaks. Known for its spiritual aura and pristine beauty, this trek is both physically challenging and soulfully rewarding.",
     price: "5,500",
@@ -451,7 +453,7 @@ export const topDestinations = [
     id: "valley-of-flowers",
     name: "Valley Of Flowers",
     image:valleyImage,
-    images: [valleyImage, gallery5, gallery6],
+    images: [valleyImage,valley2, gallery6],
     description:
       "A UNESCO World Heritage site, this trek offers a burst of colorful alpine flowers nestled in the Himalayas.",
     price: "9,500",

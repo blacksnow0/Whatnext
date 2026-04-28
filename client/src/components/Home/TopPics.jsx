@@ -38,6 +38,8 @@ function TopPicks() {
   };
 
   return (
+    <div className="bg-gray-50 ">
+      
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-16 sm:py-20">
       {/* Header */}
       <div className="grid lg:grid-cols-2 gap-8 items-end mb-10 sm:mb-14">
@@ -77,6 +79,7 @@ function TopPicks() {
         ))}
       </div>
     </section>
+    </div>
   );
 }
 
