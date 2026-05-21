@@ -137,6 +137,7 @@ import FAQSection from "../components/destination/FAQSection";
 import StickyBookingBar from "../components/destination/StickyBookingBar";
 import ExpeditionBrief from "../components/destination/ExpeditionBrief";
 import TrekServices from "../components/destination/TrekServices";
+import TrekItinerary from "../components/destination/TrekItinerary";
 
 const DestinationDetail = () => {
   const { id } = useParams();
@@ -157,15 +158,17 @@ const DestinationDetail = () => {
 
       {/* <OverviewSection destination={destination} /> */}
 
+      <TrekItinerary destination={destination}/>
+
       <ImageSection images={destination.gallery} />
 
       {/* <HighlightsSection
         highlights={destination.highlights}
       /> */}
 
-      <ItinerarySection
+      {/* <ItinerarySection
         itinerary={destination.itinerary}
-      />
+      /> */}
 
       {/* <InclusionSection
         inclusions={destination.inclusions}

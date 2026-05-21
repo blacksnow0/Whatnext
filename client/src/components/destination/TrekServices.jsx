@@ -59,30 +59,69 @@ const TrekServices = ({ destination }) => {
         </div>
 
         {/* Services */}
-        <div className="mt-8 border-t border-orange-100">
+        {/* Mobile Layout */}
+        <div className="sm:hidden mt-8 border-t border-orange-100">
           {serviceSections.map((section, index) => {
             const Icon = section.icon;
 
             return (
               <div
                 key={section.title}
-                className={`grid sm:grid-cols-[180px_1fr] gap-5 py-5 ${
+                className={`py-5 ${
+                  index !== serviceSections.length - 1
+                    ? "border-b border-orange-100"
+                    : ""
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  <Icon size={18} className="text-orange-500" />
+
+                  <h3 className="text-base font-semibold text-zinc-900">
+                    {section.title}
+                  </h3>
+                </div>
+
+                <div className="space-y-2 mt-4">
+                  {section.items.map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <div className="w-1 h-1 rounded-full bg-orange-500 mt-2 shrink-0" />
+
+                      <p className="text-sm text-zinc-600 leading-relaxed">
+                        {item}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="hidden sm:block mt-8 border-t border-orange-100">
+          {serviceSections.map((section, index) => {
+            const Icon = section.icon;
+
+            return (
+              <div
+                key={section.title}
+                className={`grid grid-cols-[180px_1fr] gap-10 py-5 ${
                   index !== serviceSections.length - 1
                     ? "border-b border-orange-100"
                     : ""
                 }`}
               >
                 {/* Left */}
-                <div>
-                  <Icon size={18} className="text-orange-500" />
+                <div className="flex items-start gap-4">
+                  <Icon size={18} className="text-orange-500 mt-0.5 shrink-0" />
 
-                  <h3 className="mt-2 text-base sm:text-lg font-semibold text-zinc-900">
+                  <h3 className="text-sm uppercase tracking-[0.2em] text-zinc-900 font-semibold leading-none">
                     {section.title}
                   </h3>
                 </div>
 
                 {/* Right */}
-                <div className="space-y-2">
+                <div className="grid grid-cols-2 gap-x-10 gap-y-3">
                   {section.items.map((item) => (
                     <div key={item} className="flex items-start gap-3">
                       <div className="w-1 h-1 rounded-full bg-orange-500 mt-2 shrink-0" />

@@ -85,15 +85,92 @@ export const destinations = [
     itinerary: [
       {
         day: "Day 1",
-        title: "Arrival at Joshimath",
+
+        title: "Rishikesh to Govindghat",
+
         description:
-          "Drive through scenic Himalayan roads and prepare for the expedition.",
+          "Begin the journey from Rishikesh early in the morning and drive through Devprayag, Rudraprayag, Karnaprayag, and Joshimath before reaching Govindghat. The route follows the Alaknanda River and offers beautiful Himalayan landscapes throughout the day.",
+
+        distance: "270 km Drive",
+
+        duration: "10-12 Hours",
+
+        altitude: "6,000 ft",
       },
 
       {
         day: "Day 2",
-        title: "Trek to Ghangaria",
-        description: "Walk alongside rivers, waterfalls, and mountain forests.",
+
+        title: "Govindghat → Pulna → Ghangharia",
+
+        description:
+          "Drive from Govindghat to Pulna village and begin the trek towards Ghangharia. The trail passes through forests, waterfalls, wooden bridges, and the Pushpawati River valley before reaching the trekking base village.",
+
+        distance: "10 km Trek",
+
+        duration: "6-7 Hours",
+
+        altitude: "10,003 ft",
+      },
+
+      {
+        day: "Day 3",
+
+        title: "Ghangharia → Valley of Flowers → Ghangharia",
+
+        description:
+          "Trek into the Valley of Flowers National Park surrounded by alpine meadows, glaciers, streams, and rare Himalayan flowers. Spend time exploring the valley before returning to Ghangharia for the night.",
+
+        distance: "10-12 km Trek",
+
+        duration: "6-7 Hours",
+
+        altitude: "11,500 ft",
+      },
+
+      {
+        day: "Day 4",
+
+        title: "Ghangharia → Hemkund Sahib → Ghangharia",
+
+        description:
+          "Ascend towards Hemkund Sahib, one of the world’s highest Gurudwaras located beside a glacial lake. The climb is steep but rewards trekkers with panoramic Himalayan views before descending back to Ghangharia.",
+
+        distance: "12 km Trek",
+
+        duration: "7-8 Hours",
+
+        altitude: "14,107 ft",
+      },
+
+      {
+        day: "Day 5",
+
+        title: "Ghangharia to Govindghat",
+
+        description:
+          "Descend through forests and mountain trails back to Pulna and drive onwards to Govindghat. Enjoy a relaxed evening after completing the trekking portion of the expedition.",
+
+        distance: "10 km Trek",
+
+        duration: "5-6 Hours",
+
+        altitude: "6,000 ft",
+      },
+
+      {
+        day: "Day 6",
+
+        title: "Govindghat to Rishikesh",
+
+        description:
+          "Drive back towards Rishikesh through scenic Himalayan roads and river valleys, marking the end of the Valley of Flowers expedition.",
+
+        distance: "270 km Drive",
+
+        duration: "10-12 Hours",
+
+        altitude: "1,220 ft",
       },
     ],
 
