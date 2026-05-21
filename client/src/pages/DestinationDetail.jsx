@@ -127,12 +127,7 @@ import { useParams } from "react-router-dom";
 import { destinations } from "../utils/data";
 
 import HeroSection from "../components/destination/HeroSection";
-import FactsSection from "../components/destination/FactsSection";
-import OverviewSection from "../components/destination/OverviewSection";
-import ImageSection from "../components/destination/ImageSection";
-import HighlightsSection from "../components/destination/HighlightsSection";
-import ItinerarySection from "../components/destination/ItinerarySection";
-import InclusionSection from "../components/destination/InclusionSection";
+
 import FAQSection from "../components/destination/FAQSection";
 import StickyBookingBar from "../components/destination/StickyBookingBar";
 import ExpeditionBrief from "../components/destination/ExpeditionBrief";
@@ -155,28 +150,9 @@ const DestinationDetail = () => {
 
       <TrekServices destination={destination}/>
 
-      {/* <FactsSection destination={destination} /> */}
-
-      {/* <OverviewSection destination={destination} /> */}
-
       <TrekItinerary destination={destination}/>
 
       <DestinationGallery destination={destination}/>
-
-      {/* <ImageSection images={destination.gallery} /> */}
-
-      {/* <HighlightsSection
-        highlights={destination.highlights}
-      /> */}
-
-      {/* <ItinerarySection
-        itinerary={destination.itinerary}
-      /> */}
-
-      {/* <InclusionSection
-        inclusions={destination.inclusions}
-        exclusions={destination.exclusions}
-      /> */}
 
       <FAQSection destination={destination} />
 
