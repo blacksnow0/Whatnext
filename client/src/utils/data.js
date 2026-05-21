@@ -25,10 +25,11 @@ export const destinations = [
 
     location: "Chamoli, Uttarakhand",
 
-    imageUrl: valleyImage,
+    imageUrl: valley_bridge,
 
     gallery: [
       valley_bridge,
+      valleyImage,
       valley_of_flowers,
       tulip_valley_of_flower,
       Valley_Start,

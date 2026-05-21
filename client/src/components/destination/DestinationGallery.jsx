@@ -33,7 +33,7 @@ const DestinationGallery = ({ destination }) => {
 
   return (
     <>
-      <section className="bg-white py-10 sm:py-16 overflow-hidden">
+      <section id="gallery" className="bg-white py-10 sm:py-16 overflow-hidden">
         <div className="max-w-6xl mx-auto px-5 sm:px-6">
           {/* Heading */}
           <div className="max-w-2xl">
