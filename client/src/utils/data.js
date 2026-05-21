@@ -11,6 +11,12 @@ import satopanth from "../assets/images/satopanth.jpeg";
 import valleyImage from "../assets/images/valleyImage.jpeg";
 import kuariImage from "../assets/images/trip2.jpeg";
 
+import tulip_valley_of_flower from "../assets/images/valley-of-flower/tulip_valley_of_flowers.jpeg";
+import valley_bridge from "../assets/images/valley-of-flower/valley_bridge.jpg";
+import valley_of_flowers from "../assets/images/valley-of-flower/valley_of_flowers.jpg";
+import Valley_Start from "../assets/images/valley-of-flower/Valley_Start.jpeg";
+import Valley from "../assets/images/valley-of-flower/Valley.jpg";
+
 export const destinations = [
   {
     id: "valley-of-flowers",
@@ -21,7 +27,12 @@ export const destinations = [
 
     imageUrl: valleyImage,
 
-    gallery: [valleyImage, kuariImage, satopanth],
+    gallery: [
+      valley_bridge,
+      valley_of_flowers,
+      tulip_valley_of_flower,
+      Valley_Start,
+    ],
 
     duration: "6 Days",
 
@@ -173,20 +184,6 @@ export const destinations = [
         altitude: "1,220 ft",
       },
     ],
-
-    faq: [
-      {
-        question: "Is this trek beginner friendly?",
-        answer:
-          "Yes. Anyone with decent fitness and preparation can complete this trek comfortably.",
-      },
-
-      {
-        question: "When is the valley in full bloom?",
-        answer:
-          "Mid July to Mid August offers the best flower bloom and scenery.",
-      },
-    ],
     services: {
       transport: {
         route: "Rishikesh to Rishikesh",
@@ -228,6 +225,119 @@ export const destinations = [
         "Safety briefings throughout the expedition",
       ],
     },
+    faq: [
+      {
+        question: "Is the Valley of Flowers Trek beginner friendly?",
+
+        answer:
+          "Yes. The trek is considered beginner friendly for people with decent fitness levels. The trails are well-defined, but some sections involve long walking hours and gradual altitude gain.",
+      },
+
+      {
+        question: "What is the best time to visit Valley of Flowers?",
+
+        answer:
+          "Mid July to Mid August is considered the best period when the valley is in full bloom with vibrant Himalayan flowers, waterfalls, and lush green landscapes.",
+      },
+
+      {
+        question: "How difficult is the trek?",
+
+        answer:
+          "The trek is graded Easy to Moderate. Most trekking days involve 5–7 hours of walking on mountain trails, stone paths, and gradual ascents.",
+      },
+
+      {
+        question: "What is the highest altitude reached during the trek?",
+
+        answer:
+          "The highest altitude is reached at Hemkund Sahib which sits at approximately 14,107 ft above sea level.",
+      },
+
+      {
+        question: "Do I need prior trekking experience?",
+
+        answer:
+          "No prior Himalayan trekking experience is required. However, basic fitness and stamina are highly recommended for a comfortable experience.",
+      },
+
+      {
+        question: "Is Hemkund Sahib included in the itinerary?",
+
+        answer:
+          "Yes. The itinerary includes an excursion to Hemkund Sahib, one of the highest Gurudwaras in the world located beside a glacial lake.",
+      },
+
+      {
+        question: "What kind of accommodation is provided?",
+
+        answer:
+          "Accommodation is usually arranged in guesthouses, lodges, or alpine stays on a sharing basis depending on the trekking location and availability.",
+      },
+
+      {
+        question: "Are meals included during the trek?",
+
+        answer:
+          "Yes. Nutritious vegetarian meals including breakfast, lunch, dinner, and evening snacks are provided during trekking days.",
+      },
+
+      {
+        question: "How cold does it get during the trek?",
+
+        answer:
+          "Temperatures can vary between 5°C to 15°C during the trekking season, while nights in higher regions can feel significantly colder.",
+      },
+
+      {
+        question: "Will there be mobile network connectivity?",
+
+        answer:
+          "Limited mobile connectivity is available in Govindghat and Ghangharia. Network signals may remain weak or unavailable in higher trekking sections.",
+      },
+
+      {
+        question: "Are permits required for the trek?",
+
+        answer:
+          "Yes. Entry permits for Valley of Flowers National Park are mandatory and are generally arranged by the trekking organizers.",
+      },
+
+      {
+        question: "What should I pack for the trek?",
+
+        answer:
+          "You should carry warm layers, waterproof clothing, trekking shoes, personal medication, rain protection, sunscreen, and essential toiletries.",
+      },
+
+      {
+        question: "Is altitude sickness common on this trek?",
+
+        answer:
+          "The trek involves gradual altitude gain, which helps acclimatization. Mild symptoms may occur for some trekkers near Hemkund Sahib due to higher elevation.",
+      },
+
+      {
+        question: "How far is the trek from Rishikesh?",
+
+        answer:
+          "The trek begins with a long mountain drive from Rishikesh to Govindghat covering approximately 270 km.",
+      },
+
+      {
+        question: "Can children or older adults do this trek?",
+
+        answer:
+          "Yes, provided they are physically fit and comfortable with long walking hours in mountain terrain.",
+      },
+
+      {
+        question: "Is porter support available?",
+
+        answer:
+          "Yes. Porter and guide support can be arranged or may already be included depending on the trekking package.",
+      },
+    ],
   },
 ];
 
