@@ -1,13 +1,12 @@
 import { Helmet } from "react-helmet";
 import Hero from "../components/Home/Hero";
-import Himachal from "../components/Home/Himanchal";
 import TopPics from "../components/Home/TopPics";
 import Uttrakhand from "../components/Home/Uttrakhand";
 
 export default function Home() {
   return (
     <div className="bg-white">
-      {/* SEO */}
+
       <Helmet>
         <title>WhatNext Online | Himalayan Treks, Winter Trips & Events</title>
 
@@ -96,10 +95,8 @@ export default function Home() {
       </h1>
 
       <Hero />
-      {/* <AuliEventsPreview /> */}
       <TopPics />
       <Uttrakhand />
-      <Himachal />
     </div>
   );
 }

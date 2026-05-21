@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
-// import bgImage from "../assets/mountain.jpg";
 
 const ItinerarySection = ({ itinerary }) => {
   const [openIndex, setOpenIndex] = useState(null);
