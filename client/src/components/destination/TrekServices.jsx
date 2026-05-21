@@ -45,7 +45,7 @@ const TrekServices = ({ destination }) => {
   ];
 
   return (
-    <section className=" py-10 sm:py-12">
+    <section className="bg-white py-10 sm:py-12">
       <div className="max-w-6xl mx-auto px-5 sm:px-6">
         {/* Heading */}
         <div className="max-w-2xl">

@@ -167,6 +167,7 @@ const DestinationDetail = () => {
         isOpen={showDepartures}
         onClose={() => setShowDepartures(false)}
         departures={destination.departures}
+        destination={destination}
       />
     </main>
   );

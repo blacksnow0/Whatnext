@@ -36,21 +36,100 @@ export const destinations = [
     ],
     departures: [
       {
-        date: "12 Jul 2026",
-        status: "Available",
-        seatsLeft: 8,
+        month: "June 2026",
+
+        batches: [
+          {
+            date: "14 Jun 2026",
+            status: "Available",
+            seatsLeft: 8,
+          },
+
+          {
+            date: "21 Jun 2026",
+            status: "Available",
+            seatsLeft: 5,
+          },
+        ],
       },
 
       {
-        date: "19 Jul 2026",
-        status: "Filling Fast",
-        seatsLeft: 3,
+        month: "July 2026",
+
+        batches: [
+          {
+            date: "12 Jul 2026",
+            status: "Available",
+            seatsLeft: 8,
+          },
+
+          {
+            date: "19 Jul 2026",
+            status: "Filling Fast",
+            seatsLeft: 3,
+          },
+
+          {
+            date: "26 Jul 2026",
+            status: "Available",
+            seatsLeft: 11,
+          },
+          {
+            date: "26 Jul 2026",
+            status: "Available",
+            seatsLeft: 11,
+          },
+          {
+            date: "26 Jul 2026",
+            status: "Available",
+            seatsLeft: 11,
+          },
+          {
+            date: "26 Jul 2026",
+            status: "Available",
+            seatsLeft: 11,
+          },
+          {
+            date: "26 Jul 2026",
+            status: "Available",
+            seatsLeft: 11,
+          },
+          {
+            date: "26 Jul 2026",
+            status: "Available",
+            seatsLeft: 11,
+          },
+        ],
       },
 
       {
-        date: "26 Jul 2026",
-        status: "Available",
-        seatsLeft: 11,
+        month: "August 2026",
+
+        batches: [
+          {
+            date: "09 Aug 2026",
+            status: "Available",
+            seatsLeft: 7,
+          },
+
+          {
+            date: "16 Aug 2026",
+            status: "Available",
+            seatsLeft: 4,
+          },
+        ],
+      },
+
+      {
+        month: "September 2026",
+
+        batches: [
+          {
+            date: "06 Sep 2026",
+            status: "Available",
+            seatsLeft: 10,
+          },
+        ],
       },
     ],
 
@@ -62,7 +141,7 @@ export const destinations = [
 
     bestSeason: "July - Aug",
 
-    price: "₹12,999",
+    price: "₹13,499",
 
     trekingDistance: "36km",
 
