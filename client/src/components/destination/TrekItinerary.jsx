@@ -12,7 +12,7 @@ const TrekItinerary = ({ destination }) => {
     useState(0);
 
   return (
-    <section className="bg-white py-10 sm:py-16">
+    <section id="itinerary" className="bg-white py-10 sm:py-16">
       <div className="max-w-6xl mx-auto px-5 sm:px-6">
         {/* Heading */}
         <div className="max-w-2xl">

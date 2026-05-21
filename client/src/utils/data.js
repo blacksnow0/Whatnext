@@ -34,6 +34,25 @@ export const destinations = [
       tulip_valley_of_flower,
       Valley_Start,
     ],
+    departures: [
+      {
+        date: "12 Jul 2026",
+        status: "Available",
+        seatsLeft: 8,
+      },
+
+      {
+        date: "19 Jul 2026",
+        status: "Filling Fast",
+        seatsLeft: 3,
+      },
+
+      {
+        date: "26 Jul 2026",
+        status: "Available",
+        seatsLeft: 11,
+      },
+    ],
 
     duration: "6 Days",
 
