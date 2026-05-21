@@ -6,7 +6,7 @@ const StickyBookingBar = ({ price }) => {
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             {/* Price Section */}
             <div>
-              <p className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-zinc-400">
+              <p className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-zinc-100">
                 Starting From
               </p>
 
@@ -15,7 +15,7 @@ const StickyBookingBar = ({ price }) => {
                   {price}
                 </h2>
 
-                <span className="text-xs sm:text-sm text-zinc-400 mb-1">
+                <span className="text-xs sm:text-sm text-zinc-100 mb-1">
                   / person
                 </span>
               </div>

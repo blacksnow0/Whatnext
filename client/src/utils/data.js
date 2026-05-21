@@ -21,11 +21,7 @@ export const destinations = [
 
     imageUrl: valleyImage,
 
-    gallery: [
-      valleyImage,
-      kuariImage,
-      satopanth,
-    ],
+    gallery: [valleyImage, kuariImage, satopanth],
 
     duration: "6 Days",
 
@@ -97,8 +93,7 @@ export const destinations = [
       {
         day: "Day 2",
         title: "Trek to Ghangaria",
-        description:
-          "Walk alongside rivers, waterfalls, and mountain forests.",
+        description: "Walk alongside rivers, waterfalls, and mountain forests.",
       },
     ],
 
@@ -115,9 +110,49 @@ export const destinations = [
           "Mid July to Mid August offers the best flower bloom and scenery.",
       },
     ],
+    services: {
+      transport: {
+        route: "Rishikesh to Rishikesh",
+
+        pickup: {
+          location: "Natraj Chowk, Rishikesh",
+          time: "06:00 AM",
+        },
+
+        dropoff: {
+          location: "Natraj Chowk, Rishikesh",
+          time: "07:30 PM",
+        },
+      },
+
+      stay: [
+        "Guesthouse accommodation during the trek",
+        "Shared alpine camps at higher altitudes",
+        "Clean sleeping arrangements with basic facilities",
+      ],
+
+      meals: [
+        "Nutritious vegetarian meals during trekking days",
+        "Breakfast, lunch, evening snacks & dinner included",
+        "Hot meals prepared by experienced mountain staff",
+      ],
+
+      support: [
+        "Certified trek leader",
+        "Experienced local mountain guides",
+        "Porter support included",
+        "Basic first aid assistance",
+      ],
+
+      essentials: [
+        "Forest permits included",
+        "All internal trek logistics managed",
+        "Small group trekking experience",
+        "Safety briefings throughout the expedition",
+      ],
+    },
   },
 ];
-
 
 // export const destinations = [
 //   {
@@ -468,7 +503,7 @@ export const topDestinations = [
   {
     id: "badrinath",
     name: "Badrinath Dham",
-    image:badrinath,
+    image: badrinath,
     images: [badrinath, badrinath2, gallery3],
     description:
       "Satopanth Tal is a high-altitude glacial lake surrounded by towering Himalayan peaks. Known for its spiritual aura and pristine beauty, this trek is both physically challenging and soulfully rewarding.",
@@ -477,7 +512,7 @@ export const topDestinations = [
   {
     id: "kagbhusandi-trek",
     name: "Kagbhusandi",
-    image:gallery4,
+    image: gallery4,
     images: [gallery4, gallery1, gallery2, gallery3],
     description: "A tropical paradise with beautiful beaches and rich culture.",
     price: "12,000",
@@ -485,8 +520,8 @@ export const topDestinations = [
   {
     id: "valley-of-flowers",
     name: "Valley Of Flowers",
-    image:valleyImage,
-    images: [valleyImage,valley2, gallery6],
+    image: valleyImage,
+    images: [valleyImage, valley2, gallery6],
     description:
       "A UNESCO World Heritage site, this trek offers a burst of colorful alpine flowers nestled in the Himalayas.",
     price: "9,500",
@@ -494,7 +529,7 @@ export const topDestinations = [
   {
     id: "satopanth-tal",
     name: "Satopanth Tal Trek",
-    image:satopanth,
+    image: satopanth,
     images: [satopanth, gallery2, gallery3],
     description:
       "Satopanth Tal is a high-altitude glacial lake surrounded by towering Himalayan peaks. Known for its spiritual aura and pristine beauty, this trek is both physically challenging and soulfully rewarding.",
@@ -503,7 +538,6 @@ export const topDestinations = [
 ];
 
 export const uttarakhand = [
-
   {
     id: "valley-of-flowers",
     name: "Valley of Flowers",

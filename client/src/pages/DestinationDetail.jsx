@@ -136,6 +136,7 @@ import InclusionSection from "../components/destination/InclusionSection";
 import FAQSection from "../components/destination/FAQSection";
 import StickyBookingBar from "../components/destination/StickyBookingBar";
 import ExpeditionBrief from "../components/destination/ExpeditionBrief";
+import TrekServices from "../components/destination/TrekServices";
 
 const DestinationDetail = () => {
   const { id } = useParams();
@@ -149,6 +150,8 @@ const DestinationDetail = () => {
       <HeroSection destination={destination} />
 
       <ExpeditionBrief destination={destination}/>
+
+      <TrekServices destination={destination}/>
 
       {/* <FactsSection destination={destination} /> */}
 
