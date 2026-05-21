@@ -440,6 +440,30 @@ export const destinations = [
   },
 ];
 
+
+export const menuCards = {
+  featured: {
+    title: "Valley Of Flowers",
+    subtitle: "Monsoon Expedition",
+    image: valleyImage,
+    href: "/destinations/valley-of-flowers",
+  },
+
+  secondary: [
+    {
+      title: "Satopanth",
+      image: satopanth,
+      href: "/destinations/satopanth",
+    },
+
+    {
+      title: "Badrinath",
+      image: badrinath,
+      href: "/destinations/badrinath",
+    },
+  ],
+};
+
 // export const destinations = [
 //   {
 //     id: "kagbhusandi-trek",

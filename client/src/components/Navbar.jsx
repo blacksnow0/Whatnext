@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+
 import logo from "../assets/images/whatnextlogo (1).png";
+
+import { menuCards } from "../utils/data";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,9 +12,9 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 lg:px-10 pt-3">
-      <nav className="max-w-7xl mx-auto bg-white/92 backdrop-blur-md border border-neutral-200/80 rounded-[22px] shadow-sm">
+      <nav className="max-w-7xl mx-auto bg-white/92 backdrop-blur-md border border-neutral-200/80 rounded-[26px] shadow-sm overflow-hidden">
         {/* TOP BAR */}
-        <div className="flex items-center justify-between px-4 sm:px-6 py-2.5">
+        <div className="flex items-center justify-between px-4 sm:px-6 py-3">
           {/* LOGO */}
           <Link
             to="/"
@@ -28,6 +31,7 @@ export default function Navbar() {
               <p className="text-sm font-semibold tracking-tight text-black">
                 WhatNext Online
               </p>
+
               <p className="text-[11px] tracking-wide text-neutral-500">
                 Himalayan Experiences
               </p>
@@ -59,7 +63,7 @@ export default function Navbar() {
 
             {/* CTA */}
             <a
-              href="https://wa.me/91XXXXXXXXXX"
+              href="https://wa.me/917017502703"
               target="_blank"
               rel="noreferrer"
               className="group flex items-center gap-2"
@@ -74,25 +78,27 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* MOBILE MENU BUTTON */}
+          {/* MOBILE BUTTON */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden h-10 w-10 flex items-center justify-center rounded-full bg-[#f97316]"
+            className="md:hidden h-11 w-11 flex items-center justify-center rounded-full bg-[#f97316]"
             aria-label="Toggle menu"
           >
             <div className="space-y-1.5">
               <span
-                className={`block h-[1px] w-5 bg-white transition ${
+                className={`block h-[1.5px] w-5 bg-white transition duration-300 ${
                   menuOpen ? "rotate-45 translate-y-[7px]" : ""
                 }`}
               />
+
               <span
-                className={`block h-[1px] w-5 bg-white transition ${
+                className={`block h-[1.5px] w-5 bg-white transition duration-300 ${
                   menuOpen ? "opacity-0" : ""
                 }`}
               />
+
               <span
-                className={`block h-[1px] w-5 bg-white transition ${
+                className={`block h-[1.5px] w-5 bg-white transition duration-300 ${
                   menuOpen ? "-rotate-45 -translate-y-[7px]" : ""
                 }`}
               />
@@ -102,46 +108,117 @@ export default function Navbar() {
 
         {/* MOBILE MENU */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ${
-            menuOpen ? "max-h-96 border-t border-neutral-200" : "max-h-0"
+          className={`md:hidden  overflow-hidden transition-all duration-500 ${
+            menuOpen ? "max-h-[900px] border-t border-neutral-200" : "max-h-0"
           }`}
         >
-          <div className="px-5 py-5 flex flex-col gap-5 text-sm font-medium text-neutral-700">
+          <div className="px-5 py-5">
+            {/* NAV LINKS */}
+            <div className="flex items-center gap-4 overflow-x-auto no-scrollbar">
+              {[
+                {
+                  label: "Home",
+                  href: "/",
+                },
+
+                {
+                  label: "Destinations",
+                  href: "/destinations",
+                },
+
+                {
+                  label: "About",
+                  href: "/about",
+                },
+              ].map((item, index, arr) => (
+                <div
+                  key={item.label}
+                  className="flex items-center gap-4 shrink-0"
+                >
+                  <Link
+                    to={item.href}
+                    onClick={closeMenu}
+                    className="relative text-[12px] uppercase tracking-[0.22em] font-semibold text-neutral-800 hover:text-[#f97316] transition-colors duration-300 group"
+                  >
+                    {item.label}
+
+                    <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-[#f97316] transition-all duration-300 group-hover:w-full" />
+                  </Link>
+
+                  {index !== arr.length - 1 && (
+                    <span className="text-neutral-300 text-sm">/</span>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* FEATURED CARD */}
             <Link
-              to="/"
+              to={menuCards.featured.href}
               onClick={closeMenu}
-              className="hover:text-black transition"
+              className="block mt-8 group"
             >
-              Home
+              <div className="relative overflow-hidden rounded-[24px] aspect-[1.5/1]">
+                <img
+                  src={menuCards.featured.image}
+                  alt={menuCards.featured.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+
+                <div className="absolute bottom-0 left-0 p-5">
+                  <p className="text-[10px] uppercase tracking-[0.24em] text-white/70">
+                    {menuCards.featured.subtitle}
+                  </p>
+
+                  <h3 className="mt-2 text-2xl font-semibold text-white leading-tight">
+                    {menuCards.featured.title}
+                  </h3>
+                </div>
+              </div>
             </Link>
 
-            <Link
-              to="/destinations"
-              onClick={closeMenu}
-              className="hover:text-black transition"
-            >
-              Destinations
-            </Link>
+            {/* SECONDARY CARDS */}
+            <div className="grid grid-cols-2 gap-3 mt-3">
+              {menuCards.secondary.map((card) => (
+                <Link
+                  key={card.title}
+                  to={card.href}
+                  onClick={closeMenu}
+                  className="group"
+                >
+                  <div className="relative overflow-hidden rounded-[20px] aspect-square">
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
 
-            <Link
-              to="/about"
-              onClick={closeMenu}
-              className="hover:text-black transition"
-            >
-              About
-            </Link>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
 
+                    <div className="absolute bottom-0 left-0 p-3">
+                      <h3 className="text-sm font-semibold text-white leading-tight">
+                        {card.title}
+                      </h3>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            {/* CTA */}
             <a
-              href="https://wa.me/91XXXXXXXXXX"
+              href="https://wa.me/917017502703"
               target="_blank"
               rel="noreferrer"
-              className="mt-2 flex items-center gap-3"
+              className="mt-6 flex items-center gap-3"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f97316] text-white">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#f97316] text-white text-lg">
                 →
               </span>
 
-              <span className="text-[11px] font-semibold tracking-[0.18em] text-black">
+              <span className="text-[11px] font-semibold tracking-[0.22em] text-black">
                 BOOK NOW
               </span>
             </a>
