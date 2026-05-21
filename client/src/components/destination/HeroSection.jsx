@@ -1,27 +1,22 @@
 const HeroSection = ({ destination }) => {
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section className="relative h-[70vh] overflow-hidden">
+      {/* Background */}
       <img
         src={destination.imageUrl}
         alt={destination.name}
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      <div className="absolute inset-0 bg-black/50" />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/45" />
 
+      {/* Content */}
       <div className="relative z-10 h-full flex items-end">
-        <div className="max-w-6xl mx-auto px-6 pb-24 w-full">
-          <p className="uppercase tracking-[6px] text-sm text-[#D6A76A]">
-            {destination.location}
-          </p>
-
-          <h1 className="text-6xl md:text-8xl font-serif text-white max-w-4xl leading-[0.95] mt-6">
+        <div className="max-w-6xl mx-auto w-full px-5 sm:px-6 pb-16 sm:pb-20">
+          <h1 className="mt-4 hidden sm:block md:text-7xl font-serif text-white leading-[0.95] max-w-3xl">
             {destination.name}
           </h1>
-
-          <p className="mt-8 text-zinc-300 max-w-2xl text-lg leading-relaxed">
-            {destination.tagline}
-          </p>
         </div>
       </div>
     </section>

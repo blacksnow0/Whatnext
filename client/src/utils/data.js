@@ -17,10 +17,7 @@ export const destinations = [
 
     name: "Valley of Flowers Trek",
 
-    location: "Uttarakhand, India",
-
-    tagline:
-      "Walk through blooming Himalayan meadows beneath towering snow peaks.",
+    location: "Chamoli, Uttarakhand",
 
     imageUrl: valleyImage,
 
@@ -34,33 +31,59 @@ export const destinations = [
 
     difficulty: "Easy to Moderate",
 
-    altitude: "12,000 ft",
+    altitude: "14,107 ft",
 
-    bestSeason: "July - August",
+    bestSeason: "July - Aug",
 
     price: "₹12,999",
 
-    overview:
-      "The Valley of Flowers Trek is one of the most breathtaking Himalayan monsoon experiences featuring alpine flowers, glaciers, waterfalls, and peaceful mountain landscapes.",
+    trekingDistance: "36km",
 
-    highlights: [
-      "UNESCO World Heritage Site",
-      "Rare Himalayan flowers",
-      "Beginner friendly route",
-      "Scenic mountain villages",
-    ],
+    region: "Chamoli, UK",
 
-    inclusions: [
-      "Accommodation",
-      "Meals during trek",
-      "Certified Trek Leaders",
-      "Permits",
-    ],
+    explorerNote:
+      "A UNESCO World Heritage Site hidden in the Garhwal Himalayas, famous for its alpine meadows, waterfalls, glaciers, and over 600 species of Himalayan flowers.",
 
-    exclusions: [
-      "Transport to base camp",
-      "Personal expenses",
-      "Insurance",
+    quickFacts: [
+      {
+        title: "Why It's Special",
+        points: [
+          "UNESCO World Heritage Site",
+          "Over 600 species of alpine flowers",
+          "Located inside Nanda Devi Biosphere Reserve",
+          "One of India's most scenic monsoon treks",
+        ],
+      },
+
+      {
+        title: "Trail Experience",
+        points: [
+          "Beginner friendly Himalayan trek",
+          "Dense forests, rivers & waterfalls",
+          "Views of snow-covered Himalayan peaks",
+          "Optional Hemkund Sahib visit",
+        ],
+      },
+
+      {
+        title: "What's Included",
+        points: [
+          "Accommodation during trek",
+          "Meals during trekking days",
+          "Certified trek leaders",
+          "Forest permits & entry fees",
+        ],
+      },
+
+      {
+        title: "Not Included",
+        points: [
+          "Transport to base camp",
+          "Personal expenses",
+          "Travel insurance",
+          "Offloading charges",
+        ],
+      },
     ],
 
     itinerary: [
@@ -83,13 +106,13 @@ export const destinations = [
       {
         question: "Is this trek beginner friendly?",
         answer:
-          "Yes, beginners with decent fitness can comfortably complete this trek.",
+          "Yes. Anyone with decent fitness and preparation can complete this trek comfortably.",
       },
 
       {
-        question: "What is the best season?",
+        question: "When is the valley in full bloom?",
         answer:
-          "July and August are the ideal months to witness the flowers in full bloom.",
+          "Mid July to Mid August offers the best flower bloom and scenery.",
       },
     ],
   },
