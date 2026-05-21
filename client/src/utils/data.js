@@ -12,7 +12,7 @@ import valleyImage from "../assets/images/valleyImage.jpeg";
 import kuariImage from "../assets/images/trip2.jpeg";
 
 import tulip_valley_of_flower from "../assets/images/valley-of-flower/tulip_valley_of_flowers.jpeg";
-import valley_bridge from "../assets/images/valley-of-flower/valley_bridge.jpg";
+import valley_bridge from "../assets/images/valley-of-flower/Valley_bridge.jpg";
 import valley_of_flowers from "../assets/images/valley-of-flower/valley_of_flowers.jpg";
 import Valley_Start from "../assets/images/valley-of-flower/Valley_Start.jpeg";
 import Valley from "../assets/images/valley-of-flower/Valley.jpg";
