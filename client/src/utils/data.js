@@ -17,6 +17,8 @@ import valley_of_flowers from "../assets/images/valley-of-flower/valley_of_flowe
 import Valley_Start from "../assets/images/valley-of-flower/Valley_Start.jpeg";
 import Valley from "../assets/images/valley-of-flower/Valley.jpg";
 
+import valleyVideo from "../assets/videos/valley_video.mp4"
+
 export const destinations = [
   {
     id: "valley-of-flowers",
@@ -26,6 +28,8 @@ export const destinations = [
     location: "Chamoli, Uttarakhand",
 
     imageUrl: valley_bridge,
+
+    videoUrl: valleyVideo,
 
     gallery: [
       valley_bridge,
