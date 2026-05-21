@@ -44,6 +44,26 @@ Hide scrollbar utility .scrollbar-hide::-webkit-scrollbar {
   scrollbar-width: none; /* Firefox */
 }
 
+
+@keyframes slowShake {
+  0%,
+  100% {
+    rotate: 0deg;
+  }
+
+  25% {
+    rotate: 8deg;
+  }
+
+  75% {
+    rotate: -8deg;
+  }
+}
+
+.call-shake {
+  animation: slowShake 2.2s ease-in-out infinite;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

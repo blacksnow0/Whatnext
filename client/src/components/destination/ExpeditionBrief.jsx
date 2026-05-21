@@ -42,7 +42,7 @@ const ExpeditionBrief = ({ destination }) => {
   ];
 
   return (
-    <section className="relative z-20 -mt-10 sm:-mt-16">
+    <section id="overview" className="relative z-20 -mt-10 sm:-mt-16">
       {/* Main Wrapper */}
       <div className="bg-[#faf7f6] rounded-t-[32px] sm:rounded-t-[48px] border-t border-orange-100">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 py-6 sm:py-8">

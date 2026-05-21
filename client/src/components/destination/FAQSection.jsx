@@ -9,7 +9,7 @@ const FAQSection = ({ destination }) => {
     useState(0);
 
   return (
-    <section className=" py-10 sm:py-16">
+    <section id="faq" className=" py-10 sm:py-16">
       <div className="max-w-5xl mx-auto px-5 sm:px-6">
         {/* Heading */}
         <div className="max-w-2xl">

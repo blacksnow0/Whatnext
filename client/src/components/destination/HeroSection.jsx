@@ -20,7 +20,7 @@ const HeroSection = ({ destination }) => {
   }, [destination.gallery.length]);
 
   return (
-    <section className="relative h-[60vh] sm:h-[65vh] overflow-hidden">
+    <section id="hero" className="relative h-[60vh] sm:h-[65vh] overflow-hidden">
       {/* Background Images */}
       {destination.gallery.map(
         (image, index) => (

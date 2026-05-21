@@ -12,6 +12,8 @@ import TrekItinerary from "../components/destination/TrekItinerary";
 import DestinationGallery from "../components/destination/DestinationGallery";
 
 import DepartureModal from "../modal/DepartureModal";
+import DestinationRail from "../components/destination/DestinationRail";
+import CallButton from "../components/destination/CallButton";
 
 const DestinationDetail = () => {
   const { id } = useParams();
@@ -22,6 +24,10 @@ const DestinationDetail = () => {
   return (
     <main>
       <HeroSection destination={destination} />
+
+      <DestinationRail/>
+
+      <CallButton/>
 
       <ExpeditionBrief destination={destination} />
 
