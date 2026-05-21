@@ -14,6 +14,7 @@ import DestinationGallery from "../components/destination/DestinationGallery";
 import DepartureModal from "../modal/DepartureModal";
 import DestinationRail from "../components/destination/DestinationRail";
 import CallButton from "../components/destination/CallButton";
+import TestimonialsSection from "../components/destination/TestimonialsSection";
 
 const DestinationDetail = () => {
   const { id } = useParams();
@@ -36,6 +37,8 @@ const DestinationDetail = () => {
       <TrekItinerary destination={destination} />
 
       <DestinationGallery destination={destination} />
+
+      <TestimonialsSection destination={destination}/>
 
       <FAQSection destination={destination} />
 

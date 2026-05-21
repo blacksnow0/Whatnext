@@ -17,7 +17,12 @@ import valley_of_flowers from "../assets/images/valley-of-flower/valley_of_flowe
 import Valley_Start from "../assets/images/valley-of-flower/Valley_Start.jpeg";
 import Valley from "../assets/images/valley-of-flower/Valley.jpg";
 
-import valleyVideo from "../assets/videos/valley_video.mp4"
+import valleyVideo from "../assets/videos/valley_video.mp4";
+
+
+import aditi from "../assets/images/users/aditi.jpeg"
+import rahul from "../assets/images/users/rahul.jpeg"
+import sneha from "../assets/images/users/sneha.jpeg"
 
 export const destinations = [
   {
@@ -30,6 +35,53 @@ export const destinations = [
     imageUrl: valley_bridge,
 
     videoUrl: valleyVideo,
+
+    testimonials: [
+      {
+        name: "Aditi Sharma",
+
+        location: "Mumbai",
+
+        trek: "Valley Of Flowers",
+
+        image: aditi,
+
+        quote:
+          "The entire experience felt deeply personal. Every detail was thoughtfully managed and the landscapes were unreal.",
+
+        highlight: "First Himalayan Trek",
+      },
+
+      {
+        name: "Rahul Verma",
+
+        location: "Delhi",
+
+        trek: "Valley Of Flowers",
+
+        image: rahul,
+
+        quote:
+          "The team handled everything smoothly and made the trek feel safe even during difficult weather conditions.",
+
+        highlight: "Solo Traveller",
+      },
+
+      {
+        name: "Sneha Kapoor",
+
+        location: "Bangalore",
+
+        trek: "Valley Of Flowers",
+
+        image: sneha,
+
+        quote:
+          "One of the most peaceful and beautiful journeys I’ve ever experienced in the Himalayas.",
+
+        highlight: "Monsoon Batch",
+      },
+    ],
 
     gallery: [
       valley_bridge,
@@ -443,7 +495,6 @@ export const destinations = [
     ],
   },
 ];
-
 
 export const menuCards = {
   featured: {
