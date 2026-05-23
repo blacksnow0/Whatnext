@@ -24,7 +24,13 @@ import aditi from "../assets/images/users/aditi.jpeg"
 import rahul from "../assets/images/users/rahul.jpeg"
 import sneha from "../assets/images/users/sneha.jpeg"
 
+
+import valleyOfFlowers from "./destinations/valleyOfFlowers";
+
+
+
 export const destinations = [
+  valleyOfFlowers,
   {
     id: "valley-of-flowers",
 

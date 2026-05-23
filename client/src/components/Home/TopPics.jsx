@@ -2,7 +2,7 @@
 
 import { useMemo, useRef, useState } from "react";
 import DestinationCard from "../HeroDestinationCard";
-import { topDestinations } from "../../utils/data";
+import { topDestinations } from "../../data/data";
 
 function TopPicks() {
   const [featuredId, setFeaturedId] = useState(topDestinations[0]?.id);

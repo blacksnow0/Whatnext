@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import logo from "../assets/images/whatnextlogo (1).png";
 
-import { menuCards } from "../utils/data";
+import { menuCards } from "../data/data";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);

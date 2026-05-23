@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { destinations } from "../utils/data";
+import { destinations } from "../data/data";
 import { Helmet } from "react-helmet";
 
 export default function Destinations() {

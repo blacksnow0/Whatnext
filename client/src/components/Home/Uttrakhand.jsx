@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 import { useEffect } from "react";
-import { uttarakhand } from "../../utils/data";
+import { uttarakhand } from "../../data/data";
 
 function Uttrakhand() {
   useEffect(() => {
