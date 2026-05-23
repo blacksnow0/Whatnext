@@ -1,16 +1,7 @@
-import valleyImage from "../../assets/images/valleyImage.webp";
-
-import tulip_valley_of_flower from "../../assets/images/valley-of-flower/tulip_valley_of_flowers.webp";
-import valley_bridge from "../../assets/images/valley-of-flower/Valley_bridge.webp";
-import valley_of_flowers from "../../assets/images/valley-of-flower/valley_of_flowers.webp";
-import Valley_Start from "../../assets/images/valley-of-flower/Valley_Start.webp";
-import Valley from "../../assets/images/valley-of-flower/Valley.webp";
-
+import heroImage from "../../assets/images/valley-of-flower/tulip_valley_of_flowers.webp";
 import valleyVideo from "../../assets/videos/valley_video.mp4";
-
-import aditi from "../../assets/images/users/aditi.webp";
-import rahul from "../../assets/images/users/rahul.webp";
-import sneha from "../../assets/images/users/sneha.webp";
+import { valleyGallery } from "../galleries/valleyGallery";
+import { valleyTestimonials } from "../testimonials/valleyTestimonials";
 
 const valleyOfFlowers = {
   slug: "valley-of-flowers",
@@ -19,12 +10,14 @@ const valleyOfFlowers = {
 
   location: "Chamoli, Uttarakhand",
 
+  gallery:valleyGallery,
+
   cardDescription:
     "Experience alpine meadows, waterfalls, glaciers, and one of the most beautiful Himalayan monsoon treks.",
 
   country: "India",
 
-  imageUrl: tulip_valley_of_flower,
+  imageUrl: heroImage,
 
   videoUrl: valleyVideo,
   seo: {
@@ -39,60 +32,8 @@ const valleyOfFlowers = {
     canonical: "https://www.whatnextonline.in/destinations/valley-of-flowers",
   },
 
-  testimonials: [
-    {
-      name: "Aditi Sharma",
+  testimonials: valleyTestimonials,
 
-      location: "Mumbai",
-
-      trek: "Valley Of Flowers",
-
-      image: aditi,
-
-      quote:
-        "The entire experience felt deeply personal. Every detail was thoughtfully managed and the landscapes were unreal.",
-
-      highlight: "First Himalayan Trek",
-    },
-
-    {
-      name: "Rahul Verma",
-
-      location: "Delhi",
-
-      trek: "Valley Of Flowers",
-
-      image: rahul,
-
-      quote:
-        "The team handled everything smoothly and made the trek feel safe even during difficult weather conditions.",
-
-      highlight: "Solo Traveller",
-    },
-
-    {
-      name: "Sneha Kapoor",
-
-      location: "Bangalore",
-
-      trek: "Valley Of Flowers",
-
-      image: sneha,
-
-      quote:
-        "One of the most peaceful and beautiful journeys I’ve ever experienced in the Himalayas.",
-
-      highlight: "Monsoon Batch",
-    },
-  ],
-
-  gallery: [
-    valley_bridge,
-    valleyImage,
-    valley_of_flowers,
-    tulip_valley_of_flower,
-    Valley_Start,
-  ],
   departures: [
     {
       month: "June 2026",

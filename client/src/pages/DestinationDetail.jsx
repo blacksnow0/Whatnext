@@ -13,15 +13,26 @@ import {
 } from "../seo/structuredData.js";
 
 import HeroSection from "../components/destination/HeroSection";
-import FAQSection from "../components/destination/FAQSection";
+
 import StickyBookingBar from "../components/destination/StickyBookingBar";
 import ExpeditionBrief from "../components/destination/ExpeditionBrief";
 import TrekServices from "../components/destination/TrekServices";
 import TrekItinerary from "../components/destination/TrekItinerary";
-import DestinationGallery from "../components/destination/DestinationGallery";
+
 import DestinationRail from "../components/destination/DestinationRail";
 import CallButton from "../components/destination/CallButton";
-import TestimonialsSection from "../components/destination/TestimonialsSection";
+
+import { lazy, Suspense } from "react";
+
+const DestinationGallery = lazy(
+  () => import("../components/destination/DestinationGallery"),
+);
+
+const TestimonialsSection = lazy(
+  () => import("../components/destination/TestimonialsSection"),
+);
+
+const FAQSection = lazy(() => import("../components/destination/FAQSection"));
 
 import DepartureModal from "../modal/DepartureModal";
 
@@ -73,11 +84,17 @@ const DestinationDetail = () => {
 
         <TrekItinerary destination={destination} />
 
-        <DestinationGallery destination={destination} />
+        <Suspense fallback={null}>
+          <DestinationGallery destination={destination} />
+        </Suspense>
 
-        <TestimonialsSection destination={destination} />
+        <Suspense fallback={null}>
+          <TestimonialsSection destination={destination} />
+        </Suspense>
 
-        <FAQSection destination={destination} />
+        <Suspense fallback={null}>
+          <FAQSection destination={destination} />
+        </Suspense>
 
         <StickyBookingBar
           price={destination.price}
