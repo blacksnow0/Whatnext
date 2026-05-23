@@ -8,21 +8,21 @@ import badrinath2 from "../assets/images/badrinath2.png";
 import valley2 from "../assets/images/valley2.png";
 
 import satopanth from "../assets/images/satopanth.jpeg";
-import valleyImage from "../assets/images/valleyImage.jpeg";
+import valleyImage from "../assets/images/valleyImage.webp";
 import kuariImage from "../assets/images/trip2.jpeg";
 
-import tulip_valley_of_flower from "../assets/images/valley-of-flower/tulip_valley_of_flowers.jpeg";
-import valley_bridge from "../assets/images/valley-of-flower/Valley_bridge.jpg";
-import valley_of_flowers from "../assets/images/valley-of-flower/valley_of_flowers.jpg";
-import Valley_Start from "../assets/images/valley-of-flower/Valley_Start.jpeg";
-import Valley from "../assets/images/valley-of-flower/Valley.jpg";
+import tulip_valley_of_flower from "../assets/images/valley-of-flower/tulip_valley_of_flowers.webp";
+import valley_bridge from "../assets/images/valley-of-flower/Valley_bridge.webp";
+import valley_of_flowers from "../assets/images/valley-of-flower/valley_of_flowers.webp";
+import Valley_Start from "../assets/images/valley-of-flower/Valley_Start.webp";
+import Valley from "../assets/images/valley-of-flower/Valley.webp";
 
 import valleyVideo from "../assets/videos/valley_video.mp4";
 
 
-import aditi from "../assets/images/users/aditi.jpeg"
-import rahul from "../assets/images/users/rahul.jpeg"
-import sneha from "../assets/images/users/sneha.jpeg"
+import aditi from "../assets/images/users/aditi.webp"
+import rahul from "../assets/images/users/rahul.webp"
+import sneha from "../assets/images/users/sneha.webp"
 
 
 import valleyOfFlowers from "./destinations/valleyOfFlowers";

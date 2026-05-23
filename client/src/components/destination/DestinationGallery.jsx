@@ -56,6 +56,7 @@ const DestinationGallery = ({ destination }) => {
                     activeImage
                   ]
                 }
+                loading="lazy"
                 alt=""
                 className="w-full h-full object-cover"
               />
@@ -122,6 +123,7 @@ const DestinationGallery = ({ destination }) => {
                   >
                     <img
                       src={image}
+                      loading="lazy"
                       alt=""
                       className="w-full h-full object-cover"
                     />
@@ -137,6 +139,7 @@ const DestinationGallery = ({ destination }) => {
             <div className="relative h-[760px] rounded-[40px] overflow-hidden group">
               <img
                 src={destination.gallery[0]}
+                loading="lazy"
                 alt=""
                 className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
               />
@@ -210,6 +213,7 @@ const DestinationGallery = ({ destination }) => {
                   >
                     <img
                       src={image}
+                      loading="lazy"
                       alt=""
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
@@ -260,6 +264,7 @@ const DestinationGallery = ({ destination }) => {
                 activeImage
               ]
             }
+            loading="lazy"
             alt=""
             className="max-w-[92%] max-h-[85vh] object-contain rounded-2xl"
           />

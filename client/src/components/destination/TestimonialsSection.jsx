@@ -106,6 +106,7 @@ const TestimonialsSection = ({
                 alt={
                   testimonial.name
                 }
+                loading="lazy"
                 className="w-full h-full object-cover"
               />
             </div>
