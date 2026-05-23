@@ -8,21 +8,35 @@ const HeroSection = ({
       id="hero"
       className="relative h-[72vh] sm:h-[78vh] lg:h-[92vh] overflow-hidden"
     >
-      {/* VIDEO BACKGROUND */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        poster={destination.imageUrl}
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source
-          src={destination.videoUrl}
-          type="video/mp4"
+      {/* DESKTOP VIDEO */}
+      <div className="hidden md:block absolute inset-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={destination.imageUrl}
+          className="w-full h-full object-cover"
+        >
+          <source
+            src={destination.videoUrl}
+            type="video/mp4"
+          />
+        </video>
+      </div>
+
+      {/* MOBILE IMAGE */}
+      <div className="block md:hidden absolute inset-0">
+        <img
+          src={destination.imageUrl}
+          alt={`${destination.name} hero`}
+          fetchPriority="high"
+          width="1200"
+          height="1600"
+          className="w-full h-full object-cover"
         />
-      </video>
+      </div>
 
       {/* OVERLAY */}
       <div className="absolute inset-0 bg-black/45" />
@@ -43,6 +57,7 @@ const HeroSection = ({
           {/* CTA */}
           <a
             href="#itinerary"
+            aria-label="Explore trek itinerary"
             className="inline-flex items-center gap-3 mt-8 text-white border border-white/15 hover:border-white/30 bg-white/10 backdrop-blur-md px-5 py-3 rounded-full transition-all duration-300"
           >
             <Images size={18} />

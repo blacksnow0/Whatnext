@@ -2,5 +2,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap:
-https://www.whatnextonline.in/sitemap.xml 
+Sitemap: https://www.whatnextonline.in/sitemap.xml 

@@ -24,7 +24,7 @@ const valleyOfFlowers = {
 
   country: "India",
 
-  imageUrl: valley_bridge,
+  imageUrl: tulip_valley_of_flower,
 
   videoUrl: valleyVideo,
   seo: {
