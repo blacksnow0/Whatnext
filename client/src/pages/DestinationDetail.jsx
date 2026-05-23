@@ -5,6 +5,13 @@ import { destinations } from "../data/destinations.js";
 
 import Meta from "../seo/Meta.jsx";
 
+import {
+  organizationSchema,
+  generateBreadcrumbSchema,
+  generateFAQSchema,
+  generateTourSchema,
+} from "../seo/structuredData.js";
+
 import HeroSection from "../components/destination/HeroSection";
 import FAQSection from "../components/destination/FAQSection";
 import StickyBookingBar from "../components/destination/StickyBookingBar";
@@ -34,6 +41,16 @@ const DestinationDetail = () => {
     );
   }
 
+  const schemas = [
+    organizationSchema,
+
+    generateFAQSchema(destination.faq),
+
+    generateBreadcrumbSchema(destination),
+
+    generateTourSchema(destination),
+  ];
+
   return (
     <>
       <Meta
@@ -41,6 +58,7 @@ const DestinationDetail = () => {
         description={destination.seo.description}
         image={destination.seo.image}
         canonical={destination.seo.canonical}
+        schemas={schemas}
       />
       <main>
         <HeroSection destination={destination} />

@@ -19,11 +19,17 @@ const valleyOfFlowers = {
 
   location: "Chamoli, Uttarakhand",
 
+  cardDescription:
+    "Experience alpine meadows, waterfalls, glaciers, and one of the most beautiful Himalayan monsoon treks.",
+
+  country: "India",
+
   imageUrl: valley_bridge,
 
   videoUrl: valleyVideo,
   seo: {
-    title: "Valley of Flowers Trek 2026 | WhatNext Online",
+    title:
+      "Valley of Flowers Trek 2026 - Itinerary, Cost, and Best Time To Vist",
 
     description:
       "Explore the Valley of Flowers trek in Uttarakhand with guided Himalayan trekking experiences.",
