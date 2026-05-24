@@ -80,7 +80,7 @@ const DestinationDetail = () => {
 
         <ExpeditionBrief destination={destination} />
 
-        <TrekServices destination={destination} />
+        <TrekServices destination={destination}/>
 
         <TrekItinerary destination={destination} />
 

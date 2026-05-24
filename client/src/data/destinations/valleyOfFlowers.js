@@ -27,7 +27,7 @@ const valleyOfFlowers = {
     description:
       "Explore the Valley of Flowers trek in Uttarakhand with guided Himalayan trekking experiences.",
 
-    image: "https://www.whatnextonline.in/og/valley-of-flowers.jpg",
+    image: "https://www.whatnextonline.in/og/valley-of-flowers.webp",
 
     canonical: "https://www.whatnextonline.in/destinations/valley-of-flowers",
   },

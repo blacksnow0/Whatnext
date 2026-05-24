@@ -5,79 +5,83 @@ import {
   ChevronRight,
   Expand,
   X,
+  Play,
 } from "lucide-react";
 
 const DestinationGallery = ({ destination }) => {
-  const [activeImage, setActiveImage] =
+  const [activeIndex, setActiveIndex] =
     useState(0);
 
   const [lightbox, setLightbox] =
     useState(false);
 
-  const nextImage = () => {
-    setActiveImage((prev) =>
-      prev ===
-      destination.gallery.length - 1
+  const gallery = destination.gallery;
+
+  const activeItem =
+    gallery[activeIndex];
+
+  const nextItem = () => {
+    setActiveIndex((prev) =>
+      prev === gallery.length - 1
         ? 0
         : prev + 1
     );
   };
 
-  const prevImage = () => {
-    setActiveImage((prev) =>
+  const prevItem = () => {
+    setActiveIndex((prev) =>
       prev === 0
-        ? destination.gallery.length - 1
+        ? gallery.length - 1
         : prev - 1
     );
   };
 
   return (
     <>
-      <section id="gallery" className="bg-white py-10 sm:py-16 overflow-hidden">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6">
+      <section
+        id="gallery"
+        className="bg-white py-14 sm:py-24 overflow-hidden"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Heading */}
           <div className="max-w-2xl">
-            <p className="text-[10px] uppercase tracking-[0.25em] text-orange-500 font-semibold">
+            <p className="text-[11px] uppercase tracking-[0.28em] text-orange-500 font-semibold">
               Expedition Gallery
             </p>
 
-            <h2 className="mt-2 text-2xl sm:text-5xl font-serif text-zinc-900 leading-tight">
+            <h2 className="mt-3 text-3xl sm:text-5xl lg:text-6xl font-serif text-zinc-900 leading-tight">
               Moments From The Journey
             </h2>
           </div>
 
           {/* ---------------- MOBILE ---------------- */}
-          <div className="sm:hidden mt-8">
-            {/* Main Image */}
-            <div className="relative h-[430px] rounded-[28px] overflow-hidden">
-              <img
-                src={
-                  destination.gallery[
-                    activeImage
-                  ]
-                }
-                loading="lazy"
-                alt=""
-                className="w-full h-full object-cover"
-              />
+          <div className="lg:hidden mt-8">
+            <div className="relative rounded-[28px] overflow-hidden bg-zinc-100 aspect-[4/5]">
+              {activeItem.type ===
+              "image" ? (
+                <img
+                  src={activeItem.src}
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <video
+                  src={activeItem.src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
+              )}
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-
-              <div className="absolute bottom-0 left-0 p-6">
-                <p className="text-white/70 uppercase tracking-[0.2em] text-[10px]">
-                  Valley Of Flowers
-                </p>
-
-                <h3 className="mt-2 text-2xl font-serif text-white leading-tight max-w-[240px]">
-                  Himalayan Expedition
-                </h3>
-              </div>
 
               <button
                 onClick={() =>
                   setLightbox(true)
                 }
-                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/30 backdrop-blur-md flex items-center justify-center"
+                className="absolute top-4 right-4 w-11 h-11 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center"
               >
                 <Expand
                   size={18}
@@ -86,7 +90,7 @@ const DestinationGallery = ({ destination }) => {
               </button>
 
               <button
-                onClick={prevImage}
+                onClick={prevItem}
                 className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/30 backdrop-blur-md flex items-center justify-center"
               >
                 <ChevronLeft
@@ -96,7 +100,7 @@ const DestinationGallery = ({ destination }) => {
               </button>
 
               <button
-                onClick={nextImage}
+                onClick={nextItem}
                 className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/30 backdrop-blur-md flex items-center justify-center"
               >
                 <ChevronRight
@@ -104,29 +108,60 @@ const DestinationGallery = ({ destination }) => {
                   className="text-white"
                 />
               </button>
+
+              {activeItem.type ===
+                "video" && (
+                <div className="absolute bottom-5 left-5 flex items-center gap-2 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full">
+                  <Play
+                    size={14}
+                    className="text-white fill-white"
+                  />
+
+                  <span className="text-sm text-white">
+                    Expedition Reel
+                  </span>
+                </div>
+              )}
             </div>
 
             {/* Thumbnails */}
-            <div className="flex gap-3 overflow-x-auto mt-4 pb-1 no-scrollbar">
-              {destination.gallery.map(
-                (image, index) => (
+            <div className="flex gap-3 overflow-x-auto mt-4 pb-2 no-scrollbar">
+              {gallery.map(
+                (item, index) => (
                   <button
                     key={index}
                     onClick={() =>
-                      setActiveImage(index)
+                      setActiveIndex(index)
                     }
-                    className={`relative min-w-[88px] h-[88px] rounded-2xl overflow-hidden border-2 transition-all ${
-                      activeImage === index
+                    className={`relative shrink-0 w-[82px] h-[82px] rounded-2xl overflow-hidden border-2 ${
+                      activeIndex === index
                         ? "border-orange-500"
                         : "border-transparent"
                     }`}
                   >
-                    <img
-                      src={image}
-                      loading="lazy"
-                      alt=""
-                      className="w-full h-full object-cover"
-                    />
+                    {item.type ===
+                    "image" ? (
+                      <img
+                        src={item.src}
+                        alt=""
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <>
+                        <video
+                          src={item.src}
+                          muted
+                          className="w-full h-full object-cover"
+                        />
+
+                        <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                          <Play
+                            size={18}
+                            className="text-white fill-white"
+                          />
+                        </div>
+                      </>
+                    )}
                   </button>
                 )
               )}
@@ -134,123 +169,89 @@ const DestinationGallery = ({ destination }) => {
           </div>
 
           {/* ---------------- DESKTOP ---------------- */}
-          <div className="hidden sm:block mt-14">
-            {/* Hero Image */}
-            <div className="relative h-[760px] rounded-[40px] overflow-hidden group">
-              <img
-                src={destination.gallery[0]}
-                loading="lazy"
-                alt=""
-                className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
-              />
+          <div className="hidden lg:grid grid-cols-12 gap-5 mt-16 auto-rows-[220px]">
+            {gallery.map(
+              (item, index) => {
+                const layouts = [
+                  "col-span-7 row-span-2",
+                  "col-span-5 row-span-1",
+                  "col-span-5 row-span-1",
+                  "col-span-4 row-span-1",
+                  "col-span-4 row-span-1",
+                  "col-span-4 row-span-1",
+                ];
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-
-              {/* Content */}
-              <div className="absolute bottom-0 left-0 p-12 max-w-2xl">
-                <p className="text-white/70 uppercase tracking-[0.28em] text-xs">
-                  Valley Of Flowers
-                </p>
-
-                <h3 className="mt-5 text-6xl font-serif text-white leading-[0.95]">
-                  Blooming Himalayan Meadows
-                </h3>
-
-                <p className="mt-6 text-lg text-white/80 leading-relaxed">
-                  Endless alpine flowers, glacier-fed streams,
-                  mountain trails, and monsoon valleys hidden deep
-                  in the Himalayas.
-                </p>
-              </div>
-            </div>
-
-            {/* Editorial Caption Row */}
-            <div className="flex items-center justify-between gap-10 mt-8">
-              <div className="max-w-2xl">
-                <p className="text-sm uppercase tracking-[0.22em] text-orange-500 font-semibold">
-                  Expedition Notes
-                </p>
-
-                <p className="mt-3 text-zinc-600 leading-relaxed">
-                  The Valley of Flowers transforms during the
-                  monsoon season into one of the most vibrant alpine
-                  landscapes in the Himalayas.
-                </p>
-              </div>
-
-              <div className="flex items-center gap-10 shrink-0">
-                <div>
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-zinc-400">
-                    Best Season
-                  </p>
-
-                  <h4 className="mt-2 text-lg font-semibold text-zinc-900">
-                    Jul — Aug
-                  </h4>
-                </div>
-
-                <div>
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-zinc-400">
-                    Difficulty
-                  </p>
-
-                  <h4 className="mt-2 text-lg font-semibold text-zinc-900">
-                    Easy — Moderate
-                  </h4>
-                </div>
-              </div>
-            </div>
-
-            {/* Horizontal Image Strip */}
-            <div className="grid grid-cols-3 gap-4 mt-12">
-              {destination.gallery
-                .slice(1, 4)
-                .map((image, index) => (
+                return (
                   <div
                     key={index}
-                    className="relative h-[280px] overflow-hidden rounded-[28px] group"
+                    onClick={() => {
+                      setActiveIndex(index);
+
+                      setLightbox(true);
+                    }}
+                    className={`relative overflow-hidden rounded-[32px] cursor-pointer group ${
+                      layouts[
+                        index %
+                          layouts.length
+                      ]
+                    }`}
                   >
-                    <img
-                      src={image}
-                      loading="lazy"
-                      alt=""
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
+                    {item.type ===
+                    "image" ? (
+                      <img
+                        src={item.src}
+                        alt=""
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    ) : (
+                      <video
+                        src={item.src}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    )}
 
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
-                    <div className="absolute bottom-0 left-0 p-6">
-                      <p className="text-white/70 uppercase tracking-[0.2em] text-[10px]">
-                        Himalayas
-                      </p>
+                    <button className="absolute top-5 right-5 w-11 h-11 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                      <Expand
+                        size={18}
+                        className="text-white"
+                      />
+                    </button>
 
-                      <h3 className="mt-2 text-2xl font-serif text-white leading-tight">
-                        {index === 0 &&
-                          "Mountain Trails"}
+                    {item.type ===
+                      "video" && (
+                      <div className="absolute bottom-5 left-5 flex items-center gap-2 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full">
+                        <Play
+                          size={14}
+                          className="text-white fill-white"
+                        />
 
-                        {index === 1 &&
-                          "Alpine Landscapes"}
-
-                        {index === 2 &&
-                          "Monsoon Valleys"}
-                      </h3>
-                    </div>
+                        <span className="text-sm text-white">
+                          Video
+                        </span>
+                      </div>
+                    )}
                   </div>
-                ))}
-            </div>
+                );
+              }
+            )}
           </div>
         </div>
       </section>
 
       {/* ---------------- LIGHTBOX ---------------- */}
       {lightbox && (
-        <div className="fixed inset-0 bg-black z-[999] flex items-center justify-center">
+        <div className="fixed inset-0 bg-black z-[9999] flex items-center justify-center p-4">
           <button
             onClick={() =>
               setLightbox(false)
             }
-            className="absolute top-5 right-5 w-11 h-11 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center"
+            className="absolute top-5 right-5 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center"
           >
             <X
               size={22}
@@ -258,16 +259,41 @@ const DestinationGallery = ({ destination }) => {
             />
           </button>
 
-          <img
-            src={
-              destination.gallery[
-                activeImage
-              ]
-            }
-            loading="lazy"
-            alt=""
-            className="max-w-[92%] max-h-[85vh] object-contain rounded-2xl"
-          />
+          <button
+            onClick={prevItem}
+            className="absolute left-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center"
+          >
+            <ChevronLeft
+              size={22}
+              className="text-white"
+            />
+          </button>
+
+          <button
+            onClick={nextItem}
+            className="absolute right-5 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center"
+          >
+            <ChevronRight
+              size={22}
+              className="text-white"
+            />
+          </button>
+
+          {activeItem.type ===
+          "image" ? (
+            <img
+              src={activeItem.src}
+              alt=""
+              className="max-w-full max-h-[88vh] object-contain rounded-2xl"
+            />
+          ) : (
+            <video
+              src={activeItem.src}
+              controls
+              autoPlay
+              className="max-w-full max-h-[88vh] rounded-2xl"
+            />
+          )}
         </div>
       )}
     </>

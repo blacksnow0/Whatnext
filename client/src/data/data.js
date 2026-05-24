@@ -1,13 +1,13 @@
 import gallery1 from "../assets/images/trip1.jpeg";
 import gallery2 from "../assets/images/trip2.jpeg";
 import gallery3 from "../assets/images/trip3.jpeg";
-import gallery4 from "../assets/images/kagbhusandi.jpeg";
 import gallery6 from "../assets/images/trip.jpeg";
 import badrinath from "../assets/images/badrinath.jpeg";
 import badrinath2 from "../assets/images/badrinath2.png";
 import valley2 from "../assets/images/valley2.png";
+import gallery4 from "../assets/images/kagbhusandi/kagbhusandi.webp"
 
-import satopanth from "../assets/images/satopanth.jpeg";
+import satopanth from '../../public/og/satopanth.webp'
 import valleyImage from "../assets/images/valleyImage.webp";
 import kuariImage from "../assets/images/trip2.jpeg";
 
@@ -506,7 +506,7 @@ export const menuCards = {
   featured: {
     title: "Valley Of Flowers",
     subtitle: "Monsoon Expedition",
-    image: valleyImage,
+    image: valley_bridge,
     href: "/destinations/valley-of-flowers",
   },
 
@@ -514,7 +514,7 @@ export const menuCards = {
     {
       title: "Satopanth",
       image: satopanth,
-      href: "/destinations/satopanth",
+      href: "/destinations/satopanth-tal",
     },
 
     {

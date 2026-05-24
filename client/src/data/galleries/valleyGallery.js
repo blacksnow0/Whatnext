@@ -6,9 +6,24 @@ import valleyImage from "../../assets/images/valleyImage.webp";
 
 
 export const valleyGallery = [
-    valley_bridge,
-    valley_of_flowers,
-    Valley,
-    Valley_Start,
-    valleyImage
+    {
+        type:"image",
+        src: valley_bridge
+    },
+    {
+        type:"image",
+        src: valley_of_flowers
+    },
+    {
+        type:"image",
+        src: Valley
+    },
+    {
+        type:"image",
+        src: Valley_Start
+    },
+    {
+        type:"image",
+        src: valleyImage
+    },
 ]

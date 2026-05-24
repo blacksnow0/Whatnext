@@ -126,6 +126,24 @@ body {
     slowShake 2.2s ease-in-out infinite;
 }
 
+.marquee-track {
+  animation: marqueeMove 120s linear infinite;
+}
+
+.mobile-marquee {
+  animation: marqueeMove 70s linear infinite;
+}
+
+@keyframes marqueeMove {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 /* =========================
    BUTTONS
 ========================= */
