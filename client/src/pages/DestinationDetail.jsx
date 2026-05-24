@@ -35,6 +35,7 @@ const TestimonialsSection = lazy(
 const FAQSection = lazy(() => import("../components/destination/FAQSection"));
 
 import DepartureModal from "../modal/DepartureModal";
+import FloatingEnquiryRail from "../components/destination/FloatingEnquiryRail.jsx";
 
 const DestinationDetail = () => {
   const { slug } = useParams();
@@ -76,11 +77,14 @@ const DestinationDetail = () => {
 
         <DestinationRail />
 
+        <FloatingEnquiryRail/>
+
         <CallButton />
 
         <ExpeditionBrief destination={destination} />
 
         <TrekServices destination={destination}/>
+        
 
         <TrekItinerary destination={destination} />
 

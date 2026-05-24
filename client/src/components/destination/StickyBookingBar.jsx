@@ -43,16 +43,44 @@ const StickyBookingBar = ({
 
             {/* WHATSAPP */}
             <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-11 h-11 rounded-full bg-[#25D366] flex items-center justify-center shrink-0 transition-all duration-300 active:scale-95 lg:w-14 lg:h-14 shadow-[0_8px_24px_rgba(37,211,102,0.25)]"
-            >
-              <FaWhatsapp
-                size={20}
-                className="text-white lg:w-7 lg:h-7"
-              />
-            </a>
+  href={whatsappLink}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+    relative
+    w-11 h-11
+    lg:w-14 lg:h-14
+    rounded-full
+    bg-[#25D366]
+    flex items-center justify-center
+    shrink-0
+    transition-all duration-300
+    active:scale-95
+    hover:scale-105
+
+    shadow-[0_0_20px_rgba(37,211,102,0.45)]
+    hover:shadow-[0_0_40px_rgba(37,211,102,0.8)]
+
+    animate-[whatsappGlow_3s_ease-in-out_infinite]
+  "
+>
+  {/* SOFT GLOW */}
+  <div
+    className="
+      absolute inset-0
+      rounded-full
+      bg-[#25D366]
+      blur-xl
+      opacity-50
+      -z-10
+    "
+  />
+
+  <FaWhatsapp
+    size={20}
+    className="text-white lg:w-7 lg:h-7"
+  />
+</a>
           </div>
         </div>
       </div>

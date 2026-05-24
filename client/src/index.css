@@ -19,6 +19,41 @@
   src: url("../src/assets/fonts/EBGaramond-VariableFont_wght.ttf");
 }
 
+
+@keyframes whatsappGlow {
+  0% {
+    box-shadow:
+      0 0 18px rgba(37,211,102,0.35);
+  }
+
+  50% {
+    box-shadow:
+      0 0 38px rgba(37,211,102,0.8);
+  }
+
+  100% {
+    box-shadow:
+      0 0 18px rgba(37,211,102,0.35);
+  }
+}
+
+
+@keyframes callGlow {
+  0% {
+    box-shadow:
+      0 0 18px rgba(37,99,235,0.35);
+  }
+
+  50% {
+    box-shadow:
+      0 0 38px rgba(37,99,235,0.85);
+  }
+
+  100% {
+    box-shadow:
+      0 0 18px rgba(37,99,235,0.35);
+  }
+}
 /* =========================
    THEME
 ========================= */

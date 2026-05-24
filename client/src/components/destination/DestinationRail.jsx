@@ -1,11 +1,15 @@
-import { useEffect, useState } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 import {
   Compass,
+  Backpack,
   Map,
-  Camera,
+  Image,
   HelpCircle,
-  Layers3,
 } from "lucide-react";
 
 const sections = [
@@ -17,8 +21,8 @@ const sections = [
 
   {
     id: "services",
-    label: "Services",
-    icon: Layers3,
+    label: "Included",
+    icon: Backpack,
   },
 
   {
@@ -30,7 +34,7 @@ const sections = [
   {
     id: "gallery",
     label: "Gallery",
-    icon: Camera,
+    icon: Image,
   },
 
   {
@@ -44,10 +48,16 @@ const DestinationRail = () => {
   const [activeSection, setActiveSection] =
     useState("overview");
 
-  const [showRail, setShowRail] =
+  const [showHeader, setShowHeader] =
     useState(false);
 
-  // SHOW AFTER HERO
+  const [pillStyle, setPillStyle] =
+    useState({});
+
+  const navRef = useRef(null);
+
+  /* ---------------- SHOW AFTER HERO ---------------- */
+
   useEffect(() => {
     const handleScroll = () => {
       const hero =
@@ -61,7 +71,7 @@ const DestinationRail = () => {
         hero.offsetTop +
         hero.offsetHeight;
 
-      setShowRail(
+      setShowHeader(
         window.scrollY >
           heroBottom - 120
       );
@@ -71,183 +81,315 @@ const DestinationRail = () => {
 
     window.addEventListener(
       "scroll",
-      handleScroll
+      handleScroll,
+      {
+        passive: true,
+      }
     );
 
-    return () => {
+    return () =>
       window.removeEventListener(
         "scroll",
         handleScroll
       );
-    };
   }, []);
 
-  // ACTIVE SECTION TRACKING
+  /* ---------------- ACTIVE SECTION ---------------- */
+
   useEffect(() => {
-    const observer =
-      new IntersectionObserver(
-        (entries) => {
-          let visibleSection =
-            activeSection;
+    const handleScroll = () => {
+      const scrollPosition =
+        window.scrollY + 220;
 
-          let maxRatio = 0;
+      let current =
+        sections[0].id;
 
-          entries.forEach((entry) => {
-            if (
-              entry.isIntersecting &&
-              entry.intersectionRatio >
-                maxRatio
-            ) {
-              maxRatio =
-                entry.intersectionRatio;
+      for (const section of sections) {
+        const element =
+          document.getElementById(
+            section.id
+          );
 
-              visibleSection =
-                entry.target.id;
-            }
-          });
+        if (!element)
+          continue;
 
-          if (
-            visibleSection !==
-            activeSection
-          ) {
-            setActiveSection(
-              visibleSection
-            );
-          }
-        },
-        {
-          threshold: [
-            0.15, 0.25, 0.4, 0.6,
-          ],
-
-          rootMargin:
-            "-10% 0px -45% 0px",
+        if (
+          scrollPosition >=
+          element.offsetTop
+        ) {
+          current =
+            section.id;
         }
+      }
+
+      setActiveSection(current);
+    };
+
+    handleScroll();
+
+    window.addEventListener(
+      "scroll",
+      handleScroll,
+      {
+        passive: true,
+      }
+    );
+
+    return () =>
+      window.removeEventListener(
+        "scroll",
+        handleScroll
+      );
+  }, []);
+
+  /* ---------------- ACTIVE PILL ---------------- */
+
+  useEffect(() => {
+    if (!navRef.current) return;
+
+    const activeButton =
+      navRef.current.querySelector(
+        `[data-id="${activeSection}"]`
       );
 
-    sections.forEach((section) => {
-      const element =
-        document.getElementById(
-          section.id
-        );
+    if (!activeButton) return;
 
-      if (element) {
-        observer.observe(element);
-      }
+    setPillStyle({
+      width:
+        activeButton.offsetWidth,
+      height:
+        activeButton.offsetHeight,
+      left:
+        activeButton.offsetLeft,
+      top: activeButton.offsetTop,
     });
-
-    return () => {
-      observer.disconnect();
-    };
   }, [activeSection]);
 
-  // SCROLL TO SECTION
+  /* ---------------- SCROLL TO SECTION ---------------- */
+
   const scrollToSection = (id) => {
     const element =
       document.getElementById(id);
 
     if (!element) return;
 
-    element.scrollIntoView({
+    const offset = 150;
+
+    const top =
+      element.getBoundingClientRect()
+        .top +
+      window.pageYOffset -
+      offset;
+
+    window.scrollTo({
+      top,
       behavior: "smooth",
-      block: "start",
     });
   };
 
+  if (!showHeader) return null;
+
   return (
-    <>
-      {/* DESKTOP */}
-      {showRail && (
-        <div className="hidden lg:flex fixed right-0 top-1/2 -translate-y-1/2 z-40">
-          <div className="flex flex-col gap-2 px-2 py-3 rounded-l-2xl bg-black/25 backdrop-blur-2xl border border-white/10 border-r-0 shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
-            {sections.map(
-              (section) => {
-                const Icon =
-                  section.icon;
+    <div
+      className="
+        fixed
+        top-24
+        left-1/2
+        -translate-x-1/2
+        z-50
+        w-[92%]
+        max-w-3xl
+      "
+    >
+      <div
+        className="
+          relative
+          overflow-hidden
+          rounded-full
 
-                const isActive =
-                  activeSection ===
-                  section.id;
+          border
+          border-white/40
 
-                return (
-                  <button
-                    key={
+          bg-white/55
+          backdrop-blur-2xl
+
+          shadow-[0_20px_60px_rgba(0,0,0,0.10)]
+
+          px-2
+          py-1.5
+        "
+      >
+        {/* GLASS OVERLAY */}
+        <div
+          className="
+            absolute
+            inset-0
+            rounded-full
+
+            bg-gradient-to-b
+            from-white/40
+            to-white/10
+
+            pointer-events-none
+          "
+        />
+
+        {/* NAV */}
+        <div
+          ref={navRef}
+          className="
+            relative
+            hidden
+            md:flex
+            items-center
+            justify-center
+            gap-1
+          "
+        >
+          {/* ACTIVE SLIDER */}
+          <div
+            className="
+              absolute
+              rounded-full
+
+              bg-gradient-to-r
+              from-orange-500
+              to-amber-500
+
+              shadow-[0_10px_30px_rgba(249,115,22,0.30)]
+
+              transition-all
+              duration-500
+              ease-[cubic-bezier(0.22,1,0.36,1)]
+            "
+            style={pillStyle}
+          />
+
+          {sections.map(
+            (section) => {
+              const Icon =
+                section.icon;
+
+              const isActive =
+                activeSection ===
+                section.id;
+
+              return (
+                <button
+                  key={section.id}
+                  data-id={
+                    section.id
+                  }
+                  onClick={() =>
+                    scrollToSection(
                       section.id
-                    }
-                    onClick={() =>
-                      scrollToSection(
-                        section.id
-                      )
-                    }
-                    className="group relative flex items-center justify-center"
-                  >
-                    {/* TOOLTIP */}
-                    <div className="absolute right-12 px-3 py-1.5 rounded-full bg-black text-white text-[11px] whitespace-nowrap opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none">
-                      {
-                        section.label
-                      }
-                    </div>
+                    )
+                  }
+                  className={`
+                    relative
+                    z-10
 
-                    {/* ICON */}
-                    <div
-                      className={`w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${
-                        isActive
-                          ? "bg-[#f97316] text-white shadow-[0_6px_20px_rgba(249,115,22,0.28)]"
-                          : "bg-white/5 text-white/70 hover:bg-white/10"
-                      }`}
-                    >
-                      <Icon
-                        size={15}
-                      />
-                    </div>
-                  </button>
-                );
-              }
-            )}
-          </div>
-        </div>
-      )}
+                    flex
+                    items-center
+                    gap-2
 
-      {/* MOBILE */}
-      {showRail && (
-        <div className="lg:hidden fixed right-0 top-[58%] -translate-y-1/2 z-40">
-          <div className="flex flex-col gap-2 px-2 py-3 rounded-l-2xl bg-black/25 backdrop-blur-2xl border border-white/10 border-r-0 shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
-            {sections.map(
-              (section) => {
-                const Icon =
-                  section.icon;
+                    px-5
+                    py-2.5
 
-                const isActive =
-                  activeSection ===
-                  section.id;
+                    rounded-full
 
-                return (
-                  <button
-                    key={
-                      section.id
-                    }
-                    onClick={() =>
-                      scrollToSection(
-                        section.id
-                      )
-                    }
-                    className={`w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${
+                    text-sm
+                    font-medium
+
+                    transition-all
+                    duration-300
+
+                    ${
                       isActive
-                        ? "bg-[#f97316] text-white shadow-[0_6px_20px_rgba(249,115,22,0.25)]"
-                        : "bg-white/5 text-white/70 hover:bg-white/10"
-                    }`}
-                  >
-                    <Icon
-                      size={15}
-                    />
-                  </button>
-                );
-              }
-            )}
-          </div>
+                        ? "text-white"
+                        : "text-zinc-600 hover:text-black"
+                    }
+                  `}
+                >
+                  <Icon
+                    size={15}
+                    strokeWidth={
+                      2.2
+                    }
+                  />
+
+                  {section.label}
+                </button>
+              );
+            }
+          )}
         </div>
-      )}
-    </>
+
+        {/* MOBILE */}
+        <div
+          className="
+            md:hidden
+            flex
+            items-center
+            gap-2
+            overflow-x-auto
+            no-scrollbar
+          "
+        >
+          {sections.map(
+            (section) => {
+              const Icon =
+                section.icon;
+
+              const isActive =
+                activeSection ===
+                section.id;
+
+              return (
+                <button
+                  key={section.id}
+                  onClick={() =>
+                    scrollToSection(
+                      section.id
+                    )
+                  }
+                  className={`
+                    shrink-0
+
+                    flex
+                    items-center
+                    gap-2
+
+                    px-4
+                    py-2.5
+
+                    rounded-full
+
+                    text-xs
+                    font-medium
+
+                    transition-all
+                    duration-300
+
+                    ${
+                      isActive
+                        ? "bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-[0_10px_25px_rgba(249,115,22,0.28)]"
+                        : "bg-white/40 text-zinc-700"
+                    }
+                  `}
+                >
+                  <Icon
+                    size={14}
+                  />
+
+                  {section.label}
+                </button>
+              );
+            }
+          )}
+        </div>
+      </div>
+    </div>
   );
 };
 
