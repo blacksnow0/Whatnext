@@ -63,8 +63,7 @@ export default function Navbar() {
 
             {/* CTA */}
             <a
-              href="https://wa.me/917017502703"
-              target="_blank"
+              href="/destinations"
               rel="noreferrer"
               className="group flex items-center gap-2"
             >
@@ -209,8 +208,7 @@ export default function Navbar() {
 
             {/* CTA */}
             <a
-              href="https://wa.me/917017502703"
-              target="_blank"
+              href="/destinations"
               rel="noreferrer"
               className="mt-6 flex items-center gap-3"
             >

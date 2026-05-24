@@ -85,7 +85,7 @@ export default function Hero() {
 
             <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row sm:flex-wrap gap-5 sm:gap-8">
               <Link
-                to="/packages"
+                to="/destinations"
                 className="group w-fit text-sm font-semibold tracking-wide uppercase"
               >
                 <span className="flex items-center gap-2">
@@ -99,7 +99,7 @@ export default function Hero() {
               </Link>
 
               <a
-                href="https://wa.me/91XXXXXXXXXX"
+                href="https://wa.me/7017502703"
                 target="_blank"
                 rel="noreferrer"
                 className="group w-fit text-sm font-semibold tracking-wide uppercase"
