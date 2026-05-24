@@ -68,7 +68,7 @@ export default function Navbar() {
               rel="noreferrer"
               className="group flex items-center gap-2"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f97316] text-white transition-transform duration-300 group-hover:translate-x-1">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-700 text-white transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>
 
@@ -81,7 +81,7 @@ export default function Navbar() {
           {/* MOBILE BUTTON */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden h-11 w-11 flex items-center justify-center rounded-full bg-[#f97316]"
+            className="md:hidden h-11 w-11 flex items-center justify-center rounded-full bg-gray-700"
             aria-label="Toggle menu"
           >
             <div className="space-y-1.5">
@@ -213,7 +213,7 @@ export default function Navbar() {
               rel="noreferrer"
               className="mt-6 flex items-center gap-3"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#f97316] text-white text-lg">
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-gray-700 text-white text-lg">
                 →
               </span>
 

@@ -27,7 +27,7 @@ export const topDestinations = [
   },
 
   {
-    id: "kagbhusandi-trek",
+    id: "kagbhusandi-tal",
 
     name: "Kagbhusandi Tal",
 

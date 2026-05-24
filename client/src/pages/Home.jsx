@@ -1,3 +1,4 @@
+import FloatingDock from "../components/Home/FloatingDock";
 import Hero from "../components/Home/Hero";
 import TopPics from "../components/Home/TopPics";
 
@@ -29,6 +30,8 @@ export default function Home() {
       <Hero />
 
       <TopPics />
+      
+      <FloatingDock/>
 
     </div>
   );

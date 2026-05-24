@@ -1,179 +1,93 @@
+// Hero.jsx
+
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import hero2 from "../../assets/images/badrinath-hero2.png";
+
+import heroImage from "../../assets/images/heroImage.webp";
 
 export default function Hero() {
-  const images = [hero2];
-  const [currentImage, setCurrentImage] = useState(0);
-
-  function CountUp({ end, suffix = "" }) {
-    const [count, setCount] = useState(0);
-
-    useEffect(() => {
-      let start = 0;
-      const duration = 1800;
-      const stepTime = 20;
-      const increment = end / (duration / stepTime);
-
-      const timer = setInterval(() => {
-        start += increment;
-
-        if (start >= end) {
-          setCount(end);
-          clearInterval(timer);
-        } else {
-          setCount(Math.floor(start));
-        }
-      }, stepTime);
-
-      return () => clearInterval(timer);
-    }, [end]);
-
-    return (
-      <span className="tabular-nums">
-        {count}
-        {suffix}
-      </span>
-    );
-  }
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 5000);
-
-    return () => clearInterval(timer);
-  }, [images.length]);
-
   return (
-    <section className="bg-[#f7f7f4] text-black pt-20 md:pt-28 pb-14 md:pb-20 px-4 sm:px-6 md:px-10 lg:px-16 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        {/* TOP SECTION */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-end">
+    <section className="relative h-screen overflow-hidden bg-[#d9ddd4]">
+      {/* IMAGE */}
+      <div className="absolute inset-0">
+        <img
+          src={heroImage}
+          alt="Himalayan Journey"
+          className="w-full h-full object-cover"
+        />
+
+        {/* CINEMATIC WASH */}
+        <div className="absolute inset-0 bg-[#d9ddd4]/30 mix-blend-lighten" />
+
+        {/* DARK FADE */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+      </div>
+
+      {/* HUGE CUT TYPO */}
+      <div className="absolute top-[90px] sm:top-[110px] lg:top-[120px] left-0 z-20 pointer-events-none leading-none">
+        <h1 className="text-[5rem] sm:text-[8rem] md:text-[10rem] lg:text-[14rem] xl:text-[17rem] font-serif tracking-[-0.08em] text-white">
+          HIMALAYAN
+        </h1>
+
+        <h1 className="-mt-5 sm:-mt-8 lg:-mt-14 ml-10 sm:ml-16 lg:ml-24 text-[5rem] sm:text-[8rem] md:text-[10rem] lg:text-[14rem] xl:text-[17rem] font-serif tracking-[-0.08em] text-white">
+          JOURNEYS
+        </h1>
+      </div>
+
+      {/* FLOATING MICRO COPY */}
+      <div className="absolute top-[48%] right-5 sm:right-8 lg:right-12 z-30 max-w-[220px] sm:max-w-xs">
+        <p className="text-white/80 text-xs sm:text-sm lg:text-base leading-relaxed">
+          Curated cinematic expeditions through the Garhwal
+          Himalayas.
+        </p>
+      </div>
+
+      {/* BOTTOM BAR */}
+      <div className="absolute bottom-0 left-0 right-0 z-30">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 px-5 sm:px-8 lg:px-12 pb-5 sm:pb-8 lg:pb-10">
           {/* LEFT */}
           <div>
-            <p className="hidden sm:block text-xs uppercase tracking-[0.35em] mb-4 font-medium">
+            <p className="text-[10px] uppercase tracking-[0.35em] text-white/50">
               WhatNext Online
             </p>
 
-            <h1 className="mt-4 sm:mt-2 max-w-5xl font-semibold tracking-tight leading-[0.95]">
-              <span className="block text-[42px] sm:text-5xl md:text-6xl lg:text-7xl">
-                Himalayan
+            <div className="mt-4 flex items-end gap-5">
+              <span className="text-[4rem] sm:text-[6rem] lg:text-[8rem] leading-none font-serif text-white">
+                03
               </span>
 
-              <span className="block text-[42px] sm:text-5xl md:text-6xl lg:text-7xl">
-                Journeys
-              </span>
-
-              <span className="block mt-2 sm:mt-3 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium text-neutral-500 tracking-normal">
-                Curated for the modern traveler
-              </span>
-
-              <span className="block mt-1 sm:mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#f97316]">
-                Ready To Experience
-              </span>
-            </h1>
-          </div>
-
-          {/* RIGHT */}
-          <div className="lg:pl-10">
-            <p className="hidden sm:block text-base md:text-lg text-neutral-600 leading-relaxed">
-              Discover a smarter way to travel — curated mountain escapes,
-              spiritual getaways, snow adventures and unforgettable stays across
-              Uttarakhand & Himachal.
-            </p>
-
-            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row sm:flex-wrap gap-5 sm:gap-8">
-              <Link
-                to="/destinations"
-                className="group w-fit text-sm font-semibold tracking-wide uppercase"
-              >
-                <span className="flex items-center gap-2">
-                  Explore Packages
-                  <span className="text-[#f97316] transition-transform duration-300 group-hover:translate-x-1">
-                    →
-                  </span>
-                </span>
-
-                <span className="block h-[1px] w-full bg-black mt-2 origin-left scale-x-100 transition-transform duration-300 group-hover:scale-x-75"></span>
-              </Link>
-
-              <a
-                href="https://wa.me/7017502703"
-                target="_blank"
-                rel="noreferrer"
-                className="group w-fit text-sm font-semibold tracking-wide uppercase"
-              >
-                <span className="flex items-center gap-2">
-                  Contact Us
-                  <span className="text-[#f97316] transition-transform duration-300 group-hover:translate-x-1">
-                    →
-                  </span>
-                </span>
-
-                <span className="block h-[1px] w-full bg-black mt-2 origin-left scale-x-100 transition-transform duration-300 group-hover:scale-x-75"></span>
-              </a>
+              <p className="max-w-[160px] sm:max-w-xs text-white/70 text-xs sm:text-sm leading-relaxed pb-2">
+                Carefully crafted Himalayan experiences.
+              </p>
             </div>
           </div>
-        </div>
 
-        {/* IMAGE */}
-        <div className="mt-8 sm:mt-10 rounded-2xl sm:rounded-3xl overflow-hidden relative h-[240px] sm:h-[340px] md:h-[420px] lg:h-[500px] ">
-          {images.map((img, index) => (
-            <img
-              key={index}
-              src={img}
-              alt="Himalayan destination"
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                currentImage === index ? "opacity-100" : "opacity-0"
-              }`}
-            />
-          ))}
-        </div>
+          {/* RIGHT CTA */}
+          <div className="flex items-center gap-6">
+            <Link
+              to="/destinations"
+              className="group"
+            >
+              <div className="flex items-center gap-3">
+                <span className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-white">
+                  Explore
+                </span>
 
-        {/* SECOND SECTION */}
-        {/* STATS */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 mt-14 sm:mt-16 border-t border-neutral-300">
-          <div className="py-7 sm:py-10 px-4 sm:px-6 border-r border-b lg:border-b-0 border-neutral-300">
-            <h3 className="text-4xl sm:text-5xl font-semibold tracking-tight text-black">
-              <CountUp end={500} suffix="+" />
-            </h3>
+                <span className="text-2xl text-white transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </div>
 
-            <p className="mt-3 text-xs sm:text-sm uppercase tracking-[0.18em] text-neutral-500">
-              Travelers Hosted
-            </p>
-          </div>
-
-          <div className="py-7 sm:py-10 px-4 sm:px-6 border-b lg:border-b-0 lg:border-r border-neutral-300">
-            <h3 className="text-4xl sm:text-5xl font-semibold tracking-tight text-black">
-              <CountUp end={10} suffix="+" />
-            </h3>
-
-            <p className="mt-3 text-xs sm:text-sm uppercase tracking-[0.18em] text-neutral-500">
-              Premium Routes
-            </p>
-          </div>
-
-          <div className="py-7 sm:py-10 px-4 sm:px-6 border-r border-neutral-300">
-            <h3 className="text-4xl sm:text-5xl font-semibold tracking-tight text-black">
-              <CountUp end={99} suffix="%" />
-            </h3>
-
-            <p className="mt-3 text-xs sm:text-sm uppercase tracking-[0.18em] text-neutral-500">
-              Happy Guests
-            </p>
-          </div>
-
-          <div className="py-7 sm:py-10 px-4 sm:px-6">
-            <h3 className="text-4xl sm:text-5xl font-semibold tracking-tight text-black">
-              <CountUp end={24} suffix="/7" />
-            </h3>
-
-            <p className="mt-3 text-xs sm:text-sm uppercase tracking-[0.18em] text-neutral-500">
-              Support Team
-            </p>
+              <div className="mt-2 h-[1px] bg-white/70 origin-left transition-transform duration-300 group-hover:scale-x-75" />
+            </Link>
           </div>
         </div>
+      </div>
+
+      {/* HUGE FADED NUMBER */}
+      <div className="absolute right-[-20px] sm:right-[-40px] lg:right-[-70px] bottom-[-50px] lg:bottom-[-90px] pointer-events-none z-10">
+        <h2 className="text-[13rem] sm:text-[18rem] lg:text-[30rem] leading-none font-black tracking-[-0.08em] text-white/10">
+          03
+        </h2>
       </div>
     </section>
   );
