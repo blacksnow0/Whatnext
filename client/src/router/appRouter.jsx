@@ -2,7 +2,12 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  useLocation,
 } from "react-router-dom";
+
+import { useEffect } from "react";
+
+import ReactGA from "../lib/analytics";
 
 import Layout from "../layout";
 
@@ -12,9 +17,33 @@ import Destinations from "../pages/DestinationsPage";
 import DestinationDetail from "../pages/DestinationDetail";
 import NotFound from "../pages/NotFound";
 
+/* =========================
+   GA4 PAGE VIEW TRACKING
+========================= */
+
+const AnalyticsTracker = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    ReactGA.send({
+      hitType: "pageview",
+
+      page: location.pathname,
+    });
+  }, [location]);
+
+  return null;
+};
+
+/* =========================
+   ROUTER
+========================= */
+
 const AppRouter = () => {
   return (
     <BrowserRouter>
+      <AnalyticsTracker />
+
       <Routes>
         <Route element={<Layout />}>
           <Route
