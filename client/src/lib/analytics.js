@@ -1,7 +1,7 @@
 import ReactGA from "react-ga4";
 
 ReactGA.initialize(
-  "G-N0E1RMNLCR"
+  "G-9336FQPR2V"
 );
 
 export default ReactGA;
