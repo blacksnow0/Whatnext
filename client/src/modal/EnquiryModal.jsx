@@ -1,52 +1,19 @@
-// EnquiryModal.jsx
-
 import { useEffect } from "react";
 
 import {
-  motion,
-  AnimatePresence,
-} from "framer-motion";
-
-import {
   X,
-  ArrowRight,
   Mountain,
+  ArrowRight,
 } from "lucide-react";
 
-export default function EnquiryModal({
+export default function ExpeditionModal({
   isOpen,
   onClose,
+  destination,
 }) {
-  /* ESC CLOSE */
   useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") {
-        onClose();
-      }
-    };
-
-    window.addEventListener(
-      "keydown",
-      handleKeyDown
-    );
-
-    return () => {
-      window.removeEventListener(
-        "keydown",
-        handleKeyDown
-      );
-    };
-  }, [onClose]);
-
-  /* LOCK BODY */
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow =
-        "hidden";
-    } else {
-      document.body.style.overflow =
-        "auto";
-    }
+    document.body.style.overflow =
+      isOpen ? "hidden" : "auto";
 
     return () => {
       document.body.style.overflow =
@@ -54,584 +21,128 @@ export default function EnquiryModal({
     };
   }, [isOpen]);
 
+  if (!isOpen) return null;
+
   return (
-    <AnimatePresence>
-      {isOpen && (
-        <motion.div
-          className="fixed inset-0 z-[9999]"
-          initial={{
-            opacity: 0,
-          }}
-          animate={{
-            opacity: 1,
-          }}
-          exit={{
-            opacity: 0,
-          }}
-          transition={{
-            duration: 0.3,
-          }}
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-md p-4">
+      <div className="relative w-full max-w-md overflow-hidden rounded-[28px] bg-[#f5f3ef] shadow-2xl">
+        
+        {/* CLOSE */}
+        <button
+          onClick={onClose}
+          className="absolute right-4 top-4 z-20 flex h-9 w-9 items-center justify-center rounded-full bg-white"
         >
-          {/* BACKDROP */}
-          <motion.div
-            onClick={onClose}
-            className="
-              absolute inset-0
-              bg-black/45
-              backdrop-blur-md
-            "
-            initial={{
-              opacity: 0,
-            }}
-            animate={{
-              opacity: 1,
-            }}
-            exit={{
-              opacity: 0,
-            }}
-            transition={{
-              duration: 0.35,
-            }}
-          />
-
-          {/* ====================================================== */}
-          {/* ==================== DESKTOP ========================== */}
-          {/* ====================================================== */}
-
-          <div className="hidden md:flex items-center justify-center min-h-screen p-8">
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 40,
-                scale: 0.96,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                scale: 1,
-              }}
-              exit={{
-                opacity: 0,
-                y: 30,
-                scale: 0.96,
-              }}
-              transition={{
-                duration: 0.45,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="
-                relative
-                w-full
-                max-w-5xl
-
-                overflow-hidden
-
-                rounded-[42px]
-
-                border border-white/10
-
-                bg-white/78
-                backdrop-blur-3xl
-
-                shadow-[0_40px_120px_rgba(0,0,0,0.22)]
-
-                grid
-                grid-cols-2
-              "
-            >
-              {/* GLOW */}
-              <div className="absolute top-[-80px] right-[-40px] w-[280px] h-[280px] bg-orange-200/60 rounded-full blur-3xl" />
-
-              <div className="absolute bottom-[-120px] left-[-80px] w-[240px] h-[240px] bg-zinc-200/70 rounded-full blur-3xl" />
-
-              {/* LEFT PANEL */}
-              <div className="relative p-12 border-r border-black/5 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-2xl bg-orange-100 flex items-center justify-center">
-                      <Mountain
-                        size={22}
-                        className="text-orange-500"
-                      />
-                    </div>
-
-                    <p className="text-[10px] uppercase tracking-[0.35em] text-orange-500 font-semibold">
-                      Expedition Enquiry
-                    </p>
-                  </div>
-
-                  <h2 className="mt-10 text-6xl leading-[0.9] tracking-[-0.06em] font-serif text-zinc-900">
-                    Plan This
-                    <br />
-                    Trek.
-                  </h2>
-
-                  <p className="mt-8 max-w-md text-zinc-600 leading-relaxed text-lg">
-                    Speak with our team regarding
-                    batches, weather conditions,
-                    transport and preparation.
-                  </p>
-                </div>
-
-                {/* FOOTNOTE */}
-                <div className="pt-10">
-                  <p className="text-sm text-zinc-400">
-                    Our expedition team usually
-                    replies within a few hours.
-                  </p>
-                </div>
-              </div>
-
-              {/* RIGHT PANEL */}
-              <div className="relative p-12 flex items-center">
-                {/* CLOSE */}
-                <button
-                  onClick={onClose}
-                  className="
-                    absolute
-                    top-6
-                    right-6
-
-                    w-11
-                    h-11
-
-                    rounded-full
-
-                    bg-black/[0.04]
-
-                    hover:bg-black/[0.08]
-
-                    transition-all
-                    duration-300
-
-                    flex
-                    items-center
-                    justify-center
-                  "
-                >
-                  <X
-                    size={18}
-                    className="text-zinc-700"
-                  />
-                </button>
-
-                {/* FORM */}
-                <form className="w-full space-y-5">
-                  {/* NAME */}
-                  <div>
-                    <input
-                      type="text"
-                      placeholder="Full Name"
-                      className="
-                        w-full
-                        h-16
-
-                        rounded-2xl
-
-                        border border-zinc-200
-
-                        bg-white/80
-
-                        px-6
-
-                        text-[15px]
-
-                        outline-none
-
-                        transition-all
-                        duration-300
-
-                        focus:border-orange-400
-                        focus:ring-4
-                        focus:ring-orange-100
-                      "
-                    />
-                  </div>
-
-                  {/* PHONE */}
-                  <div>
-                    <input
-                      type="tel"
-                      placeholder="Phone Number"
-                      className="
-                        w-full
-                        h-16
-
-                        rounded-2xl
-
-                        border border-zinc-200
-
-                        bg-white/80
-
-                        px-6
-
-                        text-[15px]
-
-                        outline-none
-
-                        transition-all
-                        duration-300
-
-                        focus:border-orange-400
-                        focus:ring-4
-                        focus:ring-orange-100
-                      "
-                    />
-                  </div>
-
-                  {/* MONTH */}
-                  <div>
-                    <select
-                      className="
-                        w-full
-                        h-16
-
-                        rounded-2xl
-
-                        border border-zinc-200
-
-                        bg-white/80
-
-                        px-6
-
-                        text-[15px]
-
-                        outline-none
-
-                        transition-all
-                        duration-300
-
-                        focus:border-orange-400
-                        focus:ring-4
-                        focus:ring-orange-100
-                      "
-                    >
-                      <option>
-                        Preferred Month
-                      </option>
-
-                      <option>
-                        June
-                      </option>
-
-                      <option>
-                        July
-                      </option>
-
-                      <option>
-                        August
-                      </option>
-
-                      <option>
-                        September
-                      </option>
-                    </select>
-                  </div>
-
-                  {/* MESSAGE */}
-                  <div>
-                    <textarea
-                      rows={5}
-                      placeholder="Tell us about your plan..."
-                      className="
-                        w-full
-
-                        rounded-2xl
-
-                        border border-zinc-200
-
-                        bg-white/80
-
-                        px-6
-                        py-5
-
-                        text-[15px]
-
-                        resize-none
-
-                        outline-none
-
-                        transition-all
-                        duration-300
-
-                        focus:border-orange-400
-                        focus:ring-4
-                        focus:ring-orange-100
-                      "
-                    />
-                  </div>
-
-                  {/* BUTTON */}
-                  <button
-                    type="submit"
-                    className="
-                      group
-                      relative
-
-                      overflow-hidden
-
-                      w-full
-                      h-16
-
-                      rounded-2xl
-
-                      bg-zinc-900
-                      text-white
-
-                      transition-all
-                      duration-500
-
-                      hover:bg-black
-                      hover:shadow-[0_18px_40px_rgba(0,0,0,0.18)]
-                    "
-                  >
-                    {/* SHIMMER */}
-                    <div
-                      className="
-                        absolute inset-0
-
-                        translate-x-[-100%]
-
-                        bg-gradient-to-r
-                        from-transparent
-                        via-white/10
-                        to-transparent
-
-                        transition-transform
-                        duration-1000
-
-                        group-hover:translate-x-[100%]
-                      "
-                    />
-
-                    <span className="relative z-10 flex items-center justify-center gap-3 text-[15px] font-medium">
-                      Send Enquiry
-
-                      <ArrowRight
-                        size={16}
-                        className="transition-transform duration-300 group-hover:translate-x-1"
-                      />
-                    </span>
-                  </button>
-                </form>
-              </div>
-            </motion.div>
+          <X size={16} />
+        </button>
+
+        {/* TOP */}
+        <div className="bg-gradient-to-b from-[#f2dfcc] to-transparent px-5 pt-6 pb-2">
+          <div className="mb-5 flex items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white">
+              <Mountain
+                size={18}
+                className="text-[#ff6b00]"
+              />
+            </div>
+
+            <div>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#ff6b00]">
+                Expedition Enquiry
+              </p>
+
+              <h2 className="mt-1 text-3xl font-semibold leading-none text-black">
+                {destination?.name ||
+                  "Plan Your Trek"}
+              </h2>
+            </div>
           </div>
+        </div>
 
-          {/* ====================================================== */}
-          {/* ===================== MOBILE ========================= */}
-          {/* ====================================================== */}
+        {/* FORM */}
+        <div className="px-5 pb-5">
+          <form
+            action="https://formsubmit.co/trek@whatnextonline.in"
+            method="POST"
+            className="space-y-3"
+          >
+            {/* HIDDEN */}
+            <input
+              type="hidden"
+              name="_subject"
+              value={`New Enquiry - ${
+                destination?.name ||
+                "Trek"
+              }`}
+            />
 
-          <div className="md:hidden absolute inset-x-0 bottom-0">
-            <motion.div
-              initial={{
-                y: "100%",
-              }}
-              animate={{
-                y: 0,
-              }}
-              exit={{
-                y: "100%",
-              }}
-              transition={{
-                duration: 0.5,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="
-                relative
+            <input
+              type="hidden"
+              name="_captcha"
+              value="false"
+            />
 
-                rounded-t-[34px]
+            <input
+              type="hidden"
+              name="_next"
+              value="https://whatnextonline.in/thank-you"
+            />
 
-                bg-white
+            <input
+              type="hidden"
+              name="destination"
+              value={destination?.name}
+            />
 
-                shadow-[0_-20px_60px_rgba(0,0,0,0.2)]
+            {/* INPUTS */}
+            <input
+              type="text"
+              name="name"
+              placeholder="Full Name"
+              required
+              className="h-14 w-full rounded-2xl border-0 bg-white px-4 text-sm outline-none focus:ring-2 focus:ring-black/5"
+            />
 
-                px-5
-                pt-5
-                pb-8
-              "
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
+              required
+              className="h-14 w-full rounded-2xl border-0 bg-white px-4 text-sm outline-none focus:ring-2 focus:ring-black/5"
+            />
+
+            <select
+              name="month"
+              className="h-14 w-full rounded-2xl border-0 bg-white px-4 text-sm outline-none focus:ring-2 focus:ring-black/5"
             >
-              {/* HANDLE */}
-              <div className="w-14 h-1.5 rounded-full bg-zinc-300 mx-auto" />
+              <option>
+                Preferred Month
+              </option>
 
-              {/* CLOSE */}
-              <button
-                onClick={onClose}
-                className="
-                  absolute
-                  top-5
-                  right-5
+              <option>April</option>
+              <option>May</option>
+              <option>June</option>
+              <option>September</option>
+            </select>
 
-                  w-10
-                  h-10
+            <textarea
+              rows="4"
+              name="message"
+              placeholder="Tell us about your plan..."
+              className="w-full rounded-2xl border-0 bg-white p-4 text-sm outline-none focus:ring-2 focus:ring-black/5"
+            />
 
-                  rounded-full
+            {/* BUTTON */}
+            <button
+              type="submit"
+              className="flex h-14 w-full items-center justify-center gap-2 rounded-2xl bg-black text-sm font-medium text-white transition hover:opacity-90"
+            >
+              Send Enquiry
 
-                  bg-zinc-100
-
-                  flex
-                  items-center
-                  justify-center
-                "
-              >
-                <X
-                  size={18}
-                  className="text-zinc-700"
-                />
-              </button>
-
-              {/* CONTENT */}
-              <div className="mt-8">
-                <p className="text-[10px] uppercase tracking-[0.35em] text-orange-500 font-semibold">
-                  Expedition Enquiry
-                </p>
-
-                <h2 className="mt-4 text-4xl leading-[0.95] tracking-[-0.05em] font-serif text-zinc-900">
-                  Plan This Trek.
-                </h2>
-
-                <p className="mt-4 text-sm text-zinc-500 leading-relaxed">
-                  Speak with our team regarding
-                  weather, batches and preparation.
-                </p>
-
-                {/* FORM */}
-                <form className="mt-8 space-y-4">
-                  <input
-                    type="text"
-                    placeholder="Full Name"
-                    className="
-                      w-full
-                      h-14
-
-                      rounded-2xl
-
-                      border border-zinc-200
-
-                      px-5
-
-                      text-sm
-
-                      outline-none
-
-                      focus:border-orange-400
-                      focus:ring-4
-                      focus:ring-orange-100
-                    "
-                  />
-
-                  <input
-                    type="tel"
-                    placeholder="Phone Number"
-                    className="
-                      w-full
-                      h-14
-
-                      rounded-2xl
-
-                      border border-zinc-200
-
-                      px-5
-
-                      text-sm
-
-                      outline-none
-
-                      focus:border-orange-400
-                      focus:ring-4
-                      focus:ring-orange-100
-                    "
-                  />
-
-                  <select
-                    className="
-                      w-full
-                      h-14
-
-                      rounded-2xl
-
-                      border border-zinc-200
-
-                      px-5
-
-                      text-sm
-
-                      outline-none
-
-                      focus:border-orange-400
-                      focus:ring-4
-                      focus:ring-orange-100
-                    "
-                  >
-                    <option>
-                      Preferred Month
-                    </option>
-
-                    <option>
-                      June
-                    </option>
-
-                    <option>
-                      July
-                    </option>
-
-                    <option>
-                      August
-                    </option>
-
-                    <option>
-                      September
-                    </option>
-                  </select>
-
-                  <textarea
-                    rows={4}
-                    placeholder="Tell us about your plan..."
-                    className="
-                      w-full
-
-                      rounded-2xl
-
-                      border border-zinc-200
-
-                      px-5
-                      py-4
-
-                      text-sm
-
-                      resize-none
-
-                      outline-none
-
-                      focus:border-orange-400
-                      focus:ring-4
-                      focus:ring-orange-100
-                    "
-                  />
-
-                  <button
-                    type="submit"
-                    className="
-                      w-full
-                      h-14
-
-                      rounded-2xl
-
-                      bg-zinc-900
-                      text-white
-
-                      text-sm
-                      font-medium
-                    "
-                  >
-                    Send Enquiry
-                  </button>
-                </form>
-              </div>
-            </motion.div>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+              <ArrowRight size={16} />
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 }

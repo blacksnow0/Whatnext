@@ -77,7 +77,7 @@ const DestinationDetail = () => {
 
         <DestinationRail />
 
-        <FloatingEnquiryRail/>
+        <FloatingEnquiryRail destination={destination}/>
 
         <CallButton />
 

@@ -16,6 +16,7 @@ import About from "../pages/About";
 import Destinations from "../pages/DestinationsPage";
 import DestinationDetail from "../pages/DestinationDetail";
 import NotFound from "../pages/NotFound";
+import ThankYouPage from "../pages/ThankYouPage";
 
 /* =========================
    GA4 PAGE VIEW TRACKING
@@ -64,6 +65,12 @@ const AppRouter = () => {
           <Route
             path="/destinations/:slug"
             element={<DestinationDetail />}
+          />
+
+
+          <Route
+            path="/thank-you"
+            element={<ThankYouPage/>}
           />
 
           <Route

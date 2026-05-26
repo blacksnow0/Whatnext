@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import EnquiryModal from "../../modal/EnquiryModal";
 
-export default function FloatingEnquiryRail() {
+export default function FloatingEnquiryRail({destination}) {
   const [isOpen, setIsOpen] =
     useState(false);
 
@@ -122,6 +122,7 @@ export default function FloatingEnquiryRail() {
         onClose={() =>
           setIsOpen(false)
         }
+        destination={destination}
       />
     </>
   );
