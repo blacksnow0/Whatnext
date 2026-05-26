@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import {
   X,
@@ -6,11 +6,18 @@ import {
   ArrowRight,
 } from "lucide-react";
 
+import { useNavigate } from "react-router-dom";
+
 export default function ExpeditionModal({
   isOpen,
   onClose,
   destination,
 }) {
+  const navigate = useNavigate();
+
+  const [result, setResult] =
+    useState("");
+
   useEffect(() => {
     document.body.style.overflow =
       isOpen ? "hidden" : "auto";
@@ -22,6 +29,61 @@ export default function ExpeditionModal({
   }, [isOpen]);
 
   if (!isOpen) return null;
+
+  const onSubmit = async (
+    event
+  ) => {
+    event.preventDefault();
+
+    setResult("Sending...");
+
+    const formData =
+      new FormData(event.target);
+
+    formData.append(
+      "access_key",
+      "0ff52f9b-d274-47e7-a9d4-06ce0008f49c"
+    );
+
+    formData.append(
+      "subject",
+      `New Enquiry - ${
+        destination?.name || "Trek"
+      }`
+    );
+
+    formData.append(
+      "destination",
+      destination?.name || ""
+    );
+
+    const response =
+      await fetch(
+        "https://api.web3forms.com/submit",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+    const data =
+      await response.json();
+
+    if (data.success) {
+      setResult("Success!");
+
+      event.target.reset();
+
+      navigate("/thank-you");
+    } else {
+      console.log(
+        "Error",
+        data
+      );
+
+      setResult("Something went wrong");
+    }
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-md p-4">
@@ -61,39 +123,9 @@ export default function ExpeditionModal({
         {/* FORM */}
         <div className="px-5 pb-5">
           <form
-            action="https://formsubmit.co/trek@whatnextonline.in"
-            method="POST"
+            onSubmit={onSubmit}
             className="space-y-3"
           >
-            {/* HIDDEN */}
-            <input
-              type="hidden"
-              name="_subject"
-              value={`New Enquiry - ${
-                destination?.name ||
-                "Trek"
-              }`}
-            />
-
-            <input
-              type="hidden"
-              name="_captcha"
-              value="false"
-            />
-
-            <input
-              type="hidden"
-              name="_next"
-              value="https://whatnextonline.in/thank-you"
-            />
-
-            <input
-              type="hidden"
-              name="destination"
-              value={destination?.name}
-            />
-
-            {/* INPUTS */}
             <input
               type="text"
               name="name"
@@ -106,6 +138,14 @@ export default function ExpeditionModal({
               type="tel"
               name="phone"
               placeholder="Phone Number"
+              required
+              className="h-14 w-full rounded-2xl border-0 bg-white px-4 text-sm outline-none focus:ring-2 focus:ring-black/5"
+            />
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
               required
               className="h-14 w-full rounded-2xl border-0 bg-white px-4 text-sm outline-none focus:ring-2 focus:ring-black/5"
             />
@@ -140,6 +180,13 @@ export default function ExpeditionModal({
 
               <ArrowRight size={16} />
             </button>
+
+            {/* RESULT */}
+            {result && (
+              <p className="pt-2 text-center text-sm text-neutral-500">
+                {result}
+              </p>
+            )}
           </form>
         </div>
       </div>

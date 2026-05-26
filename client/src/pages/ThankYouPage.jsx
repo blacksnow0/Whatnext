@@ -42,7 +42,7 @@ export default function ThankYouPage() {
           </a>
 
           <a
-            href="https://wa.me/91YOURNUMBER"
+            href="https://wa.me/917017502703"
             target="_blank"
             rel="noreferrer"
             className="flex h-14 items-center justify-center rounded-2xl border border-black/10 bg-[#25D366] px-6 text-sm font-medium text-white transition hover:opacity-90"
