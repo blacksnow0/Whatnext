@@ -10,7 +10,7 @@ const valleyOfFlowers = {
 
   location: "Chamoli, Uttarakhand",
 
-  gallery:valleyGallery,
+  gallery: valleyGallery,
 
   cardDescription:
     "Experience alpine meadows, waterfalls, glaciers, and one of the most beautiful Himalayan monsoon treks.",
@@ -48,7 +48,7 @@ const valleyOfFlowers = {
         {
           date: "21 Jun 2026",
           status: "Available",
-          seatsLeft: 5,
+          seatsLeft: 15,
         },
       ],
     },
@@ -58,64 +58,104 @@ const valleyOfFlowers = {
 
       batches: [
         {
+          date: "05 Jul 2026",
+          status: "Available",
+          seatsLeft: 12,
+        },
+
+        {
+          date: "08 Jul 2026",
+          status: "Filling Fast",
+          seatsLeft: 10,
+        },
+
+        {
           date: "12 Jul 2026",
           status: "Available",
-          seatsLeft: 8,
+          seatsLeft: 9,
+        },
+
+        {
+          date: "16 Jul 2026",
+          status: "Almost Full",
+          seatsLeft: 12,
         },
 
         {
           date: "19 Jul 2026",
           status: "Filling Fast",
+          seatsLeft: 5,
+        },
+
+        {
+          date: "23 Jul 2026",
+          status: "Available",
+          seatsLeft: 10,
+        },
+
+        {
+          date: "26 Jul 2026",
+          status: "Limited Seats",
           seatsLeft: 3,
         },
 
         {
-          date: "26 Jul 2026",
+          date: "30 Jul 2026",
           status: "Available",
-          seatsLeft: 11,
-        },
-        {
-          date: "26 Jul 2026",
-          status: "Available",
-          seatsLeft: 11,
-        },
-        {
-          date: "26 Jul 2026",
-          status: "Available",
-          seatsLeft: 11,
-        },
-        {
-          date: "26 Jul 2026",
-          status: "Available",
-          seatsLeft: 11,
-        },
-        {
-          date: "26 Jul 2026",
-          status: "Available",
-          seatsLeft: 11,
-        },
-        {
-          date: "26 Jul 2026",
-          status: "Available",
-          seatsLeft: 11,
+          seatsLeft: 14,
         },
       ],
     },
-
     {
       month: "August 2026",
 
       batches: [
         {
-          date: "09 Aug 2026",
+          date: "02 Aug 2026",
           status: "Available",
-          seatsLeft: 7,
+          seatsLeft: 18,
+        },
+
+        {
+          date: "06 Aug 2026",
+          status: "Available",
+          seatsLeft: 15,
+        },
+
+        {
+          date: "09 Aug 2026",
+          status: "Filling Fast",
+          seatsLeft: 12,
+        },
+
+        {
+          date: "13 Aug 2026",
+          status: "Available",
+          seatsLeft: 16,
         },
 
         {
           date: "16 Aug 2026",
           status: "Available",
-          seatsLeft: 4,
+          seatsLeft: 14,
+        },
+
+        {
+          date: "20 Aug 2026",
+          status: "Available",
+          seatsLeft: 17,
+        },
+
+        {
+          date: "23 Aug 2026",
+          status: "Filling Fast",
+          seatsLeft: 11,
+        },
+
+        {
+          date: "27 Aug 2026",
+          status: "Available",
+          seatsLeft: 19,
         },
       ],
     },

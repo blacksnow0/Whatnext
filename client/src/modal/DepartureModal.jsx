@@ -106,7 +106,12 @@ const DepartureModal = ({ isOpen, onClose, departures, destination }) => {
                       onClick={onClose}
                       className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-orange-500 transition-colors duration-300"
                     >
-                      <span>Planning your trek? <span className="underline font-bold">See complete itinerary</span></span>
+                      <span>
+                        Planning your trek?{" "}
+                        <span className="underline font-bold">
+                          See complete itinerary
+                        </span>
+                      </span>
 
                       <ChevronRight size={16} />
                     </a>
@@ -157,6 +162,12 @@ const DepartureModal = ({ isOpen, onClose, departures, destination }) => {
                           href={whatsappLink}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={() => {
+                            window.gtag("event", "whatsapp_click", {
+                              destination: destination.name,
+                              batch: batch.date,
+                            });
+                          }}
                           className="h-10 px-4 rounded-full bg-yellow-600 hover:bg-yellow-500 text-white flex items-center gap-2 shrink-0 text-sm font-semibold transition-all duration-300 active:scale-95 shadow-sm"
                         >
                           <MessageCircle size={14} />

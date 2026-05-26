@@ -148,21 +148,39 @@ const ExpeditionBrief = ({ destination }) => {
               </h3>
 
               <div className="flex flex-col gap-4 mt-6">
-                <div className="flex items-center gap-3">
+                {/* CALL */}
+                <a
+                  href="tel:+917017502703"
+                  onClick={() => {
+                    window.gtag("event", "call_click", {
+                      source: "contact_section",
+                    });
+                  }}
+                  className="flex items-center gap-3 transition hover:text-orange-500"
+                >
                   <Phone size={18} className="text-orange-500" />
 
                   <span className="text-zinc-700 font-medium">
-                    +91 98765 43210
+                    +91 7017502703
                   </span>
-                </div>
+                </a>
 
-                <div className="flex items-center gap-3">
+                {/* EMAIL */}
+                <a
+                  href="mailto:trek@whatnextonline.in"
+                  onClick={() => {
+                    window.gtag("event", "email_click", {
+                      source: "contact_section",
+                    });
+                  }}
+                  className="flex items-center gap-3 transition hover:text-orange-500"
+                >
                   <Mail size={18} className="text-orange-500" />
 
                   <span className="text-zinc-700 font-medium">
-                    hello@trek.com
+                    trek@whatnextonline.in
                   </span>
-                </div>
+                </a>
               </div>
 
               <p className="mt-6 text-sm text-zinc-500">

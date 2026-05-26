@@ -1,201 +1,310 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-
-export default function About() {
+export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-white text-gray-900">
-      {/* SEO */}
-      <Helmet>
-        <title>About Us | WhatNext Online</title>
+    <main className="bg-[#f7f4ef] text-[#121212]">
+      {/* HERO */}
+      <section className="relative overflow-hidden px-6 py-24 md:px-12 lg:px-20 lg:py-32">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#efe2d2] to-transparent opacity-70" />
 
-        <meta
-          name="description"
-          content="WhatNext Online curates memorable travel experiences including Himalayan treks, winter sports, destination events, and experiential journeys across India. Discover who we are and why thousands of travelers trust WhatNext."
-        />
+        <div className="relative mx-auto max-w-7xl">
+          <div className="max-w-4xl">
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.32em] text-[#ff6b00]">
+              About WhatNext Online
+            </p>
 
-        <meta
-          name="keywords"
-          content="WhatNext, What Next Online, trekking company India, Auli events, Himalaya treks, adventure travel India, curated trips India"
-        />
+            <h1 className="max-w-4xl text-5xl font-semibold leading-[0.95] tracking-tight md:text-7xl">
+              Himalayan journeys built for people who want more than just a trip.
+            </h1>
 
-        <meta property="og:title" content="About WhatNext Online" />
-        <meta
-          property="og:description"
-          content="WhatNext Online brings curated Himalayan treks, snow experiences, and unforgettable destination events such as Auli DJ Nights. Learn about our mission and story."
-        />
-        <meta property="og:url" content="https://www.whatnextonline.in/about" />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="https://www.whatnextonline.in/static/whatnext-about-banner.jpg"
-        />
-
-        <link rel="canonical" href="https://www.whatnextonline.in/about" />
-
-        {/* Organization Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "WhatNext Online",
-            url: "https://www.whatnextonline.in",
-            logo: "https://www.whatnextonline.in/static/whatnext-logo.png",
-            sameAs: [
-              "https://instagram.com/whatnextonline",
-              "https://www.facebook.com/whatnextonline",
-            ],
-            description:
-              "WhatNext Online specializes in curated Himalayan treks, winter adventures, Auli events, and experiential travel packages across India.",
-          })}
-        </script>
-      </Helmet>
-
-      {/* Hero */}
-      <section className="w-full bg-brand/10 py-20 px-4 text-center">
-        <h1 className="text-4xl md:text-5xl font-ubuntu font-bold text-brand">
-          About WhatNext Online
-        </h1>
-        <p className="mt-3 text-gray-700 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
-          Curating unforgettable experiences across the Himalayas — from treks
-          to winter sports to destination events.
-        </p>
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-neutral-600 md:text-xl">
+              WhatNext Online creates carefully designed trekking experiences across the Himalayas with a strong focus on safety, storytelling, local expertise and unforgettable mountain moments.
+            </p>
+          </div>
+        </div>
       </section>
 
-      {/* Main Content */}
-      <div className="max-w-5xl mx-auto px-4 py-14 space-y-16">
-        {/* Who We Are */}
-        <section className="space-y-4">
-          <h2 className="text-3xl font-ubuntu font-semibold text-brand">
-            Who We Are
-          </h2>
-          <p className="text-gray-700 text-lg leading-relaxed">
-            WhatNext Online is a travel experiences brand built with one simple
-            idea — to help people discover what’s next. Whether it’s conquering
-            a Himalayan trek, celebrating New Year in Auli’s snow-covered
-            slopes, or experiencing curated adventure trips, our goal is to
-            create journeys that feel authentic, safe, and unforgettable.
+      {/* STORY */}
+      <section className="px-6 py-20 md:px-12 lg:px-20">
+        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-2 lg:gap-20">
+          <div>
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-[#ff6b00]">
+              Our Story
+            </p>
+
+            <h2 className="text-4xl font-semibold leading-tight md:text-5xl">
+              Created from a passion for mountains, people and meaningful travel.
+            </h2>
+          </div>
+
+          <div className="space-y-6 text-[17px] leading-8 text-neutral-600">
+            <p>
+              WhatNext Online began with a simple vision — to make Himalayan trekking feel more personal, immersive and trustworthy. Instead of rushed itineraries and overcrowded experiences, we focus on curated journeys that balance adventure with comfort and preparation.
+            </p>
+
+            <p>
+              From iconic treks to hidden alpine routes, every expedition is planned with local insights, experienced trek leaders and carefully selected logistics to ensure a smooth experience from start to finish.
+            </p>
+
+            <p>
+              Whether you are a first-time trekker or a seasoned explorer, our goal is to help you experience the mountains with confidence and clarity.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* STATS */}
+      <section className="px-6 pb-20 md:px-12 lg:px-20">
+        <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              title: 'Curated Himalayan Treks',
+              value: '20+',
+            },
+            {
+              title: 'Expert Expedition Planning',
+              value: '100%',
+            },
+            {
+              title: 'Support Throughout Journey',
+              value: '24/7',
+            },
+            {
+              title: 'Focus On Safety & Experience',
+              value: 'Top Priority',
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="rounded-[28px] bg-white p-8 shadow-[0_10px_40px_rgba(0,0,0,0.04)]"
+            >
+              <p className="text-4xl font-semibold tracking-tight md:text-5xl">
+                {item.value}
+              </p>
+
+              <p className="mt-4 text-sm leading-7 text-neutral-500">
+                {item.title}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* VALUES */}
+      <section className="bg-white px-6 py-20 md:px-12 lg:px-20">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-3xl">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-[#ff6b00]">
+              What We Believe
+            </p>
+
+            <h2 className="text-4xl font-semibold leading-tight md:text-5xl">
+              Experiences should feel safe, inspiring and unforgettable.
+            </h2>
+          </div>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                title: 'Safety First',
+                text: 'Careful planning, responsible itineraries and experienced coordination remain at the center of every trek.',
+              },
+              {
+                title: 'Authentic Exploration',
+                text: 'We believe the best journeys come from meaningful local experiences and genuine mountain culture.',
+              },
+              {
+                title: 'Small Details Matter',
+                text: 'Preparation, communication and smooth logistics create a better overall trekking experience.',
+              },
+              {
+                title: 'Responsible Travel',
+                text: 'We encourage eco-conscious travel practices and respect for local communities and landscapes.',
+              },
+              {
+                title: 'Community Driven',
+                text: 'Trekking is not just about reaching summits — it is about the people you meet along the way.',
+              },
+              {
+                title: 'Designed For Modern Travelers',
+                text: 'Clear information, responsive support and modern planning tools make the experience stress-free.',
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="rounded-[28px] border border-black/5 bg-[#f8f5f1] p-8"
+              >
+                <h3 className="text-2xl font-semibold tracking-tight">
+                  {item.title}
+                </h3>
+
+                <p className="mt-4 text-[15px] leading-7 text-neutral-600">
+                  {item.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* POLICIES */}
+      <section
+        id="policies"
+        className="bg-[#f8f5f1] px-6 py-20 md:px-12 lg:px-20"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-3xl">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-[#ff6b00]">
+              Policies & Information
+            </p>
+
+            <h2 className="text-4xl font-semibold leading-tight md:text-5xl">
+              Important details before your expedition.
+            </h2>
+          </div>
+
+          <div className="mt-14 grid gap-6 lg:grid-cols-2">
+            <div
+              id="cancellation-policy"
+              className="rounded-[28px] bg-white p-8 shadow-[0_10px_40px_rgba(0,0,0,0.04)]"
+            >
+              <h3 className="text-2xl font-semibold tracking-tight">
+                Cancellation Policy
+              </h3>
+
+              <ul className="mt-6 space-y-4 text-[15px] leading-7 text-neutral-600">
+                <li>
+                  • Cancellations made 30+ days before departure may receive partial refunds after deduction of processing charges.
+                </li>
+
+                <li>
+                  • Cancellations within 15–30 days may receive limited refunds depending on bookings and logistics already confirmed.
+                </li>
+
+                <li>
+                  • Last-minute cancellations are generally non-refundable.
+                </li>
+
+                <li>
+                  • In case of weather or operational disruptions, alternative arrangements may be offered where possible.
+                </li>
+              </ul>
+            </div>
+
+            <div
+              id="booking-policy"
+              className="rounded-[28px] bg-white p-8 shadow-[0_10px_40px_rgba(0,0,0,0.04)]"
+            >
+              <h3 className="text-2xl font-semibold tracking-tight">
+                Booking Policy
+              </h3>
+
+              <ul className="mt-6 space-y-4 text-[15px] leading-7 text-neutral-600">
+                <li>
+                  • Trek slots are confirmed only after advance payment.
+                </li>
+
+                <li>
+                  • Participants are requested to provide accurate contact information during booking.
+                </li>
+
+                <li>
+                  • Departure schedules may vary depending on weather and operational conditions.
+                </li>
+
+                <li>
+                  • Government ID proof may be required before departure.
+                </li>
+              </ul>
+            </div>
+
+            <div
+              id="safety-guidelines"
+              className="rounded-[28px] bg-white p-8 shadow-[0_10px_40px_rgba(0,0,0,0.04)]"
+            >
+              <h3 className="text-2xl font-semibold tracking-tight">
+                Safety Guidelines
+              </h3>
+
+              <ul className="mt-6 space-y-4 text-[15px] leading-7 text-neutral-600">
+                <li>
+                  • Trekkers should ensure they are physically fit before joining high-altitude expeditions.
+                </li>
+
+                <li>
+                  • Follow instructions provided by trek leaders and local guides at all times.
+                </li>
+
+                <li>
+                  • Carry essential medications and personal trekking gear.
+                </li>
+
+                <li>
+                  • Weather in mountain regions can change rapidly and may affect itineraries.
+                </li>
+              </ul>
+            </div>
+
+            <div
+              id="privacy-policy"
+              className="rounded-[28px] bg-white p-8 shadow-[0_10px_40px_rgba(0,0,0,0.04)]"
+            >
+              <h3 className="text-2xl font-semibold tracking-tight">
+                Privacy Policy
+              </h3>
+
+              <ul className="mt-6 space-y-4 text-[15px] leading-7 text-neutral-600">
+                <li>
+                  • Personal information submitted through enquiry forms is used only for communication and booking purposes.
+                </li>
+
+                <li>
+                  • We do not sell or share customer data with unrelated third parties.
+                </li>
+
+                <li>
+                  • Basic analytics and tracking tools may be used to improve website experience.
+                </li>
+
+                <li>
+                  • By using the website, users agree to the collection of necessary operational information.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="px-6 py-24 md:px-12 lg:px-20">
+        <div className="mx-auto max-w-5xl rounded-[36px] bg-[#121212] px-8 py-16 text-center text-white md:px-16">
+          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#ff6b00]">
+            Begin Your Journey
           </p>
-          <p className="text-gray-700 leading-relaxed">
-            We bring together passion for exploration and professional trip
-            planning to make adventure travel simple and accessible. From the
-            moment you enquire to the moment you return home, we handle the
-            details so you can focus entirely on the experience.
+
+          <h2 className="mx-auto mt-5 max-w-3xl text-4xl font-semibold leading-tight md:text-6xl">
+            The mountains are waiting. Let’s plan your next adventure.
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-neutral-400 md:text-lg">
+            Explore curated Himalayan treks, seasonal expeditions and unforgettable journeys built for modern explorers.
           </p>
-        </section>
 
-        {/* What We Do */}
-        <section className="space-y-4">
-          <h2 className="text-3xl font-ubuntu font-semibold text-brand">
-            What We Do
-          </h2>
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <a
+              href="/"
+              className="flex h-14 items-center justify-center rounded-2xl bg-white px-8 text-sm font-medium text-black transition hover:opacity-90"
+            >
+              Explore Treks
+            </a>
 
-          <ul className="space-y-4 text-gray-700 leading-relaxed">
-            <li>
-              <span className="font-semibold text-brand">
-                • Curated Himalayan Treks
-              </span>
-              <p>
-                Handpicked treks such as Kagbhusandi, Kuari Pass, Valley of
-                Flowers, Satopanth, Hampta Pass and more — designed for all
-                experience levels with safety and comfort in mind.
-              </p>
-            </li>
-
-            <li>
-              <span className="font-semibold text-brand">
-                • Winter Sports & Snow Adventures
-              </span>
-              <p>
-                From skiing and snowboarding courses in Auli to immersive winter
-                getaways, we bring the thrill of the Himalayas to life.
-              </p>
-            </li>
-
-            <li>
-              <span className="font-semibold text-brand">
-                • Auli Christmas & New Year Events
-              </span>
-              <p>
-                One of our most loved offerings — DJ nights, bonfire evenings,
-                local performers, snow activities, and a fully managed 3-day
-                winter celebration in Auli every December.
-              </p>
-            </li>
-
-            <li>
-              <span className="font-semibold text-brand">
-                • Custom Group Experiences
-              </span>
-              <p>
-                We curate customized trips for student groups, corporate teams,
-                friend circles, and private adventure seekers with complete
-                planning, guidance, and support.
-              </p>
-            </li>
-          </ul>
-        </section>
-
-        {/* Why Choose Us */}
-        <section className="space-y-4">
-          <h2 className="text-3xl font-ubuntu font-semibold text-brand">
-            Why Choose WhatNext?
-          </h2>
-
-          <ul className="grid md:grid-cols-2 gap-6 text-gray-700">
-            <li className="p-5 bg-white border shadow-sm rounded-xl">
-              <h3 className="font-semibold mb-1 text-brand">
-                Experienced Trip Coordination
-              </h3>
-              <p>
-                Every itinerary is crafted with field expertise, safety checks,
-                and local knowledge.
-              </p>
-            </li>
-
-            <li className="p-5 bg-white border shadow-sm rounded-xl">
-              <h3 className="font-semibold mb-1 text-brand">
-                Traveler-First Approach
-              </h3>
-              <p>
-                Transparent pricing, friendly support, and curated itineraries
-                built to maximize comfort and memories.
-              </p>
-            </li>
-
-            <li className="p-5 bg-white border shadow-sm rounded-xl">
-              <h3 className="font-semibold mb-1 text-brand">
-                Local Partnerships
-              </h3>
-              <p>
-                We work closely with trusted local guides, homestays, and
-                operators to ensure authentic experiences.
-              </p>
-            </li>
-
-            <li className="p-5 bg-white border shadow-sm rounded-xl">
-              <h3 className="font-semibold mb-1 text-brand">
-                Seamless Digital Experience
-              </h3>
-              <p>
-                Simple online booking, WhatsApp support, and quick confirmations
-                ensure easy planning for every traveler.
-              </p>
-            </li>
-          </ul>
-        </section>
-
-        {/* Mission */}
-        <section>
-          <h2 className="text-3xl font-ubuntu font-semibold text-brand">
-            Our Mission
-          </h2>
-          <p className="mt-3 text-gray-700 text-lg leading-relaxed">
-            To inspire and enable people to explore India’s most beautiful and
-            lesser-known destinations — safely, comfortably, and with memories
-            that last a lifetime.
-          </p>
-        </section>
-      </div>
-    </div>
+            <a
+              href="/contact"
+              className="flex h-14 items-center justify-center rounded-2xl border border-white/10 px-8 text-sm font-medium text-white transition hover:bg-white/5"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

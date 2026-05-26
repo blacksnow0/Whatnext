@@ -1,152 +1,190 @@
 import {
   FaFacebookF,
-  FaTwitter,
   FaInstagram,
   FaEnvelope,
 } from "react-icons/fa";
 
+import { Link } from "react-router-dom";
+
 function Footer() {
   return (
-    <footer className="bg-[#2a2a2e] text-[#cccbd1] py-12">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* Logo + Tagline */}
+    <footer className="bg-[#18181b] text-[#d4d4d8]">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-2 lg:grid-cols-4">
+        
+        {/* BRAND */}
         <div>
-          <h3 className="font-ubuntu text-3xl font-bold mb-3 tracking-widest text-orange-200">
-            What next!
+          <h3 className="text-3xl font-semibold tracking-tight text-white">
+            WhatNext Online
           </h3>
-          <p className="text-sm max-w-xs leading-relaxed opacity-80">
-            Discover your next unforgettable adventure with us.
+
+          <p className="mt-5 max-w-sm text-sm leading-7 text-neutral-400">
+            Curated Himalayan trekking experiences designed
+            for modern explorers seeking unforgettable mountain
+            journeys.
           </p>
-        </div>
 
-        {/* Quick Links */}
-        <div>
-          <h4 className="font-semibold mb-4 uppercase tracking-wider text-orange-200">
-            Explore
-          </h4>
-          <ul className="space-y-2 text-sm cursor-pointer">
-            <li>
-              <a
-                href="#overview"
-                className="hover:underline hover:text-[#7e395b] transition-colors"
-              >
-                Overview
-              </a>
-            </li>
-            <li>
-              <a
-                href="#best-time"
-                className="hover:underline hover:text-[#7e395b] transition-colors"
-              >
-                Best Time
-              </a>
-            </li>
-            <li>
-              <a
-                href="#itinerary"
-                className="hover:underline hover:text-[#7e395b] transition-colors"
-              >
-                Itinerary
-              </a>
-            </li>
-            <li>
-              <a
-                href="#gallery"
-                className="hover:underline hover:text-[#7e395b] transition-colors"
-              >
-                Gallery
-              </a>
-            </li>
-            <li>
-              <a
-                href="#highlights"
-                className="hover:underline hover:text-[#7e395b] transition-colors"
-              >
-                Highlights
-              </a>
-            </li>
-            <li>
-              <a
-                href="#inclusions"
-                className="hover:underline hover:text-[#7e395b] transition-colors"
-              >
-                Inclusions
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        {/* Contact & Socials */}
-        <div>
-          <h4 className="font-semibold mb-4 uppercase tracking-wider text-orange-200">
-            Get in Touch
-          </h4>
-          <p className="text-sm mb-3">Email: info@whatnextonline.in</p>
-          <p className="text-sm mb-6">Phone: +91 7017502703</p>
-          <div className="flex gap-4 text-orange-200">
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Facebook"
-              className="hover:text-[#bb7c9f] transition-colors"
-            >
-              <FaFacebookF />
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Twitter"
-              className="hover:text-[#bb7c9f] transition-colors"
-            >
-              <FaTwitter />
-            </a>
+          <div className="mt-6 flex gap-4 text-white">
             <a
               href="https://instagram.com"
               target="_blank"
               rel="noreferrer"
-              aria-label="Instagram"
-              className="hover:text-[#bb7c9f] transition-colors"
+              className="transition hover:text-[#ff6b00]"
             >
-              <FaInstagram />
+              <FaInstagram size={18} />
             </a>
+
             <a
-              href="mailto:info@travellera.com"
-              aria-label="Email"
-              className="hover:text-[#bb7c9f] transition-colors"
+              href="https://facebook.com"
+              target="_blank"
+              rel="noreferrer"
+              className="transition hover:text-[#ff6b00]"
             >
-              <FaEnvelope />
+              <FaFacebookF size={18} />
+            </a>
+
+            <a
+              href="mailto:trek@whatnextonline.in"
+              className="transition hover:text-[#ff6b00]"
+            >
+              <FaEnvelope size={18} />
             </a>
           </div>
         </div>
 
-        {/* Newsletter Signup */}
+        {/* TREKS */}
         <div>
-          <h4 className="font-semibold mb-4 uppercase tracking-wider text-orange-200">
-            Newsletter
+          <h4 className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#ff6b00]">
+            Explore
           </h4>
-          <p className="text-sm mb-4 max-w-xs opacity-80">
-            Stay updated with exclusive offers and travel inspiration.
-          </p>
-          <form className="flex gap-2">
-            <input
-              type="email"
-              placeholder="Your email"
-              className="flex-grow rounded-full py-2 text-white placeholder-orange-200 focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="bg-[#7e395b] text-[#f4eef1] rounded-full px-4 py-2 font-semibold hover:bg-[#a06a7f] transition-colors"
+
+          <ul className="space-y-3 text-sm text-neutral-400">
+            <li>
+              <a
+                href="/#destinations"
+                className="transition hover:text-white"
+              >
+                Popular Treks
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/#gallery"
+                className="transition hover:text-white"
+              >
+                Gallery
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/#testimonials"
+                className="transition hover:text-white"
+              >
+                Testimonials
+              </a>
+            </li>
+
+            <li>
+              <Link
+                to="/about"
+                className="transition hover:text-white"
+              >
+                About Us
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* POLICIES */}
+        <div>
+          <h4 className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#ff6b00]">
+            Policies
+          </h4>
+
+          <ul className="space-y-3 text-sm text-neutral-400">
+            <li>
+              <Link
+                to="/about#cancellation-policy"
+                className="transition hover:text-white"
+              >
+                Cancellation Policy
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to="/about#booking-policy"
+                className="transition hover:text-white"
+              >
+                Booking Policy
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to="/about#privacy-policy"
+                className="transition hover:text-white"
+              >
+                Privacy Policy
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to="/about#safety-guidelines"
+                className="transition hover:text-white"
+              >
+                Safety Guidelines
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* CONTACT */}
+        <div>
+          <h4 className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#ff6b00]">
+            Contact
+          </h4>
+
+          <div className="space-y-4 text-sm text-neutral-400">
+            <p>
+              info@whatnextonline.in
+            </p>
+
+            <p>
+              +91 7017502703
+            </p>
+
+            <p className="leading-7">
+              Uttarakhand, India
+            </p>
+
+            <a
+              href="https://wa.me/917017502703"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex rounded-2xl bg-[#ff6b00] px-5 py-3 text-sm font-medium text-white transition hover:opacity-90"
             >
-              Subscribe
-            </button>
-          </form>
+              Chat on WhatsApp
+            </a>
+          </div>
         </div>
       </div>
 
-      <div className="mt-10 border-t border-[#7e395b]/30 pt-6 text-center text-sm opacity-70 text-[#cccbd1]">
-        &copy; {new Date().getFullYear()} Travellera. All rights reserved.
+      {/* BOTTOM */}
+      <div className="border-t border-white/5">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-6 text-center text-sm text-neutral-500 md:flex-row">
+          
+          <p>
+            © {new Date().getFullYear()} WhatNext Online.
+            All rights reserved.
+          </p>
+
+          <p>
+            Designed for modern Himalayan explorers.
+          </p>
+        </div>
       </div>
     </footer>
   );
