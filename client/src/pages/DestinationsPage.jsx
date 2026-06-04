@@ -281,7 +281,12 @@ export default function Destinations() {
 
                   <div className="mt-10 flex items-center gap-3 text-orange-500">
                     <span className="text-sm uppercase tracking-[0.2em]">
-                      Explore Journey
+                      <Link
+                        to={`/destinations/${destinations[0].slug}`}
+                      >
+                        Explore Journey
+                      </Link>
+                     
                     </span>
 
                     <span className="text-2xl">→</span>

@@ -41,14 +41,24 @@ const valleyOfFlowers = {
       batches: [
         {
           date: "14 Jun 2026",
-          status: "Available",
+          status: "Filling fast",
           seatsLeft: 8,
         },
 
         {
           date: "21 Jun 2026",
           status: "Available",
-          seatsLeft: 15,
+          seatsLeft: 13,
+        },
+        {
+          date: "25 Jun 2026",
+          status: "Available",
+          seatsLeft: 20,
+        },
+        {
+          date: "28 Jun 2026",
+          status: "Available",
+          seatsLeft: 20,
         },
       ],
     },
@@ -78,7 +88,7 @@ const valleyOfFlowers = {
         {
           date: "16 Jul 2026",
           status: "Almost Full",
-          seatsLeft: 12,
+          seatsLeft: 8,
         },
 
         {
@@ -181,7 +191,7 @@ const valleyOfFlowers = {
 
   bestSeason: "July - Aug",
 
-  price: "₹13,499",
+  price: "₹13,599",
 
   trekingDistance: "36km",
 

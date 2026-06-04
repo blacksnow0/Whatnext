@@ -90,13 +90,13 @@ const ExpeditionBrief = ({ destination }) => {
                 <div className="flex items-center gap-3">
                   <Phone size={18} className="text-orange-500" />
 
-                  <span className="text-sm text-zinc-700">+91 98765 43210</span>
+                  <span className="text-sm text-zinc-700">+91 7017502703</span>
                 </div>
 
                 <div className="flex items-center gap-3">
                   <Mail size={18} className="text-orange-500" />
 
-                  <span className="text-sm text-zinc-700">hello@trek.com</span>
+                  <span className="text-sm text-zinc-700">trek@whatnextonline.in</span>
                 </div>
               </div>
             </div>

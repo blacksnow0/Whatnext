@@ -25,7 +25,7 @@ function Footer() {
 
           <div className="mt-6 flex gap-4 text-white">
             <a
-              href="https://instagram.com"
+              href="https://instagram.com/whatnextonline"
               target="_blank"
               rel="noreferrer"
               className="transition hover:text-[#ff6b00]"
@@ -109,6 +109,15 @@ function Footer() {
                 className="transition hover:text-white"
               >
                 Cancellation Policy
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to="/contact-us"
+                className="transition hover:text-white"
+              >
+                Contact Us
               </Link>
             </li>
 

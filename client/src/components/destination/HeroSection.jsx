@@ -56,14 +56,14 @@ const HeroSection = ({
 
           {/* CTA */}
           <a
-            href="#itinerary"
+            href="#gallery"
             aria-label="Explore trek itinerary"
             className="inline-flex items-center gap-3 mt-8 text-white border border-white/15 hover:border-white/30 bg-white/10 backdrop-blur-md px-5 py-3 rounded-full transition-all duration-300"
           >
             <Images size={18} />
 
             <span className="text-sm font-medium">
-              Explore Journey
+              Gallery
             </span>
           </a>
         </div>

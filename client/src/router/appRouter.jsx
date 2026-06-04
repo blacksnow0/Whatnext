@@ -17,6 +17,7 @@ import Destinations from "../pages/DestinationsPage";
 import DestinationDetail from "../pages/DestinationDetail";
 import NotFound from "../pages/NotFound";
 import ThankYouPage from "../pages/ThankYouPage";
+import Contact from "../pages/ContactUs";
 
 /* =========================
    GA4 PAGE VIEW TRACKING
@@ -55,6 +56,11 @@ const AppRouter = () => {
           <Route
             path="/about"
             element={<About />}
+          />
+
+          <Route
+            path="/contact-us"
+            element={<Contact/>}
           />
 
           <Route

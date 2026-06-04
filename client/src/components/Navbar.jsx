@@ -12,7 +12,7 @@ export default function Navbar() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 lg:px-10 pt-3">
+    <header className="fixed top-0 left-0 w-full z-99 px-4 sm:px-6 lg:px-10 pt-3">
       <nav className="max-w-7xl mx-auto bg-white/92 backdrop-blur-md border border-neutral-200/80 rounded-[26px] shadow-sm overflow-hidden">
         {/* TOP BAR */}
         <div className="flex items-center justify-between px-4 sm:px-6 py-3">
@@ -60,6 +60,12 @@ export default function Navbar() {
               className="relative hover:text-black transition after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-black after:transition-all hover:after:w-full"
             >
               About
+            </Link>
+            <Link
+              to="/contact-us"
+              className="relative hover:text-black transition after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-black after:transition-all hover:after:w-full"
+            >
+              Contact
             </Link>
 
             {/* CTA */}
@@ -129,6 +135,10 @@ export default function Navbar() {
                 {
                   label: "About",
                   href: "/about",
+                },
+                {
+                  label: "Contact-us",
+                  href: "/contact-us",
                 },
               ].map((item, index, arr) => (
                 <div

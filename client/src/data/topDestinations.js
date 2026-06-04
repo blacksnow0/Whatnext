@@ -21,7 +21,7 @@ export const topDestinations = [
     description:
       "A UNESCO World Heritage trek filled with blooming alpine flowers, waterfalls, misty valleys, and breathtaking Himalayan landscapes.",
 
-    price: "₹13,499",
+    price: "₹13,599",
 
     accent: "from-orange-900/70 to-transparent",
   },
