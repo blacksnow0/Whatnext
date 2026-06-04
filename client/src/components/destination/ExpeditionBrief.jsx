@@ -60,19 +60,15 @@ const ExpeditionBrief = ({ destination }) => {
             </div>
 
             {/* Info */}
-            <div className="grid grid-cols-2 gap-y-8 gap-x-4 mt-8">
+            <div className="grid grid-cols-2 gap-y-4 gap-x-3 mt-6">
               {infoItems.map((item) => {
                 const Icon = item.icon;
 
                 return (
-                  <div key={item.label}>
-                    <Icon size={20} className="text-orange-500" />
+                  <div key={item.value} className="flex items-center gap-2">
+                    <Icon size={16} className="text-orange-500 shrink-0" />
 
-                    <p className="mt-3 text-[10px] uppercase tracking-[0.18em] text-zinc-400 font-semibold">
-                      {item.label}
-                    </p>
-
-                    <h3 className="mt-1 text-[15px] font-semibold text-zinc-900 leading-snug">
+                    <h3 className="text-sm font-medium text-zinc-900 leading-none">
                       {item.value}
                     </h3>
                   </div>
@@ -80,24 +76,70 @@ const ExpeditionBrief = ({ destination }) => {
               })}
             </div>
 
+            <div className="mt-5 -mx-5 bg-white sm:-mx-6 overflow-hidden border-y border-zinc-200">
+              <div className="marquee-track py-3">
+                <div className="marquee-content">
+                  <span>July Batches Filling Fast</span>
+                  <span>Peak Bloom Season</span>
+                  <span>Small Group Departures</span>
+
+                  {/* Duplicate */}
+                  <span>July Batches Filling Fast</span>
+                  <span>Peak Bloom Season</span>
+                  <span>Small Group Departures</span>
+                </div>
+              </div>
+            </div>
+
             {/* Contact */}
-            <div className="mt-10 pt-6 border-t border-orange-100">
-              <p className="text-sm font-semibold text-zinc-900">
-                Speak With a Trek Expert
-              </p>
+            <div className="mt-3S pt-5 ">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-zinc-500">
+                    Trek Support
+                  </p>
 
-              <div className="flex flex-col gap-4 mt-5">
-                <div className="flex items-center gap-3">
-                  <Phone size={18} className="text-orange-500" />
+                  <h3 className="mt-2 text-lg font-semibold text-zinc-900">
+                    Planning Assistance
+                  </h3>
 
-                  <span className="text-sm text-zinc-700">+91 7017502703</span>
+                  <p className="mt-2 text-sm text-zinc-600 leading-relaxed max-w-xs">
+                    Unsure about difficulty, fitness requirements or departures?
+                    Our team can help.
+                  </p>
                 </div>
+              </div>
 
-                <div className="flex items-center gap-3">
-                  <Mail size={18} className="text-orange-500" />
+              <div className="mt-5 space-y-3">
+                <a
+                  href="tel:+917017502703"
+                  className="flex items-center bg-white justify-between rounded-2xl border border-zinc-200 px-4 py-3 hover:border-zinc-300 transition"
+                >
+                  <div>
+                    <p className="text-xs text-zinc-500">Call Us</p>
 
-                  <span className="text-sm text-zinc-700">trek@whatnextonline.in</span>
-                </div>
+                    <p className="text-sm font-medium text-zinc-900">
+                      +91 7017502703
+                    </p>
+                  </div>
+
+                  <Phone size={16} className="text-orange-500" />
+                </a>
+
+                <a
+                  href="mailto:trek@whatnextonline.in"
+                  className="flex items-center bg-white justify-between rounded-2xl border border-zinc-200 px-4 py-3 hover:border-zinc-300 transition"
+                >
+                  <div>
+                    <p className="text-xs text-zinc-500">Email Us</p>
+
+                    <p className="text-sm font-medium text-zinc-900">
+                      trek@whatnextonline.in
+                    </p>
+                  </div>
+
+                  <Mail size={16} className="text-orange-500" />
+                </a>
               </div>
             </div>
           </div>

@@ -1,8 +1,6 @@
 import { Images } from "lucide-react";
 
-const HeroSection = ({
-  destination,
-}) => {
+const HeroSection = ({ destination }) => {
   return (
     <section
       id="hero"
@@ -19,10 +17,7 @@ const HeroSection = ({
           poster={destination.imageUrl}
           className="w-full h-full object-cover"
         >
-          <source
-            src={destination.videoUrl}
-            type="video/mp4"
-          />
+          <source src={destination.videoUrl} type="video/mp4" />
         </video>
       </div>
 
@@ -57,14 +52,11 @@ const HeroSection = ({
           {/* CTA */}
           <a
             href="#gallery"
-            aria-label="Explore trek itinerary"
-            className="inline-flex items-center gap-3 mt-8 text-white border border-white/15 hover:border-white/30 bg-white/10 backdrop-blur-md px-5 py-3 rounded-full transition-all duration-300"
+            className="inline-flex items-center gap-3 mt-8 px-5 py-3 rounded-full bg-white text-zinc-900 hover:bg-zinc-100 transition"
           >
-            <Images size={18} />
+            <Images size={16} />
 
-            <span className="text-sm font-medium">
-              Gallery
-            </span>
+            <span className="text-sm font-medium">10 Photos & Videos</span>
           </a>
         </div>
       </div>
