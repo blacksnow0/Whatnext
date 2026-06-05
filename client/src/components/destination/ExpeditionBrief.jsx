@@ -83,7 +83,14 @@ const ExpeditionBrief = ({ destination }) => {
                   <span>Peak Bloom Season</span>
                   <span>Small Group Departures</span>
 
-                  {/* Duplicate */}
+                  <span>July Batches Filling Fast</span>
+                  <span>Peak Bloom Season</span>
+                  <span>Small Group Departures</span>
+
+                  <span>July Batches Filling Fast</span>
+                  <span>Peak Bloom Season</span>
+                  <span>Small Group Departures</span>
+
                   <span>July Batches Filling Fast</span>
                   <span>Peak Bloom Season</span>
                   <span>Small Group Departures</span>

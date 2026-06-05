@@ -1,23 +1,5 @@
 @import "tailwindcss";
 
-/* =========================
-   FONTS
-========================= */
-
-@font-face {
-  font-family: "Ubuntu";
-  src: url("../src/assets/fonts/Ubuntu-Medium.ttf");
-}
-
-@font-face {
-  font-family: "Exo";
-  src: url("../src/assets/fonts/Exo2-VariableFont_wght.ttf");
-}
-
-@font-face {
-  font-family: "Garamond";
-  src: url("../src/assets/fonts/EBGaramond-VariableFont_wght.ttf");
-}
 
 
 .marquee-track {
@@ -29,7 +11,7 @@
   display: inline-flex;
   align-items: center;
 
-  animation: marquee 60s linear infinite;
+  animation: marquee 120s linear infinite;
 
   font-size: 11px;
   font-weight: 500;
@@ -44,7 +26,7 @@
   }
 
   to {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
@@ -81,17 +63,6 @@
     box-shadow:
       0 0 18px rgba(37,99,235,0.35);
   }
-}
-/* =========================
-   THEME
-========================= */
-
-@theme {
-  --font-ubuntu: Ubuntu, sans-serif;
-
-  --font-exo: Exo, sans-serif;
-
-  --font-garamond: Garamond, serif;
 }
 
 /* =========================
