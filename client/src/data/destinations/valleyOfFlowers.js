@@ -41,24 +41,24 @@ const valleyOfFlowers = {
       batches: [
         {
           date: "14 Jun 2026",
-          status: "Filling fast",
-          seatsLeft: 8,
+          status: "Sold out",
+          seatsLeft: 0,
         },
 
         {
           date: "21 Jun 2026",
-          status: "Available",
-          seatsLeft: 13,
+          status: "Sold out",
+          seatsLeft: 0,
         },
         {
           date: "25 Jun 2026",
-          status: "Available",
-          seatsLeft: 20,
+          status: "Sold out",
+          seatsLeft: 0,
         },
         {
           date: "28 Jun 2026",
-          status: "Available",
-          seatsLeft: 20,
+          status: "Sold out",
+          seatsLeft: 0,
         },
       ],
     },
@@ -69,8 +69,8 @@ const valleyOfFlowers = {
       batches: [
         {
           date: "05 Jul 2026",
-          status: "Available",
-          seatsLeft: 12,
+          status: "Filling Fast",
+          seatsLeft: 4,
         },
 
         {
