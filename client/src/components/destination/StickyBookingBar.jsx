@@ -1,14 +1,9 @@
 import { FaWhatsapp } from "react-icons/fa";
 
-const StickyBookingBar = ({
-  price,
-  onOpenDepartures,
-  name,
-}) => {
-  const whatsappMessage =
-    encodeURIComponent(
-      `Hi, I'm interested in the ${name}. Please share the upcoming batch details.`,
-    );
+const StickyBookingBar = ({ price, onOpenDepartures, name }) => {
+  const whatsappMessage = encodeURIComponent(
+    `Hi, I'm interested in the ${name}. Please share the upcoming batch details.`,
+  );
 
   const whatsappLink = `https://wa.me/7017502703?text=${whatsappMessage}`;
 
@@ -33,9 +28,7 @@ const StickyBookingBar = ({
           <div className="flex items-center gap-2 lg:gap-4 shrink-0">
             {/* CTA */}
             <button
-              onClick={
-                onOpenDepartures
-              }
+              onClick={onOpenDepartures}
               className="h-11 px-4 rounded-xl bg-orange-500 hover:bg-orange-400 text-white text-sm font-semibold transition-all duration-300 active:scale-95 whitespace-nowrap lg:h-14 lg:px-8 lg:text-base lg:rounded-2xl shadow-[0_8px_24px_rgba(249,115,22,0.25)]"
             >
               Check Availability
@@ -43,10 +36,10 @@ const StickyBookingBar = ({
 
             {/* WHATSAPP */}
             <a
-  href={whatsappLink}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
     relative
     w-11 h-11
     lg:w-14 lg:h-14
@@ -63,10 +56,10 @@ const StickyBookingBar = ({
 
     animate-[whatsappGlow_3s_ease-in-out_infinite]
   "
->
-  {/* SOFT GLOW */}
-  <div
-    className="
+            >
+              {/* SOFT GLOW */}
+              <div
+                className="
       absolute inset-0
       rounded-full
       bg-[#25D366]
@@ -74,13 +67,10 @@ const StickyBookingBar = ({
       opacity-50
       -z-10
     "
-  />
+              />
 
-  <FaWhatsapp
-    size={20}
-    className="text-white lg:w-7 lg:h-7"
-  />
-</a>
+              <FaWhatsapp size={20} className="text-white lg:w-7 lg:h-7" />
+            </a>
           </div>
         </div>
       </div>

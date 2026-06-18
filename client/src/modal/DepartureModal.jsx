@@ -143,7 +143,7 @@ const DepartureModal = ({ isOpen, onClose, departures, destination }) => {
                               className={`font-medium ${
                                 batch.status === "Available"
                                   ? "text-green-600"
-                                  : "text-orange-500"
+                                  : "text-red-500"
                               }`}
                             >
                               {batch.status}
